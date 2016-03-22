@@ -43,19 +43,7 @@
 \makeatletter
 
 %-- Macros personnelles
-% \newcounter{ctrTime}
-% \newcommand{\decompte}[1]{%
-% 	\setcounter{ctrTime}{#1}
-% 	\multido{\n=1+1}{#1}{%
-% 		\only<\n>{%
-% 			\begin{flushright}\alert{ Il reste \arabic{ctrTime} s. }\end{flushright}%
-% 			\transduration{1}
-% 		}
-% 		\addtocounter{ctrTime}{-1}
-% 	}
-% }
-
-
+% titre
 \newcommand{\titre}[4]{%
 	\title{#1}
 	\subtitle{Cours}
@@ -64,33 +52,13 @@
 	\institute{#4}
 }
 
-
+% debut - fin
 \newcommand{\debut}{%
 	\begin{frame}
 		\titlepage
-
 		\transduration{3}
 	\end{frame}
 }
-
-
-\newcounter{ctrQuest}
-\NewDocumentEnvironment{questions}{O{60}}{ % begin
-	\stepcounter{ctrQuest}
-	\section{Question \usecounter{ctrQuest}}
-	\begin{frame}
-		\centering
-		Question \usecounter{ctrQuest}\transduration{3}
-	\end{frame}
-	\begin{frame}
-	\centering
-	\begin{beamerboxesrounded}{Q\usecounter{ctrQuest}.}
-} { % end
-	\end{beamerboxesrounded} %
-	\decompte{#1} %
-	\end{frame} %
-}
-
 
 \newcommand{\fin}{%
 	\section{Sommaire}
@@ -99,6 +67,27 @@
 		\tableofcontents
 	\end{frame}
 }
+
+% blocks
+% \newenvironment<>{def}[1]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+% 	\begin{block}{#1}}{\end{block}
+% }
+%
+% \newenvironment<>{thm}[1]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+% 	\begin{block}#2[#1]}{\end{block}
+% }
+%
+% \newenvironment<>{rmq}[1]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
+% 	\begin{block}#2[#1]}{\end{block}
+% }
+%
+% \newenvironment<>{exp}[1]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
+% 	\begin{block}#2[#1]}{\end{block}
+% }
 %--%
 
 

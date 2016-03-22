@@ -1,0 +1,77 @@
+%%%
+%%%
+%%% Extensions : commun.sty
+%%% Version : 1.0
+%%% Date : 03/05/15
+%%% Auteur : Jeff LANCE
+%%%
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{commun}[2015/05/03 Extensions et definitions globales, v1.0]
+
+
+%-- extensions
+% langue et police
+\RequirePackage[francais]{babel}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{libertine}
+\RequirePackage{eurosym}
+\RequirePackage{bbding}
+
+% maths
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{tkz-euclide}
+\RequirePackage{calc}
+\RequirePackage{pgfplots}
+\RequirePackage[amssymb, squaren, pstricks]{SIunits}
+\RequirePackage{asymptote}
+
+% programmation
+\RequirePackage{ifthen}
+\RequirePackage{ifmtarg}
+\RequirePackage{ifpdf}
+\RequirePackage{xstring}
+\RequirePackage{multido}
+\RequirePackage{xparse}
+
+% tableau
+\RequirePackage{array}
+\RequirePackage{tabularx}
+%-- %
+
+
+%% MACROS : DEBUT
+\makeatletter
+
+%-- Macros personnelles
+% Pour environnement \tabular commandes d'alignement du contenu
+% dans la colonne de largeur <largeur>.
+%% lh{largeur} : gauche - haut
+%\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
+%% ch{largeur} : centre - haut
+%\newcolumntype{ch}[1]{>{\centering\arraybackslash}p{#1}}
+%% rh{largeur} : droite - haut
+%\newcolumntype{rh}[1]{>{\raggedleft}p{#1}}
+%% lc{largeur} : gauche - centre
+%\newcolumntype{lc}[1]{>{\raggedright}m{#1}}
+%% cc{largeur} : centre - centre
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+%% rc{largeur} : droite - centre
+%\newcolumntype{rc}[1]{>{\raggedleft}m{#1}}
+%% lb{largeur} : gauche - bas
+%\newcolumntype{lb}[1]{>{\raggedright}b{#1}}
+%% cb{largeur} : centre - bas
+%\newcolumntype{cb}[1]{>{\centering}b{#1}}
+%% rb{largeur} : droite - bas
+%\newcolumntype{rb}[1]{>{\raggedleft}b{#1}}
+%--%
+
+
+% Macros modifiées
+% - %
+
+\makeatother
+%% MACROS : FIN

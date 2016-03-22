@@ -71,24 +71,6 @@
 
 		\transduration{3}
 	\end{frame}
-
-	\begin{frame}
-		\centering
-		Voici un rapide calcul mental pour tester votre compréhension du cours.\\~\\
-		\begin{itemize}[<+-|alert@+>]
-			\item Vous répondrez sur la feuille qui vous a été distribuée.
-			\item Vous avez 60 secondes pour répondre à chaque question.
-			\item Un compte à rebours apparaîtra en bas à droite vous indiquant le temps restant pour répondre.
-			\item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
-		\end{itemize}
-
-		\only<5->{Bonne chance !}
-
-		\only<3>{
-			\decompte{30}
-		}
-		\transduration{4}
-	\end{frame}
 }
 
 
@@ -111,15 +93,9 @@
 
 
 \newcommand{\fin}{%
+	\section{Sommaire}
 	\begin{frame}
-		\centering
-		C'est fini !\transduration{3}
-	\end{frame}
-
-
-	\section{Index}
-	\begin{frame}
-		\begin{center}{\Large Index des questions}\end{center}
+		\begin{center}{\Large Plan }\end{center}
 		\tableofcontents
 	\end{frame}
 }

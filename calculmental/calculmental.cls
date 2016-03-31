@@ -43,15 +43,15 @@
 \makeatletter
 
 %-- Macros personnelles
-\newcounter{ctrTime}
+\newcounter{decomptecounter}
 \newcommand{\decompte}[1]{%
-	\setcounter{ctrTime}{#1}
+	\setcounter{decomptecounter}{#1}
 	\multido{\n=1+1}{#1}{%
 		\only<\n>{%
-			\begin{flushright}\alert{ Il reste \arabic{ctrTime} s. }\end{flushright}%
+			\begin{flushright}\alert{ Il reste \arabic{decomptecounter} s. }\end{flushright}%
 			\transduration{1}
 		}
-		\addtocounter{ctrTime}{-1}
+		\addtocounter{decomptecounter}{-1}
 	}
 }
 

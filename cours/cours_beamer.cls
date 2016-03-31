@@ -35,8 +35,8 @@
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme{serif}
-\setbeamerfont{enumerate item}{family=\sffamily}
-\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamerfont{enumerate item}{family=\rmfamily}
+\setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
 
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol

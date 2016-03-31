@@ -12,6 +12,7 @@
 
 
 %-- classe de base
+% inutile de passer l'option [utf8] puisque chargee dans commun.sty
 \LoadClass{beamer}
 %-- %
 
@@ -31,13 +32,18 @@
 \graphicspath{{images/}}
 
 \usetheme{Madrid}
+\useinnertheme{circles}
+\useoutertheme{default}
 \usefonttheme{serif}
 \setbeamerfont{enumerate item}{family=\sffamily}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
 
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
 }
+
+% \setbeamertemplate{headline}{} % pour supprimer l'entête
 %-- %
 
 
@@ -50,7 +56,7 @@
 	\title{#1}
 	\subtitle{Cours}
 	\date{#2}
-	\author{#3}
+	\author[]{#3}
 	\institute{#4}
 }
 

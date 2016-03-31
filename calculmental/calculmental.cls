@@ -77,7 +77,7 @@
 		Voici un rapide calcul mental pour tester votre compréhension du cours.\\~\\
 		\begin{itemize}[<+-|alert@+>]
 			\item Vous répondrez sur la feuille qui vous a été distribuée.
-			\item Vous avez 60 secondes pour répondre à chaque question.
+			\item Le temps pour répondre à chaque question vous est indiqué au début de chacune d'elle.
 			\item Un compte à rebours apparaîtra en bas à droite vous indiquant le temps restant pour répondre.
 			\item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
 		\end{itemize}
@@ -92,17 +92,17 @@
 }
 
 
-\newcounter{ctrQuest}
+\newcounter{questionscounter}
 \NewDocumentEnvironment{questions}{O{60}}{ % begin
-	\stepcounter{ctrQuest}
-	\section{Question \usecounter{ctrQuest}}
+	\stepcounter{questionscounter}
+	\section{Question \usecounter{questionscounter}}
 	\begin{frame}
 		\centering
-		Question \usecounter{ctrQuest}\transduration{3}
+		Question \usecounter{questionscounter}\transduration{3}
 	\end{frame}
 	\begin{frame}
 	\centering
-	\begin{beamerboxesrounded}{Q\usecounter{ctrQuest}.}
+	\begin{beamerboxesrounded}{Q\usecounter{questionscounter}.}
 } { % end
 	\end{beamerboxesrounded} %
 	\decompte{#1} %

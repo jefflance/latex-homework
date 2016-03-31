@@ -42,7 +42,7 @@
 \RequirePackage{tabularx}
 
 % liste
-\RequirePackage{enumitem}
+%\RequirePackage{enumitem}
 %-- %
 
 
@@ -61,7 +61,7 @@
 %% lc{largeur} : gauche - centre
 %\newcolumntype{lc}[1]{>{\raggedright}m{#1}}
 %% cc{largeur} : centre - centre
-\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{M}[1]{ >{\centering\arraybackslash} m{#1} }
 %% rc{largeur} : droite - centre
 %\newcolumntype{rc}[1]{>{\raggedleft}m{#1}}
 %% lb{largeur} : gauche - bas
@@ -71,11 +71,58 @@
 %% rb{largeur} : droite - bas
 %\newcolumntype{rb}[1]{>{\raggedleft}b{#1}}
 
-% \newenvironment{be}{ % begin
-%     \begin{enumitem}
-% } { % end
-% 	\end{enumitem} %
-% }
+% questions<[type]>
+%
+% type = 1	-> \arabic
+% type = a	-> \alph
+% type = A	-> \Alph
+% type = i	-> \roman
+% type = I	-> \Roman
+% \arabic par défaut
+\newcounter{questionscounter}
+\newcommand{\questionsseparator}{.}
+\newenvironment{questions}[1][1] {
+	\ifthenelse{ \equal{#1}{i} }
+	{
+		\def\cType{\roman}
+        \renewcommand{\questionsseparator}{)}
+	}
+	{
+		\ifthenelse{ \equal{#1}{I} }
+		{
+			\def\cType{\Roman}
+            \renewcommand{\questionsseparator}{.}
+		}
+		{
+			\ifthenelse{ \equal{#1}{a} }
+			{
+				\def\cType{\alph}
+                \renewcommand{\questionsseparator}{)}
+			}
+			{
+				\ifthenelse{ \equal{#1}{A} }
+				{
+					\def\cType{\Alph}
+                    \renewcommand{\questionsseparator}{.}
+				}
+				{
+					\def\cType{\arabic}
+                    \renewcommand{\questionsseparator}{.}
+				}
+			}
+		}
+	}
+	\begin{list}{\textbf{\cType{questionscounter}\questionsseparator}}{
+                 \usecounter{questionscounter}
+                 \itemindent=0em
+                 \itemsep=8pt \leftmargin=0,54cm}
+	} {
+	\end{list}
+}
+\newcommand{\bq}{\begin{questions}}
+\newcommand{\eq}{\end{questions}}
+
+
 %--%
 
 

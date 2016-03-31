@@ -1,6 +1,6 @@
 %%%
 %%%
-%%% Classe 	: calculmental.cls
+%%% Classe 	: cours_beamer.cls
 %%% Version : 1.0
 %%% Date 	: 08/12/14
 %%% Auteur 	: Jeff LANCE
@@ -28,6 +28,8 @@
 
 
 %-- paramètrages
+\graphicspath{{images/}}
+
 \usetheme{Madrid}
 \usefonttheme{serif}
 \setbeamerfont{enumerate item}{family=\sffamily}
@@ -69,25 +71,60 @@
 }
 
 % blocks
-% \newenvironment<>{def}[1]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
-% 	\begin{block}{#1}}{\end{block}
-% }
+\newenvironment<>{déf}[1][]{%begin
+	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}%
+	\begin{block}{Définition}{#1}}{\end{block}
+}
 %
-% \newenvironment<>{thm}[1]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
-% 	\begin{block}#2[#1]}{\end{block}
-% }
+\newenvironment<>{thm}[1][]{%begin
+	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}%
+	\begin{block}{Théorème}{#1}}{\end{block}
+}
 %
-% \newenvironment<>{rmq}[1]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
-% 	\begin{block}#2[#1]}{\end{block}
-% }
+\newenvironment<>{rmq}[1][]{%begin
+	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
+	\begin{block}#1}{\end{block}
+}
 %
-% \newenvironment<>{exp}[1]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-% 	\begin{block}#2[#1]}{\end{block}
-% }
+\newenvironment<>{exp}[1][]{%begin
+	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
+	\begin{block}#1}{\end{block}
+}
+%
+\newcounter{exercicecounter}
+\newenvironment<>{exo}[1][]{%begin
+	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+	\ifthenelse{ \equal{#1}{i} }
+		{
+			\def\cType{\roman}
+		}
+		{
+			\ifthenelse{ \equal{#1}{I} }
+			{
+				\def\cType{\Roman}
+			}
+			{
+				\ifthenelse{ \equal{#1}{a} }
+				{
+					\def\cType{\alph}
+				}
+				{
+					\ifthenelse{ \equal{#1}{A} }
+					{
+						\def\cType{\Alph}
+					}
+					{
+						\def\cType{\arabic}
+					}
+				}
+			}
+		}
+	\stepcounter{exercicecounter}
+	\begin{block}{Exercice \cType{exercicecounter}\ }}{\end{block}
+}
+
+
+
 %--%
 
 

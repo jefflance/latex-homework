@@ -64,7 +64,6 @@
 \newcommand{\debut}{%
 	\begin{frame}
 		\titlepage
-		\transduration{3}
 	\end{frame}
 }
 

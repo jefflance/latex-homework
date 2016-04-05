@@ -56,7 +56,7 @@
 	\title{#1}
 	\subtitle{Cours}
 	\date{#2}
-	\author[]{#3}
+	\author{#3}
 	\institute{#4}
 }
 

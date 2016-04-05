@@ -78,54 +78,75 @@
 % blocks
 \newenvironment<>{déf}[1][]{%begin
 	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}%
-	\begin{block}{Définition}{#1}}{\end{block}
+	\begin{block}{Définition}{#1}
+}{%end
+	\end{block}
 }
 %
-\newenvironment<>{thm}[1][]{%begin
-	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}%
-	\begin{block}{Théorème}{#1}}{\end{block}
+\NewDocumentEnvironment{thm}{ G{Théorème} }{%begin
+	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}
+	\begin{block} {#1}
+}{%end
+	\end{block}
 }
 %
-\newenvironment<>{rmq}[1][]{%begin
+\newenvironment<>{pre}[1][]{%begin
+	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
+	\begin{block}{Preuve}{#1}
+}{%end
+	\end{block}
+}
+%
+\NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
-	\begin{block}#1}{\end{block}
+	\begin{block}{#1}
+}{%end
+	\end{block}
 }
 %
 \newenvironment<>{exp}[1][]{%begin
 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-	\begin{block}#1}{\end{block}
+	\begin{block}#1
+}{%end
+	\end{block}
 }
 %
 \newcounter{exercicecounter}
 \newenvironment<>{exo}[1][]{%begin
 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
-	\ifthenelse{ \equal{#1}{i} }
-		{
-			\def\cType{\roman}
-		}
-		{
-			\ifthenelse{ \equal{#1}{I} }
+	\IfNoValueTF{ #1 }{
+		\ifthenelse{ \equal{#1}{i} }
 			{
-				\def\cType{\Roman}
+				\def\cType{\roman}
 			}
 			{
-				\ifthenelse{ \equal{#1}{a} }
+				\ifthenelse{ \equal{#1}{I} }
 				{
-					\def\cType{\alph}
+					\def\cType{\Roman}
 				}
 				{
-					\ifthenelse{ \equal{#1}{A} }
+					\ifthenelse{ \equal{#1}{a} }
 					{
-						\def\cType{\Alph}
+						\def\cType{\alph}
 					}
 					{
-						\def\cType{\arabic}
+						\ifthenelse{ \equal{#1}{A} }
+						{
+							\def\cType{\Alph}
+						}
+						{
+							\def\cType{\arabic}
+						}
 					}
 				}
 			}
-		}
-	\stepcounter{exercicecounter}
-	\begin{block}{Exercice \cType{exercicecounter}\ }}{\end{block}
+		\stepcounter{exercicecounter}
+		\begin{block}{Exercice \cType{exercicecounter}\ }
+	}{
+		\begin{block}{Exercice\ }
+	}
+}{%end
+	\end{block}
 }
 
 

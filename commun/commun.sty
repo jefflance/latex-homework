@@ -19,6 +19,7 @@
 \RequirePackage{libertine}
 \RequirePackage{eurosym}
 \RequirePackage{bbding}
+\RequirePackage{xcolor}
 
 % maths
 \RequirePackage{amsmath}
@@ -28,9 +29,10 @@
 \RequirePackage{pgfplots}
 \RequirePackage[amssymb, squaren, pstricks]{SIunits}
 \RequirePackage{asymptote}
+% \RequirePackage{cancel}
 
 % programmation
-\RequirePackage{ifthen}
+\RequirePackage{xifthen}
 \RequirePackage{ifmtarg}
 \RequirePackage{ifpdf}
 \RequirePackage{xstring}
@@ -125,6 +127,19 @@
 % enumerate
 \newcommand{\be}{\begin{enumerate}}
 \newcommand{\ee}{\end{enumerate}}
+
+% itemize
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand\hcancel[2][black]{
+	\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{2pt}}}}#2
+}
+% \NewDocumentCommand \hcancel { O{black} O{1pt} } {
+% 	\setbox0=\hbox{$#3$}%
+% 	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{#2}}}} {#3}
+% }
 %--%
 
 

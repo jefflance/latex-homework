@@ -99,22 +99,28 @@
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
-	\begin{block}{#1}
+	\begin{block} {#1}
 }{%end
 	\end{block}
 }
 %
-\newenvironment<>{exp}[1][]{%begin
+\NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-	\begin{block}#1
+	\begin{block} {#1}
 }{%end
 	\end{block}
 }
+% \newenvironment<>{exp}[1][]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
+% 	\begin{block} #1
+% }{%end
+% 	\end{block}
+% }
 %
 \newcounter{exercicecounter}
-\newenvironment<>{exo}[1][]{%begin
+\NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
-	\IfNoValueTF{ #1 }{
+	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{
 				\def\cType{\roman}
@@ -141,9 +147,9 @@
 				}
 			}
 		\stepcounter{exercicecounter}
-		\begin{block}{Exercice \cType{exercicecounter}\ }
+		\begin{block}{#2 \cType{exercicecounter}\ }
 	}{
-		\begin{block}{Exercice\ }
+		\begin{block}{#2\ }
 	}
 }{%end
 	\end{block}

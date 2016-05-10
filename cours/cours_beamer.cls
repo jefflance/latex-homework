@@ -105,7 +105,8 @@
 \makeatletter
 
 %-- Macros personnelles
-% titre
+% \titre
+% defini le titre du document
 \newcommand{\titre}[4]{%
 	\title{#1}
 	\subtitle{Cours}
@@ -177,6 +178,8 @@
 }
 
 % blocks
+% definition de divers blocks personnels : definition, theoreme, exemple,
+% exercice (avec numerotation), remarque
 \NewDocumentEnvironment{déf}{ G{Définition} }{%begin
 	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
 	\begin{block} {#1}
@@ -250,7 +253,8 @@
 	\end{block}
 }
 
-% pour inclure des medias
+% \includemovie
+% permet d'inclure une video dans une frame
 \newcommand{\includemovie}[3]{%
 	\includemedia[%
 		width=#1,height=#2,%

@@ -1,19 +1,19 @@
 %%%
 %%%
 %%% Classe 	: cours_beamer.cls
-%%% Version : 1.0
+%%% Version : 1.5
 %%% Date 	: 08/12/14
 %%% Auteur 	: Jeff LANCE
 %%%
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.0]
+\ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.5]
 
 
 %-- classe de base
 % inutile de passer l'option [utf8] puisque chargee dans commun.sty
-\LoadClass{beamer}
+\LoadClassWithOptions{beamer}
 %-- %
 
 
@@ -35,15 +35,53 @@
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme{serif}
+
+% enumerate
 \setbeamerfont{enumerate item}{family=\rmfamily}
 \setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
+
+% itemize
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[circle]
 
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
 }
 
-% \setbeamertemplate{headline}{} % pour supprimer l'entête
+% mdframed
+\pgfdeclarehorizontalshading{partiebkg}{100bp}{
+	color(0bp)=(white!40);color(100bp)=(black!0)
+}
+%
+\pgfdeclarehorizontalshading{sspartiebkg}{100bp}{
+	color(0bp)=(white!40);color(100bp)=(black!0)
+}
+\mdfdefinestyle{partie}{
+	outerlinewidth=1em, outerlinecolor=white,%
+	% leftmargin=-1em, rightmargin=-1em,%
+	middlelinewidth=1.2pt, linecolor=red,roundcorner=5pt,%
+	apptotikzsetting={
+		\tikzset{
+			mdfbackground/.append style={
+				shading=partiebkg
+			}
+		}
+	}
+}
+%
+\mdfdefinestyle{sspartie}{
+	outerlinewidth=1em, outerlinecolor=white,%
+	% leftmargin=-1em, rightmargin=-1em,%
+	middlelinewidth=1.2pt, linecolor=blue,roundcorner=0pt,%
+	apptotikzsetting={
+		\tikzset{
+			mdfbackground/.append style={
+				shading=partiebkg
+			}
+		}
+	}
+}
 %-- %
 
 
@@ -60,13 +98,14 @@
 	\institute{#4}
 }
 
+
 % debut - fin
 \newcommand{\debut}{%
 	\begin{frame}
 		\titlepage
 	\end{frame}
 }
-
+%
 \newcommand{\fin}{%
 	\section{Sommaire}
 	\begin{frame}
@@ -75,12 +114,43 @@
 	\end{frame}
 }
 
+
+% (sous)partie
+\newcounter{partiecounter}
+\NewDocumentCommand \partie { G{Partie} } {%
+	\def\cType{\Roman}
+	\stepcounter{partiecounter}
+	\section{#1}
+	\begin{frame}
+		\begin{center}
+			\begin{mdframed}[style=partie]
+				\centering \textcolor{red}{\textbf{ \cType{partiecounter}. #1}}
+			\end{mdframed}
+		\end{center}
+	\end{frame}
+}
+%
+\newcounter{sspartiecounter}
+\NewDocumentCommand \sspartie { G{Sous-Partie} } {%
+	\def\cType{\arabic}
+	\stepcounter{sspartiecounter}
+	\subsection{#1}
+	\begin{frame}
+		\begin{center}
+			\begin{mdframed}[style=sspartie]
+				\centering \textcolor{blue}{\textbf{ \cType{sspartiecounter}) #1}}
+			\end{mdframed}
+		\end{center}
+	\end{frame}
+}
+
+
 % blocks
-\newenvironment<>{déf}[1][]{%begin
-	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}%
-	\begin{block}{Définition}{#1}
-}{%end
-	\end{block}
+\NewDocumentEnvironment{déf}{ G{Définition} }{%begin
+	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
+	\begin{block} {#1}
+	}{%end
+\end{block}
 }
 %
 \NewDocumentEnvironment{thm}{ G{Théorème} }{%begin
@@ -110,12 +180,6 @@
 }{%end
 	\end{block}
 }
-% \newenvironment<>{exp}[1][]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-% 	\begin{block} #1
-% }{%end
-% 	\end{block}
-% }
 %
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
@@ -154,7 +218,6 @@
 }{%end
 	\end{block}
 }
-
 
 
 %--%

@@ -133,9 +133,12 @@
 
 % (sous)partie
 \newcounter{partiecounter}
+\newcounter{sspartiecounter}
+
 \NewDocumentCommand \partie { G{Partie} } {%
 	\def\cType{\Roman}
 	\stepcounter{partiecounter}
+	\setcounter{sspartiecounter}{0}
 	\section{#1}
 	\begin{frame}
 		\begin{center}
@@ -146,7 +149,6 @@
 	\end{frame}
 }
 %
-\newcounter{sspartiecounter}
 \NewDocumentCommand \sspartie { G{Sous-Partie} } {%
 	\def\cType{\arabic}
 	\stepcounter{sspartiecounter}
@@ -258,6 +260,7 @@
 		}%
 	]{}{VPlayer.swf}%
 }
+
 %--%
 
 

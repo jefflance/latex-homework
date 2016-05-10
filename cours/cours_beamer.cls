@@ -224,7 +224,8 @@
 
 
 % Macros modifiées
-
+% \renewcommand{\thesection}{\Roman{section}.}
+% \renewcommand{\thesubsection}{\arabic{section})}
 % - %
 
 \makeatother

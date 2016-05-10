@@ -115,7 +115,8 @@
 }
 
 
-% debut - fin
+% \debut | \fin
+% renvoie les slides d'intro et de cloture du document
 \newcommand{\debut}{%
 	\begin{frame}
 		\titlepage
@@ -131,7 +132,8 @@
 }
 
 
-% (sous)partie
+% \partie | \sspartie
+% definie un slide de titre pour une (sous)section
 \newcounter{partiecounter}
 \newcounter{sspartiecounter}
 
@@ -161,8 +163,11 @@
 		\end{center}
 	\end{frame}
 }
-%
-\NewDocumentCommand \frametit { }{%
+
+% \ftitre
+% definie le titre des frames de section et de sous-section en fonction
+% des (sous)sections actuellement definies
+\NewDocumentCommand \ftitre { }{%
 	\ifnum \value{partiecounter}>0
 		\frametitle{\textbf{\Roman{partiecounter}. \insertsection}}
 	\fi

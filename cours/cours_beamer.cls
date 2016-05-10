@@ -49,6 +49,13 @@
 	\insertsectionnavigationsymbol
 }
 
+% sections
+% \setbeamertemplate{section in toc}[sections numbered]{
+% 	\leftskip=3em%
+% 	\Roman{section}.%
+% 	\inserttocsection\par
+% }
+
 % mdframed
 \pgfdeclarehorizontalshading{partiebkg}{100bp}{
 	color(0bp)=(white!40);color(100bp)=(black!0)

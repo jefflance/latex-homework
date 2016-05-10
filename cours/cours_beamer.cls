@@ -21,7 +21,10 @@
 % perso
 \RequirePackage{couleurs}
 \RequirePackage{commun}
+% autres
+\RequirePackage{media9}
 %-- %
+
 
 
 %-- definitions
@@ -30,6 +33,7 @@
 
 %-- paramètrages
 \graphicspath{{images/}}
+\addmediapath{{videos/}}
 
 \usetheme{Madrid}
 \useinnertheme{circles}
@@ -50,11 +54,16 @@
 }
 
 % sections
-% \setbeamertemplate{section in toc}[sections numbered]{
-% 	\leftskip=3em%
-% 	\Roman{section}.%
+% \setbeamertemplate{section}{
+% 	\def\cType{\Roman}
+% 	\cType{section}.%
 % 	\inserttocsection\par
 % }
+% \renewcommand{\thesection}{
+% 	\def\cType{\Roman}
+% 	\cType{section}.
+% }
+% \renewcommand{\thesubsection}{\arabic{subsection})}
 
 % mdframed
 \pgfdeclarehorizontalshading{partiebkg}{100bp}{
@@ -150,7 +159,15 @@
 		\end{center}
 	\end{frame}
 }
-
+%
+\NewDocumentCommand \frametit { }{%
+	\ifnum \value{partiecounter}>0
+		\frametitle{\textbf{\Roman{partiecounter}. \insertsection}}
+	\fi
+	\ifnum \value{sspartiecounter}>0
+		\framesubtitle{\textbf{\arabic{sspartiecounter}) \insertsubsection}}
+	\fi
+}
 
 % blocks
 \NewDocumentEnvironment{déf}{ G{Définition} }{%begin
@@ -226,13 +243,26 @@
 	\end{block}
 }
 
-
+% pour inclure des medias
+\newcommand{\includemovie}[3]{%
+	\includemedia[%
+		width=#1,height=#2,%
+		activate=pagevisible,%
+		deactivate=pageclose,%
+		addresource=#3,%
+		flashvars={%
+			source=#3 % same path as in addresource!
+			&autoPlay=false % default: false; if =true, automatically starts playback after activation (see option ‘activation)’
+			&loop=false % if loop=true, media is played in a loop
+			&controlBarAutoHideTimeout=0 %  time span before auto-hide
+		}%
+	]{}{VPlayer.swf}%
+}
 %--%
 
 
 % Macros modifiées
-% \renewcommand{\thesection}{\Roman{section}.}
-% \renewcommand{\thesubsection}{\arabic{section})}
+
 % - %
 
 \makeatother

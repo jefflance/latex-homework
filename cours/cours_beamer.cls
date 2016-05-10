@@ -21,10 +21,10 @@
 % perso
 \RequirePackage{couleurs}
 \RequirePackage{commun}
+\RequirePackage{shortcuts}
 % autres
 \RequirePackage{media9}
 %-- %
-
 
 
 %-- definitions

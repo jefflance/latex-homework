@@ -125,7 +125,7 @@
 }
 %
 \newcommand{\fin}{%
-	\section{Sommaire}
+	\section*{Plan}
 	\begin{frame}
 		\begin{center}{\Large Plan }\end{center}
 		\tableofcontents

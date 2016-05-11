@@ -20,6 +20,7 @@
 % perso
 \RequirePackage{couleurs}
 \RequirePackage{commun}
+\RequirePackage{shortcuts}
 %-- %
 
 
@@ -28,6 +29,8 @@
 
 
 %-- paramètrages
+\graphicspath{{images/}}
+
 \usetheme{Madrid}
 \usefonttheme{serif}
 \setbeamerfont{enumerate item}{family=\sffamily}

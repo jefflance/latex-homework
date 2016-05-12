@@ -184,7 +184,7 @@
 	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
 	\begin{block} {#1}
 	}{%end
-\end{block}
+		\end{block}
 }
 %
 \NewDocumentEnvironment{thm}{ G{Théorème} }{%begin

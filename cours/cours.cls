@@ -45,6 +45,10 @@
 
 %--%
 
+%
+% \toggletrue{cours}
+%
+
 
 %-- structure de la page
 
@@ -208,52 +212,56 @@
 }
 
 
-% % questions<[type]>
-% %
-% % type = 1	-> \arabic
-% % type = a	-> \alph
-% % type = A	-> \Alph
-% % type = i	-> \roman
-% % type = I	-> \Roman
-% % \arabic par défaut
-% \newcounter{questionscounter}
-% \newcommand{\questionsseparator}{.}
-% \newenvironment{questions}[1][1] {
-% 	\ifthenelse{ \equal{#1}{i} }
-% 	{
-% 		\def\cType{\roman}
-% 	}
-% 	{
-% 		\ifthenelse{ \equal{#1}{I} }
-% 		{
-% 			\def\cType{\Roman}
-% 		}
-% 		{
-% 			\ifthenelse{ \equal{#1}{a} }
-% 			{
-% 				\def\cType{\alph}
-%                 \renewcommand{\questionsseparator}{)}
-% 			}
-% 			{
-% 				\ifthenelse{ \equal{#1}{A} }
-% 				{
-% 					\def\cType{\Alph}
-% 				}
-% 				{
-% 					\def\cType{\arabic}
-% 				}
-% 			}
-% 		}
-% 	}
-% 	\begin{list}{\textbf{\cType{questionscounter}\questionsseparator}}{
-%                  \usecounter{questionscounter}
-%                  \itemindent=0em
-%                  \itemsep=8pt \leftmargin=0,54cm}
-% 	} {
-% 	\end{list}
-% }
-% \newcommand{\bq}{\begin{questions}}
-% \newcommand{\eq}{\end{questions}}
+% questions<[type]>
+%
+% type = 1	-> \arabic
+% type = a	-> \alph
+% type = A	-> \Alph
+% type = i	-> \roman
+% type = I	-> \Roman
+% \arabic par défaut
+\newcounter{cours_questionscounter}
+\newcommand{\questionsseparator}{.}
+\newenvironment{questions}[1][1] {
+    \ifthenelse{ \equal{#1}{i} }
+    {
+        \def\cType{\roman}
+        \renewcommand{\questionsseparator}{)}
+    }
+    {
+        \ifthenelse{ \equal{#1}{I} }
+        {
+            \def\cType{\Roman}
+            \renewcommand{\questionsseparator}{.}
+        }
+        {
+            \ifthenelse{ \equal{#1}{a} }
+            {
+                \def\cType{\alph}
+                \renewcommand{\questionsseparator}{)}
+            }
+            {
+                \ifthenelse{ \equal{#1}{A} }
+                {
+                    \def\cType{\Alph}
+                    \renewcommand{\questionsseparator}{.}
+                }
+                {
+                    \def\cType{\arabic}
+                    \renewcommand{\questionsseparator}{.}
+                }
+            }
+        }
+    }
+    \begin{list}{\textbf{\cType{cours_questionscounter}\questionsseparator}}{
+                 \usecounter{cours_questionscounter}
+                 \itemindent=0em
+                 \itemsep=8pt \leftmargin=0,54cm}
+    } {
+    \end{list}
+}
+\newcommand{\bq}{\begin{questions}}
+\newcommand{\eq}{\end{questions}}
 
 
 % setAngle{nom}{valeur}

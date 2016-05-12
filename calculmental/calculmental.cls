@@ -12,7 +12,7 @@
 
 
 %-- classe de base
-\LoadClass{beamer}
+\LoadClassWithOptions{beamer}
 %-- %
 
 
@@ -24,8 +24,9 @@
 %-- %
 
 
-%-- definitions
-%-- %
+%
+% \toggletrue{calculmental}
+%
 
 
 %-- paramètrages
@@ -95,22 +96,22 @@
 }
 
 
-\newcounter{questionscounter}
-\NewDocumentEnvironment{questions}{O{60}}{ % begin
-	\stepcounter{questionscounter}
-	\section{Question \usecounter{questionscounter}}
-	\begin{frame}
-		\centering
-		Question \usecounter{questionscounter}\transduration{3}
-	\end{frame}
-	\begin{frame}
-	\centering
-	\begin{beamerboxesrounded}{Q\usecounter{questionscounter}.}
-} { % end
-	\end{beamerboxesrounded} %
-	\decompte{#1} %
-	\end{frame} %
-}
+% \newcounter{cqcm}
+% \NewDocumentEnvironment{qcm}{ G{60} }{ % begin
+% 		\stepcounter{cqcm}
+% 		\section{Question \usecounter{cqcm}\ }
+% 		\begin{frame}
+% 			\centering
+% 			Question \usecounter{cqcm}\transduration{3}
+% 		\end{frame}
+% 		\begin{frame}
+% 		\centering
+% 		\begin{beamerboxesrounded}{Q\usecounter{cqcm}.\ }
+% 	}{ % end
+% 		\end{beamerboxesrounded} %
+% 		\decompte{#1} %
+% 		\end{frame} %
+% }
 
 
 \newcommand{\fin}{%
@@ -120,7 +121,7 @@
 	\end{frame}
 
 
-	\section{Index}
+	\section*{Index}
 	\begin{frame}
 		\begin{center}{\Large Index des questions}\end{center}
 		\tableofcontents

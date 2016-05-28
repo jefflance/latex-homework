@@ -11,9 +11,11 @@
 \ProvidesClass{cours}[2010/07/29 Document de cours, V1.0]
 
 
+
 %-- classe de base
 \LoadClass[a4paper, 10pt]{article}
 %--%
+
 
 
 %-- extensions
@@ -25,33 +27,13 @@
 \RequirePackage[pdftex]{graphicx}
 \RequirePackage{comment}
 
-% maths
-% \RequirePackage{amsmath}
-% \RequirePackage{amssymb}
-% \RequirePackage{calc}
-% \RequirePackage{tkz-euclide}
-% \RequirePackage{xlop}
-
 % mise en page
 \RequirePackage{fancyhdr}
-\RequirePackage{multicol}
-% \RequirePackage{enumitem}
-
-% insertion d'image
-%\RequirePackage{picins}
-
-% euro
-%\RequirePackage{textcomp}
-
 %--%
 
-%
-% \toggletrue{cours}
-%
 
 
 %-- structure de la page
-
 % marges de la page : haute et basse
 \setlength{\hoffset}{-1in+0.5cm}
 \setlength{\voffset}{-1in+0.5cm}
@@ -76,12 +58,11 @@
 \pagestyle{empty}
 % paragraphes : pas d'alinea
 \setlength{\parindent}{0pt}
-
 %--%
 
 
-%-- paramétrage de certains packages
 
+%-- paramétrage de certains packages
 % metapost
 \ifpdf
   \DeclareGraphicsRule{*}{mps}{*}{}
@@ -89,18 +70,14 @@
 
 % tkz
 \usetkzobj{all} % on charge tous les objets
-
 %--%
+
 
 
 %% MACROS : DEBUT
 \makeatletter
 
 %-- Macros personnelles
-% Pour les tableaux
-%\newcolumntype{M}[1]{>{\raggedright}m{#1}}
-%\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
-
 % Vtextvisiblespace[largeur]
 \newcommand\Vtextvisiblespace[1][.3em]{%
 	\mbox{\kern.06em\vrule height.3ex}%
@@ -365,12 +342,11 @@
 		\end{tikzpicture}
 	}
 }
-
 %--%
 
 
-% Macros modifiées
 
+%-- Macros modifiées
 % on n'affiche pas le numéro de page
 \renewcommand{\thepage}{}
 
@@ -378,8 +354,7 @@
 \renewcommand{\thesection}{\Roman{section}.}
 
 \renewcommand{\thesubsection}{\arabic{section})}
-
-% - %
+%--%
 
 \makeatother
 %% MACROS : FIN

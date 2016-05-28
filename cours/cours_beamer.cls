@@ -180,16 +180,35 @@
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque
-\NewDocumentEnvironment{déf}{ G{Définition} }{%begin
-	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
-	\begin{block} {#1}
-	}{%end
+\NewDocumentEnvironment{déf}{ G{} }{%begin
+	\setbeamercolor{block title}{fg=white,bg=amethyst!95!white}
+	\IfNoValueTF {#1} {
+		\begin{block} {Définition}
+	}{
+		\begin{block} {Définition - #1}
+	}
+}{%end
 		\end{block}
 }
 %
-\NewDocumentEnvironment{thm}{ G{Théorème} }{%begin
+\NewDocumentEnvironment{thm}{ G{} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}
-	\begin{block} {#1}
+	\IfNoValueTF {#1} {
+		\begin{block} {Théorème}
+	}{
+		\begin{block} {Théorème - #1}
+	}
+}{%end
+	\end{block}
+}
+%
+\NewDocumentEnvironment{ppt}{ G{} }{%begin
+	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
+	\IfNoValueTF {#1} {
+		\begin{block} {Propriété}
+	}{
+		\begin{block} {Propriété - #1}
+	}
 }{%end
 	\end{block}
 }

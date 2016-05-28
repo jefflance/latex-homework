@@ -13,7 +13,8 @@
 
 %-- classe de base
 \LoadClassWithOptions{beamer}
-%-- %
+%--%
+
 
 
 %-- extensions
@@ -21,12 +22,14 @@
 \RequirePackage{couleurs}
 \RequirePackage{commun}
 \RequirePackage{shortcuts}
-%-- %
+%--%
+
 
 
 %
 % \toggletrue{calculmental}
 %
+
 
 
 %-- paramètrages
@@ -40,7 +43,8 @@
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
 }
-%-- %
+%--%
+
 
 
 %% MACROS : DEBUT
@@ -130,9 +134,9 @@
 %--%
 
 
-% Macros modifiées
 
-% - %
+%-- Macros modifiées
+%--%
 
 \makeatother
 %% MACROS : FIN

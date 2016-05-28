@@ -180,34 +180,34 @@
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque
-\NewDocumentEnvironment{déf}{ G{} }{%begin
+\NewDocumentEnvironment{déf}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=amethyst!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {Définition}
+		\begin{block} {\textbf{Défintion}}
 	}{
-		\begin{block} {Définition - #1}
+		\begin{block} {\textbf{Définition - #1}}
 	}
 }{%end
 		\end{block}
 }
 %
-\NewDocumentEnvironment{thm}{ G{} }{%begin
+\NewDocumentEnvironment{thm}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {Théorème}
+		\begin{block} {\textbf{Théorème}}
 	}{
-		\begin{block} {Théorème - #1}
+		\begin{block} {\textbf{Théorème - #1}}
 	}
 }{%end
 	\end{block}
 }
 %
-\NewDocumentEnvironment{ppt}{ G{} }{%begin
+\NewDocumentEnvironment{ppt}{ g }{%begin
 	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {Propriété}
+		\begin{block} {\textbf{Propriété}}
 	}{
-		\begin{block} {Propriété - #1}
+		\begin{block} {\textbf{Propriété - #1}}
 	}
 }{%end
 	\end{block}
@@ -215,21 +215,67 @@
 %
 \newenvironment<>{pre}[1][]{%begin
 	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
-	\begin{block}{Preuve}{#1}
+	\begin{block}{Preuve}{\textbf{#1}}
 }{%end
 	\end{block}
 }
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
-	\begin{block} {#1}
+	\begin{block} {\textbf{#1}}
+}{%end
+	\end{block}
+}
+%
+\newcounter{methodecounter}
+\NewDocumentEnvironment{met} { O{0} g }{%begin
+	\setbeamercolor{block title}{fg=black,bg=amber!75!white}%
+	\ifthenelse{ \NOT \equal{#1}{0} }{
+		\ifthenelse{ \equal{#1}{i} }
+		{
+			\def\cType{\roman}
+		}
+		{
+			\ifthenelse{ \equal{#1}{I} }
+			{
+				\def\cType{\Roman}
+			}
+			{
+				\ifthenelse{ \equal{#1}{a} }
+				{
+					\def\cType{\alph}
+				}
+				{
+					\ifthenelse{ \equal{#1}{A} }
+					{
+						\def\cType{\Alph}
+					}
+					{
+						\def\cType{\arabic}
+					}
+				}
+			}
+		}
+		\stepcounter{methodecounter}
+		\IfNoValueTF {#2} {
+			\begin{block} {\textbf{Méthode \cType{methodecounter}\ }}
+		}{
+			\begin{block} {\textbf{Méthode \cType{methodecounter}\ - #2}}
+		}
+	}{
+		\IfNoValueTF {#2} {
+			\begin{block} {\textbf{Méthode\ }}
+		}{
+			\begin{block} {\textbf{Méthode\ - #2}}
+		}
+	}
 }{%end
 	\end{block}
 }
 %
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-	\begin{block} {#1}
+	\begin{block} {\textbf{#1}}
 }{%end
 	\end{block}
 }
@@ -264,9 +310,9 @@
 				}
 			}
 		\stepcounter{exercicecounter}
-		\begin{block}{#2 \cType{exercicecounter}\ }
+		\begin{block}{\textbf{#2 \cType{exercicecounter}\ }}
 	}{
-		\begin{block}{#2\ }
+		\begin{block}{\textbf{#2\ }}
 	}
 }{%end
 	\end{block}

@@ -179,13 +179,13 @@
 
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
-% exercice (avec numerotation), remarque
+% exercice (avec numerotation), remarque, methode.
 \NewDocumentEnvironment{déf}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=amethyst!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {\textbf{Défintion}}
+		\begin{block} {Définition}
 	}{
-		\begin{block} {\textbf{Définition - #1}}
+		\begin{block} {Définition - #1}
 	}
 }{%end
 		\end{block}
@@ -194,9 +194,9 @@
 \NewDocumentEnvironment{thm}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {\textbf{Théorème}}
+		\begin{block} {Théorème}
 	}{
-		\begin{block} {\textbf{Théorème - #1}}
+		\begin{block} {Théorème - #1}
 	}
 }{%end
 	\end{block}
@@ -205,9 +205,9 @@
 \NewDocumentEnvironment{ppt}{ g }{%begin
 	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
 	\IfNoValueTF {#1} {
-		\begin{block} {\textbf{Propriété}}
+		\begin{block} {Propriété}
 	}{
-		\begin{block} {\textbf{Propriété - #1}}
+		\begin{block} {Propriété - #1}
 	}
 }{%end
 	\end{block}
@@ -215,14 +215,14 @@
 %
 \newenvironment<>{pre}[1][]{%begin
 	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
-	\begin{block}{Preuve}{\textbf{#1}}
+	\begin{block}{Preuve}{#1}
 }{%end
 	\end{block}
 }
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
-	\begin{block} {\textbf{#1}}
+	\begin{block} {#1}
 }{%end
 	\end{block}
 }
@@ -258,15 +258,15 @@
 		}
 		\stepcounter{methodecounter}
 		\IfNoValueTF {#2} {
-			\begin{block} {\textbf{Méthode \cType{methodecounter}\ }}
+			\begin{block}{Méthode \cType{methodecounter}\ }
 		}{
-			\begin{block} {\textbf{Méthode \cType{methodecounter}\ - #2}}
+			\begin{block}{Méthode \cType{methodecounter}\ - #2}
 		}
 	}{
 		\IfNoValueTF {#2} {
-			\begin{block} {\textbf{Méthode\ }}
+			\begin{block}{Méthode\ }
 		}{
-			\begin{block} {\textbf{Méthode\ - #2}}
+			\begin{block}{Méthode\ - #2}
 		}
 	}
 }{%end
@@ -275,7 +275,7 @@
 %
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
-	\begin{block} {\textbf{#1}}
+	\begin{block} {#1}
 }{%end
 	\end{block}
 }
@@ -310,9 +310,9 @@
 				}
 			}
 		\stepcounter{exercicecounter}
-		\begin{block}{\textbf{#2 \cType{exercicecounter}\ }}
+		\begin{block}{#2 \cType{exercicecounter}\ }
 	}{
-		\begin{block}{\textbf{#2\ }}
+		\begin{block}{#2\ }
 	}
 }{%end
 	\end{block}

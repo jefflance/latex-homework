@@ -11,10 +11,12 @@
 \ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.5]
 
 
+
 %-- classe de base
 % inutile de passer l'option [utf8] puisque chargee dans commun.sty
 \LoadClassWithOptions{beamer}
-%-- %
+%--%
+
 
 
 %-- extensions
@@ -24,11 +26,13 @@
 \RequirePackage{shortcuts}
 % autres
 \RequirePackage{media9}
-%-- %
+%--%
+
 
 
 %-- definitions
-%-- %
+%--%
+
 
 
 %-- paramètrages
@@ -98,7 +102,7 @@
 		}
 	}
 }
-%-- %
+%--%
 
 
 %% MACROS : DEBUT
@@ -165,6 +169,7 @@
 	\end{frame}
 }
 
+
 % \ftitre
 % definie le titre des frames de section et de sous-section en fonction
 % des (sous)sections actuellement definies
@@ -176,6 +181,7 @@
 		\framesubtitle{\textbf{\arabic{sspartiecounter}) \insertsubsection}}
 	\fi
 }
+
 
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
@@ -318,6 +324,7 @@
 	\end{block}
 }
 
+
 % \includemovie
 % permet d'inclure une video dans une frame
 \newcommand{\includemovie}[3]{%
@@ -334,12 +341,10 @@
 		}%
 	]{}{VPlayer.swf}%
 }
-
 %--%
 
 
 % Macros modifiées
-
 % - %
 
 \makeatother

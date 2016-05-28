@@ -4,6 +4,9 @@
 %%% Version : 1.0
 %%% Date : 10/05/16
 %%% Auteur : Jeff LANCE
+%%% Notes : Cette extension peut demander l'ajout de certains packages.
+%%%         Il est conseillé de l'appeler dans un(e) classe/(package) appelant
+%%%         elle(lui)-même ces packages. 
 %%%
 %%%
 
@@ -13,7 +16,7 @@
 
 
 
-%-- Environments --%
+%-- Environments
 % itemize
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
@@ -25,16 +28,21 @@
 % questions
 \newcommand{\bq}{\begin{questions}}
 \newcommand{\eq}{\end{questions}}
+%--%
 
 
-%-- Texte --%
+
+%-- Texte
 % texte gras
 \newcommand{\tb}[1]{\textbf{#1}}
 
 % vecteurs i et j
+% utilise la syntax du package xparse non déclaré dans le préambule de ce
+% fichier.
 \NewDocumentCommand \veci { } {
 	\vec{\imath}
 }
 \NewDocumentCommand \vecj { } {
 	\vec{\jmath}
 }
+%--%

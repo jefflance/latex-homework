@@ -186,12 +186,22 @@
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque, methode.
-\NewDocumentEnvironment{déf}{ g }{%begin
+\NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=amethyst!95!white}
-	\IfNoValueTF {#1} {
-		\begin{block} {Définition}
-	}{
-		\begin{block} {Définition - #1}
+	\IfBooleanTF #1
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {}
+		}{
+			\begin{block} {#2}
+		}
+	}
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {Définition}
+		}{
+			\begin{block} {Définition - #2}
+		}
 	}
 }{%end
 		\end{block}
@@ -219,12 +229,23 @@
 	\end{block}
 }
 %
-\newenvironment<>{pre}[1][]{%begin
-	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
-	\begin{block}{Preuve}{#1}
+\NewDocumentEnvironment{pre}{ g }{%begin
+	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!white}
+	\IfNoValueTF {#1} {
+		\begin{block} {Preuve}
+	}{
+		\begin{block} {#1}
+	}
 }{%end
 	\end{block}
 }
+%
+% \newenvironment<>{pre}[1][]{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
+% 	\begin{block}{Preuve}{#1}
+% }{%end
+% 	\end{block}
+% }
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!75!black}%

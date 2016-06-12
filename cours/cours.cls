@@ -24,7 +24,7 @@
 \RequirePackage{commun}
 
 % sortie
-\RequirePackage[pdftex]{graphicx}
+% \RequirePackage[pdftex]{graphicx}
 \RequirePackage{comment}
 
 % mise en page

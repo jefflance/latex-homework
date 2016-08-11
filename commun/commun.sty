@@ -3,19 +3,28 @@
 %%% Extensions : commun.sty
 %%% Version : 1.0
 %%% Date : 03/05/15
+%%%
+%%% Version : 2.0
+%%% Date : 11/08/16
+%%% Mods : Change some packages call to be compatible with LuaLaTeX
+%%%
 %%% Auteur : Jeff LANCE
 %%%
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{commun}[2015/05/03 Extensions et definitions globales, v1.0]
+\ProvidesPackage{commun}[2015/05/03 Extensions et definitions globales, v2.0]
 
 
 %-- extensions
 % langue et police
-\RequirePackage[francais]{babel}
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T1]{fontenc}
+% \RequirePackage[francais]{babel}						% LuaLaTeX =>polyglossia
+\RequirePackage{polyglossia}							% LuaLaTeX
+\setdefaultlanguage{french}								% LuaLaTeX
+% \RequirePackage[utf8]{inputenc}						% LuaLaTeX => fontspec
+% \RequirePackage[T1]{fontenc}							% LuaLaTeX => fontspec
+\RequirePackage{fontspec}								% LuaLaTeX
+
 \RequirePackage{libertine}
 \RequirePackage{eurosym}
 \RequirePackage{bbding}

@@ -49,8 +49,9 @@
 \setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
 
 % itemize
-\setbeamertemplate{itemize item}[triangle]
-\setbeamertemplate{itemize subitem}[circle]
+% \setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize item}[circle]
+\setbeamertemplate{itemize subitem}{\textendash}
 
 % navigation
 \setbeamertemplate{navigation symbols}{%

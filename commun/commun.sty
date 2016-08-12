@@ -17,13 +17,26 @@
 
 
 %-- extensions
+% programmation
+\RequirePackage{xifthen}
+\RequirePackage{ifmtarg}
+\RequirePackage{ifpdf}
+\RequirePackage{xstring}
+\RequirePackage{multido}
+\RequirePackage{xparse}
+\RequirePackage{etoolbox}
+\RequirePackage{ifluatex}
+
 % langue
-% \RequirePackage[francais]{babel}						% LuaLaTeX =>polyglossia
-\RequirePackage{polyglossia}							% LuaLaTeX
-\setdefaultlanguage{french}								% LuaLaTeX
-% \RequirePackage[utf8]{inputenc}						% LuaLaTeX => fontspec
-% \RequirePackage[T1]{fontenc}							% LuaLaTeX => fontspec
-\RequirePackage{fontspec}								% LuaLaTeX
+\ifluatex
+	\RequirePackage{polyglossia}							% LuaLaTeX
+	\setdefaultlanguage{french}								% LuaLaTeX
+	\RequirePackage{fontspec}								% LuaLaTeX
+\else
+	\RequirePackage[francais]{babel}						% LuaLaTeX =>polyglossia
+	\RequirePackage[utf8]{inputenc}						% LuaLaTeX => fontspec
+	\RequirePackage[T1]{fontenc}							% LuaLaTeX => fontspec
+\fi
 
 % polices
 \RequirePackage{libertine}
@@ -32,6 +45,7 @@
 \RequirePackage{eurosym}
 \RequirePackage{bbding}
 
+% couleur, dessin
 \RequirePackage{xcolor}
 \RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{graphicx}
@@ -45,15 +59,6 @@
 \RequirePackage[amssymb, squaren, pstricks]{SIunits}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
-
-% programmation
-\RequirePackage{xifthen}
-\RequirePackage{ifmtarg}
-\RequirePackage{ifpdf}
-\RequirePackage{xstring}
-\RequirePackage{multido}
-\RequirePackage{xparse}
-\RequirePackage{etoolbox}
 
 % tableau
 \RequirePackage{array}

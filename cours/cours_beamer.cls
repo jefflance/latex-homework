@@ -363,6 +363,43 @@
 }{%end
 	\end{block}
 }
+% \NewDocumentEnvironment{exo} { s G{Exercice} }{%begin
+% 	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+% 	\IfBooleanTF #1
+% 	{
+% 		\begin{block}{#2\ }
+% 	}{
+% 		\ifthenelse{ \equal{#1}{i} }
+% 			{
+% 				\def\cType{\roman}
+% 			}
+% 			{
+% 				\ifthenelse{ \equal{#1}{I} }
+% 				{
+% 					\def\cType{\Roman}
+% 				}
+% 				{
+% 					\ifthenelse{ \equal{#1}{a} }
+% 					{
+% 						\def\cType{\alph}
+% 					}
+% 					{
+% 						\ifthenelse{ \equal{#1}{A} }
+% 						{
+% 							\def\cType{\Alph}
+% 						}
+% 						{
+% 							\def\cType{\arabic}
+% 						}
+% 					}
+% 				}
+% 			}
+% 		\stepcounter{exercicecounter}
+% 		\begin{block}{#2 \cType{exercicecounter}\ }
+% 	}
+% }{%end
+% 	\end{block}
+% }
 
 
 % \includemovie

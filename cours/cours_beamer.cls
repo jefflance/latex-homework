@@ -52,10 +52,28 @@
 \setbeamertemplate{itemize item}[triangle]
 \setbeamertemplate{itemize subitem}[circle]
 
+% navigation
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
 }
+
+% ToC
+\defbeamertemplate{subsection in toc}{bullets}{%
+	\leavevmode
+	\parbox[t]{1em}{\textbullet\hfill}%
+	\parbox[t]{\dimexpr\textwidth-1em\relax}{\inserttocsubsection}\par
+}
+\defbeamertemplate{section in toc}{sections numbered roman}{%
+	\leavevmode%
+	{\bfseries
+		\MakeUppercase{\romannumeral\inserttocsectionnumber}.\ %
+		\inserttocsection\par
+	}
+}
+\setbeamertemplate{section in toc}[sections numbered roman]
+\setbeamertemplate{subsection in toc}[bullets]
+
 
 % sections
 % \setbeamertemplate{section}{

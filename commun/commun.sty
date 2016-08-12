@@ -29,13 +29,13 @@
 
 % langue
 \ifluatex
-	\RequirePackage{polyglossia}							% LuaLaTeX
-	\setdefaultlanguage{french}								% LuaLaTeX
-	\RequirePackage{fontspec}								% LuaLaTeX
+	\RequirePackage{polyglossia}					% => babel
+	\setdefaultlanguage{french}						% => inputenc
+	\RequirePackage{fontspec}						% => fontenc
 \else
-	\RequirePackage[francais]{babel}						% LuaLaTeX =>polyglossia
-	\RequirePackage[utf8]{inputenc}						% LuaLaTeX => fontspec
-	\RequirePackage[T1]{fontenc}							% LuaLaTeX => fontspec
+	\RequirePackage[francais]{babel}				% => polyglossia
+	\RequirePackage[utf8]{inputenc}					% => fontspec
+	\RequirePackage[T1]{fontenc}					% => fontspec
 \fi
 
 % polices

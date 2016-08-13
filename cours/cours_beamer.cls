@@ -60,6 +60,13 @@
 }
 
 % ToC
+% change l'espace vertical entre les sections
+\patchcmd{\beamer@sectionintoc}
+{\vfill}
+{\setlength{\itemsep}{10pt}\vskip\itemsep}
+{}
+{}
+% change le symbole pour lister
 \defbeamertemplate{subsection in toc}{bullets}{%
 	\leavevmode
 	\parbox[t]{1em}{\textbullet\hfill}%
@@ -74,19 +81,6 @@
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
 \setbeamertemplate{subsection in toc}[bullets]
-
-
-% sections
-% \setbeamertemplate{section}{
-% 	\def\cType{\Roman}
-% 	\cType{section}.%
-% 	\inserttocsection\par
-% }
-% \renewcommand{\thesection}{
-% 	\def\cType{\Roman}
-% 	\cType{section}.
-% }
-% \renewcommand{\thesubsection}{\arabic{subsection})}
 
 % mdframed
 \pgfdeclarehorizontalshading{partiebkg}{100bp}{

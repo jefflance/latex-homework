@@ -31,7 +31,7 @@
 \ifluatex
 	\RequirePackage{polyglossia}					% => babel
 	\setdefaultlanguage{french}						% => inputenc
-	\RequirePackage{fontspec}						% => fontenc
+	\RequirePackage{luatextra}						% charge fontspec => fontenc
 \else
 	\RequirePackage[francais]{babel}				% => polyglossia
 	\RequirePackage[utf8]{inputenc}					% => fontspec
@@ -46,6 +46,9 @@
 \RequirePackage{bbding}
 
 % couleur, dessin
+\ifluatex
+	\RequirePackage{luacolor}
+\fi
 \RequirePackage{xcolor}
 \RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{graphicx}

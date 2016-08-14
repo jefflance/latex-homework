@@ -42,7 +42,7 @@
 \usetheme{Madrid}
 \useinnertheme{circles}
 \useoutertheme{default}
-\usefonttheme{serif}
+\usefonttheme[onlymath]{serif}
 
 % enumerate
 \setbeamerfont{enumerate item}{family=\rmfamily}

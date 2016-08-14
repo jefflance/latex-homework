@@ -52,8 +52,20 @@
 }
 
 % ensembles
-\NewDocumentCommand \R { } {
-	\( \mathbb{R} \)
+\NewDocumentCommand \R { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \( \mathbb{R} \setminus \{0\} \)
+        }{
+            \( \mathbb{R} \setminus \{0, #2\} \)
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \( \mathbb{R} \)
+        }{
+            \( \mathbb{R} \setminus \{#2\} \)
+        }
+    }
 }
 \NewDocumentCommand \RQ { } {
 	\( \mathbb{R} \setminus \mathbb{Q} \)

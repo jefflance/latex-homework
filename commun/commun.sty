@@ -69,8 +69,8 @@
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
 
-% liste
-%\RequirePackage{enumitem}
+% mise en page
+\RequirePackage{varwidth}
 %-- %
 
 
@@ -118,12 +118,14 @@
 % }
 
 
-% changer de police
-\NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
-	\fontencoding{#2}%
-	\fontfamily{#1}%
-	\selectfont
-}
+% polices
+\newfontfamily\Comic[Ligatures=TeX]{comicsansms}
+% tentative pour une commande généraliste
+% \NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
+% 	\fontencoding{#2}%
+% 	\fontfamily{#1}%
+% 	\selectfont
+% }
 %--%
 
 

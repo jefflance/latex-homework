@@ -1,6 +1,6 @@
 %%%
 %%%
-%%% Extensions : shortcuts.sty
+%%% Extensions : shoDtcuts.sty
 %%% Version : 1.0
 %%% Date : 10/05/16
 %%% Auteur : Jeff LANCE
@@ -45,41 +45,89 @@
 % utilise la syntax du package xparse non déclaré dans le préambule de ce
 % fichier.
 \NewDocumentCommand \veci { } {
-	$ \vec{\imath} $
+	\( \vec{\imath} \)
 }
 \NewDocumentCommand \vecj { } {
-	$ \vec{\jmath} $
+	\( \vec{\jmath} \)
 }
 
 % ensembles
-\NewDocumentCommand \R { s g } {
+\NewDocumentCommand \N { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            $ \mathbb{R} \setminus \{0\} $
+            \( \!\!\!\! \mathbb{R} \setminus \{0\} \!\!\! \)
         }{
-            $ \mathbb{R} \setminus \{0, #2\} $
+            \( \!\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!\! \)
         }
     }{
         \IfNoValueTF {#2} {
-            $ \mathbb{R} $
+            \( \!\!\!\! \mathbb{R} \!\!\! \)
         }{
-            $ \mathbb{R} \setminus \{#2\} $
+            \( \!\!\!\! \mathbb{R} \setminus \{#2\} \!\!\! \)
         }
     }
 }
 \NewDocumentCommand \RQ { } {
-	$ \mathbb{R} \setminus \mathbb{Q} $
+	\( \mathbb{R} \setminus \mathbb{Q} \)
 }
-\NewDocumentCommand \Q { } {
-	$ \mathbb{Q} $
+\NewDocumentCommand \Q { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{Q} \setminus \{0\} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{Q} \setminus \{0, #2\} \!\!\! \)
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{Q} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{Q} \setminus \{#2\} \!\!\! \)
+        }
+    }
 }
-\NewDocumentCommand \D { } {
-	$ \mathbb{D} $
+\NewDocumentCommand \D { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{D} \setminus \{0\} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{D} \setminus \{0, #2\} \!\!\! \)
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{D} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{D} \setminus \{#2\} \!\!\! \)
+        }
+    }
 }
-\NewDocumentCommand \Z { } {
-	$ \mathbb{Z} $
+\NewDocumentCommand \Z { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{Z} \setminus \{0\} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{Z} \setminus \{0, #2\} \!\!\! \)
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{Z} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{Z} \setminus \{#2\} \!\!\! \)
+        }
+    }
 }
-\NewDocumentCommand \N { } {
-	$ \mathbb{N} $
+\NewDocumentCommand \N { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{N} \setminus \{0\} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{N} \setminus \{0, #2\} \!\!\! \)
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \( \!\!\!\! \mathbb{N} \!\!\! \)
+        }{
+            \( \!\!\!\! \mathbb{N} \setminus \{#2\} \!\!\! \)
+        }
+    }
 }
 %--%

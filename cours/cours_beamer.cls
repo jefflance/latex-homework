@@ -33,19 +33,20 @@
 %-- definitions
 %--%
 
-
-
 %-- paramètrages
 \graphicspath{{images/}}
 \addmediapath{{videos/}}
 
+% theme beamer
 \usetheme{Madrid}
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme[onlymath]{serif}
+\usecolortheme[named=lapislazuli]{structure}
 
 % enumerate
 \setbeamerfont{enumerate item}{family=\rmfamily}
+\setbeamercolor{enumerate item}{fg=black}
 \setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
 
 % itemize
@@ -106,7 +107,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=blue,roundcorner=0pt,%
+	middlelinewidth=1.2pt, linecolor=lapislazuli,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -176,7 +177,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{blue}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{lapislazuli}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -200,7 +201,7 @@
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque, methode.
 \NewDocumentEnvironment{déf}{ s g }{%begin
-	\setbeamercolor{block title}{fg=white,bg=amethyst!95!white}
+	\setbeamercolor{block title}{fg=red,bg=blush!10!white}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -221,7 +222,7 @@
 }
 %
 \NewDocumentEnvironment{thm}{ g }{%begin
-	\setbeamercolor{block title}{fg=white,bg=cerisepink!95!white}
+	\setbeamercolor{block title}{fg=white,bg=red!90!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
 	}{
@@ -232,7 +233,7 @@
 }
 %
 \NewDocumentEnvironment{ppt}{ g }{%begin
-	\setbeamercolor{block title}{fg=crimson,bg=pink!95!white}
+	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Propriété}
 	}{
@@ -243,7 +244,7 @@
 }
 %
 \NewDocumentEnvironment{pre}{ g }{%begin
-	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!white}
+	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
 	}{
@@ -261,7 +262,7 @@
 % }
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
-	\setbeamercolor{block title}{fg=white,bg=red!75!black}%
+	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
 	\begin{block} {#1}
 }{%end
 	\end{block}
@@ -314,7 +315,7 @@
 }
 %
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
-	\setbeamercolor{block title}{fg=white,bg=green!75!black}%
+	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}%
 	\begin{block} {#1}
 }{%end
 	\end{block}
@@ -322,7 +323,7 @@
 %
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
-	\setbeamercolor{block title}{fg=white,bg=blue!75!black}%
+	\setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}%
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{

@@ -45,41 +45,41 @@
 % utilise la syntax du package xparse non déclaré dans le préambule de ce
 % fichier.
 \NewDocumentCommand \veci { } {
-	\( \vec{\imath} \)
+	$ \vec{\imath} $
 }
 \NewDocumentCommand \vecj { } {
-	\( \vec{\jmath} \)
+	$ \vec{\jmath} $
 }
 
 % ensembles
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{R} \setminus \{0\} \!\!\!\! \)
+            $ \mathbb{R} \setminus \{0\} $
         }{
-            \( \!\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!\!\! \)
+            $ \mathbb{R} \setminus \{0, #2\} $
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{R} \!\! \)
+            $ \mathbb{R} $
         }{
-            \( \!\!\!\! \mathbb{R} \setminus \{#2\} \!\!\!\! \)
+            $ \mathbb{R} \setminus \{#2\} $
         }
     }
 }
 \NewDocumentCommand \RQ { } {
-	\( \mathbb{R} \setminus \mathbb{Q} \)
+	$ \mathbb{R} \setminus \mathbb{Q} $
 }
 \NewDocumentCommand \Q { } {
-	\( \mathbb{Q} \)
+	$ \mathbb{Q} $
 }
 \NewDocumentCommand \D { } {
-	\( \mathbb{D} \)
+	$ \mathbb{D} $
 }
 \NewDocumentCommand \Z { } {
-	\( \mathbb{Z} \)
+	$ \mathbb{Z} $
 }
 \NewDocumentCommand \N { } {
-	\( \mathbb{N} \)
+	$ \mathbb{N} $
 }
 %--%

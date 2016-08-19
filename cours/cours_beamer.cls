@@ -26,12 +26,33 @@
 \RequirePackage{shortcuts}
 % autres
 \RequirePackage{media9}
+\RequirePackage{xkeyval}
 %--%
 
 
 
 %-- definitions
+% firstcolor
+% 	option de classe
+%	couleur générale du beamer
+\def\firstcolor{lapislazuli}%
+\define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
+  \def\firstcolor{#1}%
+}
+
+\def\secondcolor{-\firstcolor}%
+\define@key{cours_beamer.cls}{secondcolor}[-\firstcolor]{%
+  \def\secondcolor{#1}%
+}
 %--%
+
+
+%-- options
+\ExecuteOptionsX{firstcolor, secondcolor}
+\ProcessOptionsX
+%--%
+
+
 
 %-- paramètrages
 \graphicspath{{images/}}
@@ -42,7 +63,7 @@
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme[onlymath]{serif}
-\usecolortheme[named=lapislazuli]{structure}
+\usecolortheme[named=\firstcolor]{structure}
 
 % enumerate
 \setbeamerfont{enumerate item}{family=\rmfamily}
@@ -50,8 +71,8 @@
 \setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
 
 % itemize
-% \setbeamertemplate{itemize item}[triangle]
 \setbeamertemplate{itemize item}[circle]
+\setbeamercolor{itemize item}{fg=\secondcolor}
 \setbeamertemplate{itemize subitem}{\textendash}
 
 % navigation
@@ -94,7 +115,7 @@
 \mdfdefinestyle{partie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=red,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor={\secondcolor},roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -107,7 +128,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=lapislazuli,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=\firstcolor,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -164,7 +185,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \textcolor{red}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \textcolor{\secondcolor}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -177,7 +198,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{lapislazuli}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{\firstcolor}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}

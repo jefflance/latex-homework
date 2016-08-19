@@ -102,7 +102,9 @@
 	}
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
+\setbeamercolor{section in toc}{fg=\secondcolor}
 \setbeamertemplate{subsection in toc}[bullets]
+\setbeamercolor{subsection in toc}{fg=\firstcolor}
 
 % mdframed
 \pgfdeclarehorizontalshading{partiebkg}{100bp}{

@@ -72,7 +72,7 @@
 
 % itemize
 \setbeamertemplate{itemize item}[circle]
-\setbeamercolor{itemize item}{fg=\secondcolor}
+\setbeamercolor{itemize item}{fg=black}
 \setbeamertemplate{itemize subitem}{\textendash}
 
 % navigation

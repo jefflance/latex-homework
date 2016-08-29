@@ -85,8 +85,8 @@
 \makeatletter
 
 %-- Macros personnelles
-% Pour environnement \tabular commandes d'alignement du contenu
-% dans la colonne de largeur <largeur>.
+% \tabular
+% commandes d'alignement du contenu dans la colonne de largeur <largeur>.
 %% lh{largeur} : gauche - haut
 %\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
 %% ch{largeur} : centre - haut
@@ -106,6 +106,8 @@
 %% rb{largeur} : droite - bas
 %\newcolumntype{rb}[1]{>{\raggedleft}b{#1}}
 
+% itemization dans tableau
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
 % barrer du texte
 \newcommand\hcancel[2][black]{

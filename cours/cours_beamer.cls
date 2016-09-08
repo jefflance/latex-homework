@@ -62,7 +62,6 @@
 \usetheme{Madrid}
 \useinnertheme{circles}
 \useoutertheme{default}
-% \usefonttheme[onlymath]{serif}
 \usefonttheme{professionalfonts}
 \usecolortheme[named=\firstcolor]{structure}
 

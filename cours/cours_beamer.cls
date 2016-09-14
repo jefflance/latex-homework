@@ -34,7 +34,7 @@
 %-- definitions
 % firstcolor
 % 	option de classe
-%	couleur générale du beamer
+%	  couleur générale du beamer
 \def\firstcolor{lapislazuli}%
 \define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
   \def\firstcolor{#1}%

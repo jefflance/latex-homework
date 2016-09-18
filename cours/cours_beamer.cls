@@ -277,13 +277,6 @@
 	\end{block}
 }
 %
-% \newenvironment<>{pre}[1][]{%begin
-% 	\setbeamercolor{block title}{fg=white,bg=airforceblue!75!black}%
-% 	\begin{block}{Preuve}{#1}
-% }{%end
-% 	\end{block}
-% }
-%
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
 	\begin{block} {#1}

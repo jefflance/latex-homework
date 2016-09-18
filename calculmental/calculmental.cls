@@ -26,6 +26,24 @@
 
 
 
+%-- definitions
+% maincolor
+% 	option de classe
+%	  couleur générale du beamer
+\def\maincolor{lapislazuli}%
+\define@key{calculmental.cls}{maincolor}[lapislazuli]{%
+  \def\maincolor{#1}%
+}
+%--%
+
+
+%-- options
+\ExecuteOptionsX{maincolor}
+\ProcessOptionsX
+%--%
+
+
+
 %
 % \toggletrue{calculmental}
 %
@@ -36,12 +54,29 @@
 \graphicspath{{images/}}
 
 \usetheme{Madrid}
-\usefonttheme{serif}
+\useinnertheme{circles}
+\useoutertheme{default}
+\usefonttheme{professionalfonts}
+\usecolortheme[named=\maincolor]{structure}
 \setbeamerfont{enumerate item}{family=\sffamily}
 
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
+}
+
+% ToC
+% change l'espace vertical entre les sections
+\patchcmd{\beamer@sectionintoc}
+{\vfill}
+{\setlength{\itemsep}{10pt}\vskip\itemsep}
+{}
+{}
+% change le symbole pour lister
+\defbeamertemplate{section in toc}{bullets}{%
+	\leavevmode
+	\parbox[t]{1em}{\textbullet\hfill}%
+	\parbox[t]{\dimexpr\textwidth-1em\relax}{\inserttocsubsection}\par
 }
 %--%
 

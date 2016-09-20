@@ -150,9 +150,9 @@
 % defini le titre du document
 \newcommand{\titre}[4]{%
 	\title{#1}
-	\subtitle{Cours}
-	\date{#2}
-	\author{#3}
+	\subtitle{#2}
+	\date{#3}
+	\author{Cours}
 	\institute{#4}
 }
 

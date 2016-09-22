@@ -108,7 +108,7 @@
 }
 
 
-\newcommand{\debut}{%
+\NewDocumentCommand \debut { s }{%
 	\begin{frame}
 		\titlepage
 
@@ -122,7 +122,11 @@
 			\item Vous répondrez sur la feuille qui vous a été distribuée.
 			\item Le temps pour répondre à chaque question vous est indiqué au début de chacune d'elle.
 			\item Un compte à rebours apparaîtra en bas à droite vous indiquant le temps restant pour répondre.
-			\item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
+    \IfBooleanTF #1 {
+			\item Même si cette activité est appelée << calcul mental >>, vous avez le droit à la calculatrice !
+    }{
+      \item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
+    }
 		\end{itemize}
 
 		\only<5->{Bonne chance !}

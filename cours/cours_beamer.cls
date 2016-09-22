@@ -232,8 +232,7 @@
 		}{
 			\begin{block} {#2}
 		}
-	}
-	{
+	}{
 		\IfNoValueTF {#2} {
 			\begin{block} {Définition}
 		}{

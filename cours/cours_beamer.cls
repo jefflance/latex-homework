@@ -8,7 +8,7 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.6]
+\ProvidesClass{cours_beamer}[2014/12/08 Beamer de cours, v1.6]
 
 
 

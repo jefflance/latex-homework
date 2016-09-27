@@ -26,6 +26,7 @@
 \RequirePackage{xparse}
 \RequirePackage{etoolbox}
 \RequirePackage{ifluatex}
+\RequirePackage{import}
 
 % langue
 \ifluatex
@@ -34,8 +35,8 @@
 	\RequirePackage{luatextra}						% charge fontspec => fontenc
 	\defaultfontfeatures{Ligatures=TeX}
 \else
-	\RequirePackage[francais]{babel}				% => polyglossia
-	\RequirePackage[utf8]{inputenc}					% => fontspec
+	\RequirePackage[francais]{babel}			% => polyglossia
+	\RequirePackage[utf8]{inputenc}				% => fontspec
 	\RequirePackage[T1]{fontenc}					% => fontspec
 \fi
 

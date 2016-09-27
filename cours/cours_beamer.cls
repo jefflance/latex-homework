@@ -8,7 +8,7 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.5]
+\ProvidesClass{cours_beamer}[2014/12/08 Slides de cours, v1.6]
 
 
 
@@ -35,16 +35,25 @@
 % firstcolor
 % 	option de classe
 %	  couleur générale du beamer
-\def\firstcolor{lapislazuli}%
-\define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
+%
+%   "classical" way
+%   \def\firstcolor{lapislazuli}%
+%   \define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
+%     \def\firstcolor{#1}%
+%   }
+%
+%   \def\secondcolor{-\firstcolor}%
+%   \define@key{cours_beamer.cls}{secondcolor}[-\firstcolor]{%
+%     \def\secondcolor{#1}%
+%   }
+%--%
+\DeclareOptionX{firstcolor}[lapislazuli]{%
   \def\firstcolor{#1}%
 }
-
-\def\secondcolor{-\firstcolor}%
-\define@key{cours_beamer.cls}{secondcolor}[-\firstcolor]{%
+\DeclareOptionX{secondcolor}[-\firstcolor]{%
   \def\secondcolor{#1}%
 }
-%--%
+
 
 
 %-- options

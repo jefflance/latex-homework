@@ -61,18 +61,19 @@
 }
 
 % ensembles
+
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{R} \setminus \{0\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{0\} \!\!}
         }{
-            \( \!\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!}
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{R} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{R} \!\!}
         }{
-            \( \!\!\!\! \mathbb{R} \setminus \{#2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{#2\} \!\!}
         }
     }
 }
@@ -82,60 +83,60 @@
 \NewDocumentCommand \Q { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{Q} \setminus \{0\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0\} \!\!}
         }{
-            \( \!\!\!\! \mathbb{Q} \setminus \{0, #2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0, #2\} \!\!}
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{Q} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Q} \!\!}
         }{
-            \( \!\!\!\! \mathbb{Q} \setminus \{#2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{#2\} \!\!}
         }
     }
 }
 \NewDocumentCommand \D { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{D} \setminus \{0\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{0\} \!\!}
         }{
-            \( \!\!\!\! \mathbb{D} \setminus \{0, #2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{0, #2\} \!\!}
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{D} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{D} \!\!}
         }{
-            \( \!\!\!\! \mathbb{D} \setminus \{#2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{#2\} \!\!}
         }
     }
 }
 \NewDocumentCommand \Z { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{Z} \setminus \{0\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0\} \!\!}
         }{
-            \( \!\!\!\! \mathbb{Z} \setminus \{0, #2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0, #2\} \!\!}
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{Z} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Z} \!\!}
         }{
-            \( \!\!\!\! \mathbb{Z} \setminus \{#2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{#2\} \!\!}
         }
     }
 }
 \NewDocumentCommand \N { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{N} \setminus \{0\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{0\} \!\!}
         }{
-            \( \!\!\!\! \mathbb{N} \setminus \{0, #2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{0, #2\} \!\!}
         }
     }{
         \IfNoValueTF {#2} {
-            \( \!\!\!\! \mathbb{N} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{N} \!\!}
         }{
-            \( \!\!\!\! \mathbb{N} \setminus \{#2\} \!\!\! \)
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{#2\} \!\!}
         }
     }
 }

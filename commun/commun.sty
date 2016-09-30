@@ -86,8 +86,10 @@
 \makeatletter
 
 %-- Macros personnelles
-% \tabular
-% commandes d'alignement du contenu dans la colonne de largeur <largeur>.
+% dans un tableau : commandes d'alignement du contenu dans la colonne de largeur <largeur>.
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 %% lh{largeur} : gauche - haut
 %\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
 %% ch{largeur} : centre - haut
@@ -97,7 +99,7 @@
 %% lc{largeur} : gauche - centre
 %\newcolumntype{lc}[1]{>{\raggedright}m{#1}}
 %% cc{largeur} : centre - centre
-\newcolumntype{M}[1]{ >{\centering\arraybackslash} m{#1} }
+% \newcolumntype{M}[1]{ >{\centering\arraybackslash} m{#1} }
 %% rc{largeur} : droite - centre
 %\newcolumntype{rc}[1]{>{\raggedleft}m{#1}}
 %% lb{largeur} : gauche - bas
@@ -119,7 +121,6 @@
 % 	\setbox0=\hbox{$#3$}%
 % 	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{#2}}}} {#3}
 % }
-
 
 % polices
 \newfontfamily\Comic[Ligatures=TeX]{comicsansms}

@@ -33,6 +33,7 @@
 \RequirePackage{scrlayer-scrpage}
 \RequirePackage{mdframed}
 \RequirePackage{titlesec}
+\RequirePackage[amsmath, framed]{ntheorem}
 %--%
 
 
@@ -76,6 +77,19 @@
     frametitlebackgroundcolor=white!0,innertopmargin=\topskip,%
     xcolor,%
 }
+
+% theorem
+\theoremstyle{nonumberbreak}
+\theorembodyfont{\normalfont}
+
+\newtheorem{definition}{}
+\newtheorem{theoreme}{}
+\newtheorem{propriete}{}
+\newtheorem{preuve}{}
+\newtheorem{vocabulaire}{}
+\newtheorem{remarque}{}
+\newtheorem{exemple}{}
+\newtheorem{exercice}{}
 %--%
 
 
@@ -127,19 +141,24 @@
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
-			\begin{block} {}
+            \begin{mdframed}[style=framed]
+    			\begin{definition}
 		}{
-			\begin{block} {#2}
+            \begin{mdframed}[style=framed,frametitle={#2}]
+                \begin{definition}
 		}
 	}{
 		\IfNoValueTF {#2} {
-			\begin{block} {Définition}
+            \begin{mdframed}[style=framed,frametitle={Définition},theoremseparator={-}]
+                \begin{definition}
 		}{
-			\begin{block} {Définition - #2}
+            \begin{mdframed}[style=framed,frametitle={Définition - #2},theoremseparator={-}]
+                \begin{definition}
 		}
 	}
 }{%end
-		\end{block}
+    		\end{definition}
+        \end{mdframed}
 }
 
 

@@ -1,7 +1,7 @@
 %%%
 %%%
 %%% Classe 	: cours_beamer.cls
-%%% Version : 1.5
+%%% Version : 1.6
 %%% Date 	: 08/12/14
 %%% Auteur 	: Jeff LANCE
 %%%

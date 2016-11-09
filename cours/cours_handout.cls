@@ -1,8 +1,8 @@
 %%%
 %%%
 %%% Classe 	: cours_handout.cls
-%%% Version : 1.5
-%%% Date 	: 08/12/14
+%%% Version : 1.0
+%%% Date 	: 27/09/16
 %%% Auteur 	: Jeff LANCE
 %%%
 %%% Classe qui génère un handout directement

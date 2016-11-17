@@ -111,8 +111,8 @@
 \mdtheorem[style=no_framed]{voc}{Vocabulaire}
 \mdtheorem[style=no_framed]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
-\mdtheorem[style=dash_framed]{ex}{Exercice - Exemple}
 \mdtheorem[style=dash_framed]{exo}{Exercice}
+\mdtheorem[style=dash_framed]{app}{Application}
 \mdtheorem[style=dash_framed]{met}{Méthode}
 %--%
 

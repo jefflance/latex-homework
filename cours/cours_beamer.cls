@@ -73,6 +73,7 @@
 \useoutertheme{default}
 \usefonttheme{professionalfonts}
 \usecolortheme[named=\firstcolor]{structure}
+\setbeamertemplate{footline}{}
 
 % enumerate
 \setbeamerfont{enumerate item}{family=\rmfamily}

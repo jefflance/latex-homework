@@ -103,9 +103,20 @@
 	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
 	xcolor,%
 }
+\mdfdefinestyle{nothing}{%
+	linecolor=white,linewidth=0pt,%
+	leftmargin=0,rightmargin=0,%
+	innertopmargin=0,innerbottommargin=0,%
+	innerleftmargin=5pt,innerrightmargin=5pt,%
+	skipabove=0,skipbelow=0,%
+  frametitle=none,%
+	frametitlerule=false,%
+	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+	xcolor,%
+}
 
-\mdtheorem[style=framed]{déf}{Définition}
-\mdtheorem[style=framed]{thm}{Théorème}
+\mdtheorem[style=framed, theoremseparator={ - }]{déf}{Définition}
+\mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}
 \mdtheorem[style=framed]{ppt}{Propriété}
 \mdtheorem[style=framed]{pre}{Preuve}
 \mdtheorem[style=no_framed]{voc}{Vocabulaire}
@@ -113,7 +124,7 @@
 \mdtheorem[style=framed]{exe}{Exemple}
 \mdtheorem[style=dash_framed]{exo}{Exercice}
 \mdtheorem[style=dash_framed]{app}{Application}
-\mdtheorem[style=dash_framed]{met}{Méthode}
+\mdtheorem[style=dash_framed, theoremseparator={ - }]{met}{Méthode}
 %--%
 
 

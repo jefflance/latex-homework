@@ -123,7 +123,7 @@
         overlay
     }
 }
-\mdfdefinestyle{complete}{%
+\mdfdefinestyle{cmpl}{%
     linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
@@ -142,7 +142,7 @@
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                 node[symbol] { \faicon{\faPencil} };},%
 }
-\mdfdefinestyle{doit}{%
+\mdfdefinestyle{todo}{%
     linecolor=white,linewidth=1pt,%
     tikzsetting={draw=black,dashed,line width=1pt},%
     leftmargin=0,rightmargin=0,%
@@ -162,8 +162,8 @@
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                 node[symbol] { \faicon{\faFileTextO} };},%
 }
-\mdfdefinestyle{quote}{%
-    linecolor=white,linewidth=1pt,%
+\mdfdefinestyle{quot}{%
+    linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
     innerleftmargin=1em,innerrightmargin=5pt,%
@@ -173,25 +173,52 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} };},%
+                node[symbol] { \faicon{\faQuoteLeft} },%
+                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                node[symbol] { \faicon{\faQuoteRight} };},%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} };},%
+                node[symbol] { \faicon{\faQuoteLeft} },%
+                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                node[symbol] { \faicon{\faQuoteRight} };},%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} };},%
+                node[symbol] { \faicon{\faQuoteLeft} },%
+                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                node[symbol] { \faicon{\faQuoteRight} };},%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} };},%
+                node[symbol] { \faicon{\faQuoteLeft} },%
+                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                node[symbol] { \faicon{\faQuoteRight} };},%
+}
+\mdfdefinestyle{warning}{%
+    linecolor=black,linewidth=1pt,%
+    leftmargin=0,rightmargin=0,%
+    innertopmargin=1em,innerbottommargin=1em,%
+    innerleftmargin=1em,innerrightmargin=5pt,%
+    skipabove=0,skipbelow=0,%
+    frametitlerule=false,%
+    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+    nobreak=true,%
+    xcolor,%
+    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faWarning} };},%
+    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faWarning} };},%
+    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faWarning} };},%
+    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faWarning} };},%
 }
 
-\mdtheorem[style=complete, theoremseparator={ - }]{déf}{Définition}
+\mdtheorem[style=cmpl, theoremseparator={ - }]{déf}{Définition}
 \mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}
 \mdtheorem[style=framed]{ppt}{Propriété}
 \mdtheorem[style=framed]{pre}{Preuve}
 \mdtheorem[style=no_framed]{voc}{Vocabulaire}
-\mdtheorem[style=no_framed]{rmq}{Remarque}
+\mdtheorem[style=warning]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
-\mdtheorem[style=doit]{exo}{Exercice}
-\mdtheorem[style=doit]{app}{Application}
-\mdtheorem[style=doit, theoremseparator={ - }]{met}{Méthode}
+\mdtheorem[style=todo]{exo}{Exercice}
+\mdtheorem[style=todo, theoremseparator={ - }]{app}{Application}
+\mdtheorem[style=todo, theoremseparator={ - }]{met}{Méthode}
 %--%
 
 

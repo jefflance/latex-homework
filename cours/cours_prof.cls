@@ -31,7 +31,7 @@
 % mise en page
 \RequirePackage{geometry}
 \RequirePackage{scrlayer-scrpage}
-\RequirePackage{mdframed}
+% \RequirePackage{mdframed}
 \RequirePackage{titlesec}
 \RequirePackage{pageslts}
 %--%
@@ -144,7 +144,7 @@
 }
 \mdfdefinestyle{todo}{%
     linecolor=white,linewidth=1pt,%
-    tikzsetting={draw=black,dashed,line width=1pt},%
+    tikzsetting={draw=black,line width=1pt},%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
     innerleftmargin=1em,innerrightmargin=5pt,%
@@ -153,6 +153,9 @@
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
     nobreak=true,%
     xcolor,%
+    % hidealllines=true, topline=true, bottomline=true,%
+    shadow=true,%
+    background=gray!40,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                 node[symbol] { \faicon{\faFileTextO} };},%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
@@ -163,7 +166,7 @@
                 node[symbol] { \faicon{\faFileTextO} };},%
 }
 \mdfdefinestyle{quot}{%
-    linecolor=black,linewidth=1pt,%
+    linecolor=white,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
     innerleftmargin=1em,innerrightmargin=5pt,%
@@ -189,7 +192,7 @@
                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
                 node[symbol] { \faicon{\faQuoteRight} };},%
 }
-\mdfdefinestyle{warning}{%
+\mdfdefinestyle{warn}{%
     linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
@@ -199,22 +202,23 @@
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
     nobreak=true,%
     xcolor,%
+    hidealllines=true, leftline=true,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faWarning} };},%
+                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faWarning} };},%
+                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faWarning} };},%
+                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faWarning} };},%
+                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
 }
 
 \mdtheorem[style=cmpl, theoremseparator={ - }]{déf}{Définition}
 \mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}
 \mdtheorem[style=framed]{ppt}{Propriété}
 \mdtheorem[style=framed]{pre}{Preuve}
-\mdtheorem[style=no_framed]{voc}{Vocabulaire}
-\mdtheorem[style=warning]{rmq}{Remarque}
+\mdtheorem[style=quot]{voc}{Vocabulaire}
+\mdtheorem[style=warn]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
 \mdtheorem[style=todo]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ - }]{app}{Application}

@@ -122,6 +122,25 @@
         overlay
     }
 }
+\mdfdefinestyle{exo}{%
+    linecolor=black,linewidth=1pt,%
+    leftmargin=0,rightmargin=0,%
+    innertopmargin=1em,innerbottommargin=1em,%
+    innerleftmargin=5pt,innerrightmargin=5pt,%
+    skipabove=0,skipbelow=0,%
+    frametitlerule=false,%
+    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+    nobreak=true,%
+    xcolor,%
+    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[writesymbol] {\$};},%
+    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[writesymbol] {\$};},%
+    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[writesymbol] {\$};},%
+    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
+                node[writesymbol] {\$};},%
+}
 
 \mdtheorem[style=framed, theoremseparator={ - }]{déf}{Définition}
 \mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}

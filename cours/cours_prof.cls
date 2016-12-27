@@ -109,7 +109,7 @@
 	innertopmargin=0,innerbottommargin=0,%
 	innerleftmargin=5pt,innerrightmargin=5pt,%
 	skipabove=0,skipbelow=0,%
-  frametitle=none,%
+    frametitle=none,%
 	frametitlerule=false,%
 	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
 	xcolor,%

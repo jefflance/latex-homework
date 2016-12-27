@@ -133,13 +133,13 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[writesymbol] {\$};},%
+                node[writesymbol] { \faicon{\faPencil} };},%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[writesymbol] {\$};},%
+                node[writesymbol] { \faicon{\faPencil} };},%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[writesymbol] {\$};},%
+                node[writesymbol] { \faicon{\faPencil} };},%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+0.5*(0,\y1)$)
-                node[writesymbol] {\$};},%
+                node[writesymbol] { \faicon{\faPencil} };},%
 }
 
 \mdtheorem[style=framed, theoremseparator={ - }]{déf}{Définition}

@@ -116,13 +116,13 @@
 }
 
 \tikzset{
-    writesymbol/.style={
-        rectangle, draw=black,
+    pensymbol/.style={
+        rectangle, draw=white,
         fill=white, scale=1,
         overlay
     }
 }
-\mdfdefinestyle{exo}{%
+\mdfdefinestyle{complete}{%
     linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
@@ -132,17 +132,17 @@
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
     nobreak=true,%
     xcolor,%
-    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+1.0*(0,\y1)$)
-                node[writesymbol] { \faicon{\faPencil} };},%
-    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+1.0*(0,\y1)$)
-                node[writesymbol] { \faicon{\faPencil} };},%
-    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+1.0*(0,\y1)$)
-                node[writesymbol] { \faicon{\faPencil} };},%
-    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,0)+1.0*(0,\y1)$)
-                node[writesymbol] { \faicon{\faPencil} };},%
+    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[pensymbol] { \faicon{\faPencil} };},%
+    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[pensymbol] { \faicon{\faPencil} };},%
+    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[pensymbol] { \faicon{\faPencil} };},%
+    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[pensymbol] { \faicon{\faPencil} };},%
 }
 
-\mdtheorem[style=framed, theoremseparator={ - }]{déf}{Définition}
+\mdtheorem[style=complete, theoremseparator={ - }]{déf}{Définition}
 \mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}
 \mdtheorem[style=framed]{ppt}{Propriété}
 \mdtheorem[style=framed]{pre}{Preuve}
@@ -150,8 +150,7 @@
 \mdtheorem[style=no_framed]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
 \mdtheorem[style=dash_framed]{exo}{Exercice}
-% \mdtheorem[style=dash_framed]{app}{Application}
-\mdtheorem[style=exo]{app}{Application}
+\mdtheorem[style=dash_framed]{app}{Application}
 \mdtheorem[style=dash_framed, theoremseparator={ - }]{met}{Méthode}
 %--%
 

@@ -149,9 +149,9 @@
 \mdtheorem[style=no_framed]{voc}{Vocabulaire}
 \mdtheorem[style=no_framed]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
-% \mdtheorem[style=dash_framed]{exo}{Exercice}
-\mdtheorem[style=exo]{exo}{Exercice}
-\mdtheorem[style=dash_framed]{app}{Application}
+\mdtheorem[style=dash_framed]{exo}{Exercice}
+% \mdtheorem[style=dash_framed]{app}{Application}
+\mdtheorem[style=exo]{app}{Application}
 \mdtheorem[style=dash_framed, theoremseparator={ - }]{met}{Méthode}
 %--%
 

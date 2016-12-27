@@ -115,6 +115,14 @@
 	xcolor,%
 }
 
+\tikzset{
+    writesymbol/.style={
+        rectangle, draw=black,
+        fill=white, scale=1,
+        overlay
+    }
+}
+
 \mdtheorem[style=framed, theoremseparator={ - }]{déf}{Définition}
 \mdtheorem[style=framed, theoremseparator={ - }]{thm}{Théorème}
 \mdtheorem[style=framed]{ppt}{Propriété}

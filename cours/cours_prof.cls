@@ -115,8 +115,9 @@
 	xcolor,%
 }
 
+
 \tikzset{
-    pensymbol/.style={
+    symbol/.style={
         rectangle, draw=white,
         fill=white, scale=1,
         overlay
@@ -133,13 +134,52 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[pensymbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faicon{\faPencil} };},%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[pensymbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faicon{\faPencil} };},%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[pensymbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faicon{\faPencil} };},%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[pensymbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faicon{\faPencil} };},%
+}
+\mdfdefinestyle{doit}{%
+    linecolor=white,linewidth=1pt,%
+    tikzsetting={draw=black,dashed,line width=1pt},%
+    leftmargin=0,rightmargin=0,%
+    innertopmargin=1em,innerbottommargin=1em,%
+    innerleftmargin=1em,innerrightmargin=5pt,%
+    skipabove=0,skipbelow=0,%
+    frametitlerule=false,%
+    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+    nobreak=true,%
+    xcolor,%
+    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faFileTextO} };},%
+    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faFileTextO} };},%
+    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faFileTextO} };},%
+    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faFileTextO} };},%
+}
+\mdfdefinestyle{quote}{%
+    linecolor=white,linewidth=1pt,%
+    leftmargin=0,rightmargin=0,%
+    innertopmargin=1em,innerbottommargin=1em,%
+    innerleftmargin=1em,innerrightmargin=5pt,%
+    skipabove=0,skipbelow=0,%
+    frametitlerule=false,%
+    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+    nobreak=true,%
+    xcolor,%
+    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faQuoteLeft} };},%
+    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faQuoteLeft} };},%
+    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faQuoteLeft} };},%
+    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+                node[symbol] { \faicon{\faQuoteLeft} };},%
 }
 
 \mdtheorem[style=complete, theoremseparator={ - }]{déf}{Définition}
@@ -149,9 +189,9 @@
 \mdtheorem[style=no_framed]{voc}{Vocabulaire}
 \mdtheorem[style=no_framed]{rmq}{Remarque}
 \mdtheorem[style=framed]{exe}{Exemple}
-\mdtheorem[style=dash_framed]{exo}{Exercice}
-\mdtheorem[style=dash_framed]{app}{Application}
-\mdtheorem[style=dash_framed, theoremseparator={ - }]{met}{Méthode}
+\mdtheorem[style=doit]{exo}{Exercice}
+\mdtheorem[style=doit]{app}{Application}
+\mdtheorem[style=doit, theoremseparator={ - }]{met}{Méthode}
 %--%
 
 

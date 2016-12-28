@@ -200,8 +200,8 @@
 }
 
 \mdtheorem[style=cmpl, theoremseparator={ - }, roundcorner=8pt]{déf}{Définition}
-\mdtheorem[style=cmpl, theoremseparator={ - },outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
-\mdtheorem[style=cmpl, theoremseparator={ - },outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=cmpl, theoremseparator={ - }, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=cmpl, theoremseparator={ - }, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
 \mdtheorem[style=frm, theoremseparator={ - }]{pre}{Preuve}
 \mdtheorem[style=qte, theoremseparator={ - }]{voc}{Vocabulaire}
 \mdtheorem[style=warn, theoremseparator={ - }]{rmq}{Remarque}

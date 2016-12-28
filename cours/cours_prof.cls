@@ -204,6 +204,7 @@
 \mdtheorem[style=cmpl, theoremseparator={ - }, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
 \mdtheorem[style=frm, theoremseparator={ - }]{pre}{Preuve}
 \mdtheorem[style=qte, theoremseparator={ - }]{voc}{Vocabulaire}
+\mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
 \mdtheorem[style=warn, theoremseparator={ - }]{rmq}{Remarque}
 \mdtheorem[style=frm, theoremseparator={ - }]{exe}{Exemple}
 \mdtheorem[style=todo, theoremseparator={ - }]{exo}{Exercice}

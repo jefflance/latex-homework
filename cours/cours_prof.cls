@@ -69,43 +69,6 @@
     frametitlealignment=\raggedright,%
     innerbottommargin=2em,%
 }
-
-
-\mdfdefinestyle{dash_framed}{%
-    linecolor=white,linewidth=1pt,%
-    tikzsetting={draw=black,dashed,line width=1pt},%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=5pt,innerrightmargin=5pt,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
-}
-\mdfdefinestyle{no_framed}{%
-	linecolor=white,linewidth=0pt,%
-	leftmargin=0,rightmargin=0,%
-	innertopmargin=0,innerbottommargin=0,%
-	innerleftmargin=5pt,innerrightmargin=5pt,%
-	skipabove=0,skipbelow=0,%
-	frametitlerule=false,%
-	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-	xcolor,%
-}
-\mdfdefinestyle{nothing}{%
-	linecolor=white,linewidth=0pt,%
-	leftmargin=0,rightmargin=0,%
-	innertopmargin=0,innerbottommargin=0,%
-	innerleftmargin=5pt,innerrightmargin=5pt,%
-	skipabove=0,skipbelow=0,%
-    frametitle=none,%
-	frametitlerule=false,%
-	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-	xcolor,%
-}
-
-
 \tikzset{
     symbol/.style={
         rectangle, draw=white,
@@ -113,11 +76,32 @@
         overlay
     }
 }
+\mdfdefinestyle{frm}{%
+    linecolor=black,linewidth=1pt,%
+    leftmargin=0,rightmargin=0,%
+    innertopmargin=1em,innerbottommargin=1em,%
+    innerleftmargin=.5em,innerrightmargin=.5em,%
+    skipabove=0,skipbelow=0,%
+    frametitlerule=false,%
+    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+    nobreak=true,%
+    xcolor,%
+}
+\mdfdefinestyle{clr}{%
+	linecolor=white,linewidth=0pt,%
+	leftmargin=0,rightmargin=0,%
+	innertopmargin=0,innerbottommargin=0,%
+	innerleftmargin=.5em,innerrightmargin=.5em,%
+	skipabove=0,skipbelow=0,%
+	frametitlerule=false,%
+	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+	xcolor,%
+}
 \mdfdefinestyle{cmpl}{%
     linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=5pt,%
+    innerleftmargin=1em,innerrightmargin=.5em,%
     skipabove=0,skipbelow=0,%
     frametitlerule=false,%
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
@@ -132,22 +116,23 @@
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                 node[symbol] { \faicon{\faPencil} };},%
 }
-\mdfdefinestyle{box}{%
-    linecolor=black,linewidth=1pt,%
+\mdfdefinestyle{dash}{%
+    linecolor=white,linewidth=1pt,%
+    tikzsetting={draw=black,dashed,line width=1pt},%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=5pt,innerrightmargin=5pt,%
+    innerleftmargin=.5em,innerrightmargin=.5em,%
     skipabove=0,skipbelow=0,%
     frametitlerule=false,%
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
     nobreak=true,%
     xcolor,%
 }
-\mdfdefinestyle{quot}{%
+\mdfdefinestyle{qte}{%
     linecolor=white,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=5pt,%
+    innerleftmargin=1em,innerrightmargin=.5em,%
     skipabove=0,skipbelow=0,%
     frametitlerule=false,%
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
@@ -175,7 +160,7 @@
     tikzsetting={draw=black,line width=1pt},%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=5pt,%
+    innerleftmargin=1em,innerrightmargin=.5em,%
     skipabove=0,skipbelow=0,%
     frametitlerule=false,%
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
@@ -197,7 +182,7 @@
     linecolor=black,linewidth=1pt,%
     leftmargin=0,rightmargin=0,%
     innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=5pt,%
+    innerleftmargin=1em,innerrightmargin=.5em,%
     skipabove=0,skipbelow=0,%
     frametitlerule=false,%
     frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
@@ -214,14 +199,14 @@
                 node[symbol] { \faicon{\fa-exclamation-triangle} };},%
 }
 
-\mdtheorem[style=cmpl, theoremseparator={ - }]{déf}{Définition}
-\mdtheorem[style=cmpl, theoremseparator={ - }]{thm}{Théorème}
-\mdtheorem[style=cmpl]{ppt}{Propriété}
-\mdtheorem[style=box]{pre}{Preuve}
-\mdtheorem[style=quot]{voc}{Vocabulaire}
-\mdtheorem[style=warn]{rmq}{Remarque}
-\mdtheorem[style=box]{exe}{Exemple}
-\mdtheorem[style=todo]{exo}{Exercice}
+\mdtheorem[style=cmpl, theoremseparator={ - }, roundcorner=8pt]{déf}{Définition}
+\mdtheorem[style=cmpl, theoremseparator={ - },outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=cmpl, theoremseparator={ - },outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=frm, theoremseparator={ - }]{pre}{Preuve}
+\mdtheorem[style=qte, theoremseparator={ - }]{voc}{Vocabulaire}
+\mdtheorem[style=warn, theoremseparator={ - }]{rmq}{Remarque}
+\mdtheorem[style=frm, theoremseparator={ - }]{exe}{Exemple}
+\mdtheorem[style=todo, theoremseparator={ - }]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ - }]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={ - }]{met}{Méthode}
 %--%

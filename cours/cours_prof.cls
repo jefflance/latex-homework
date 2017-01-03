@@ -253,10 +253,10 @@
     \subsection{#1}
 }
 
-% text ghosting
-\NewDocumentCommand \ghost { } {%
-    \color{white}
-}
+% % text ghosting
+% \NewDocumentCommand \ghost { } {%
+%     \color{white}
+% }
 %-- %
 
 \makeatother

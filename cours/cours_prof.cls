@@ -254,9 +254,9 @@
 }
 
 % text ghosting
-\NewDocumentCommand \ghost { } {%
-    \color{white}
-}
+% \NewDocumentCommand \ghost { } {%
+%     \color{white}
+% }
 %-- %
 
 \makeatother

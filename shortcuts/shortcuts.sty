@@ -1,0 +1,148 @@
+%%%
+%%%
+%%% Extensions : shoDtcuts.sty
+%%% Version : 1.0
+%%% Date : 10/05/16
+%%% Auteur : Jeff LANCE
+%%% Notes : Cette extension peut demander l'ajout de certains packages.
+%%%         Il est conseillé de l'appeler dans un(e) classe/(package) appelant
+%%%         elle(lui)-même ces packages.
+%%%
+%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{shortcuts}[2016/05/16
+                            Définitions de raccourcis vers des macros, v1.0]
+
+
+
+%-- Environments
+% itemize
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+% enumerate
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+% descriptions
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+
+% questions
+\newcommand{\bq}{\begin{questions}}
+\newcommand{\eq}{\end{questions}}
+%--%
+
+
+
+%-- Typo
+% texte gras
+\newcommand{\tb}[1]{\textbf{#1}}
+
+%-- Texte
+% c'est-à-dire
+\NewDocumentCommand \cad { } {
+	{c'est-à-dire}
+}
+\NewDocumentCommand \Cad { } {
+	{C'est-à-dire}
+}
+
+%-- Maths
+% vecteurs i et j
+% utilise la syntax du package xparse non déclaré dans le préambule de ce
+% fichier.
+\NewDocumentCommand \veci { } {
+	\( \vec{\imath} \)
+}
+\NewDocumentCommand \vecj { } {
+	\( \vec{\jmath} \)
+}
+
+% ensembles
+
+\NewDocumentCommand \R { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{0\} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{R} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{R} \setminus \{#2\} \!\!}
+        }
+    }
+}
+\NewDocumentCommand \RQ { } {
+	\( \mathbb{R} \setminus \mathbb{Q} \)
+}
+\NewDocumentCommand \Q { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0\} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0, #2\} \!\!}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{Q} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{Q} \setminus \{#2\} \!\!}
+        }
+    }
+}
+\NewDocumentCommand \D { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{0\} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{0, #2\} \!\!}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{D} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{D} \setminus \{#2\} \!\!}
+        }
+    }
+}
+\NewDocumentCommand \Z { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0\} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0, #2\} \!\!}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{Z} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{Z} \setminus \{#2\} \!\!}
+        }
+    }
+}
+\NewDocumentCommand \N { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{0\} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{0, #2\} \!\!}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\!\!\! \mathbb{N} \!\!}
+        }{
+            \ensuremath{\!\!\! \mathbb{N} \setminus \{#2\} \!\!}
+        }
+    }
+}
+
+% \NewDocumentCommand \% {
+%   \si{\percent}
+% }
+
+%--%

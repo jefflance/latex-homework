@@ -70,6 +70,7 @@
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
+\RequirePackage{multirow}
 
 % mise en page
 \RequirePackage{varwidth}
@@ -93,13 +94,13 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 %% lh{largeur} : gauche - haut
 %\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
-%% ch{largeur} : centre - haut
-%\newcolumntype{ch}[1]{>{\centering\arraybackslash}p{#1}}
+% % ch{largeur} : centre - haut
+% \newcolumntype{H}[1]{>{\centering\arraybackslash}p{#1}}
 %% rh{largeur} : droite - haut
 %\newcolumntype{rh}[1]{>{\raggedleft}p{#1}}
-%% lc{largeur} : gauche - centre
-%\newcolumntype{lc}[1]{>{\raggedright}m{#1}}
-%% cc{largeur} : centre - centre
+% % lc{largeur} : gauche - centre
+% \newcolumntype{N}[1]{>{\raggedright}m{#1}}
+% % cc{largeur} : centre - centre
 % \newcolumntype{M}[1]{ >{\centering\arraybackslash} m{#1} }
 %% rc{largeur} : droite - centre
 %\newcolumntype{rc}[1]{>{\raggedleft}m{#1}}

@@ -65,6 +65,94 @@
 \graphicspath{{images/}}
 
 % mdframed
+% Fix for package see : http://tex.stackexchange.com/questions/179790/mdframed-how-to-change-the-separator-between-the-label-and-the-title-of-a-non-n#179794
+\DeclareDocumentCommand{\mdtheorem}{ O{} m o m o }%
+ {\ifcsdef{#2}%
+   {\mdf@PackageWarning{Environment #2 already exits\MessageBreak}}%
+   {%
+    \IfNoValueTF {#3}%
+     {%#3 not given -- number relationship
+      \IfNoValueTF {#5}%
+        {%#3+#5 not given
+        \@definecounter{#2}%
+        \expandafter\xdef\csname the#2\endcsname{\@thmcounter{#2}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#2}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }%
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}{\let\@temptitle\relax}{\def\@temptitle{\mdf@theoremseparator\ ##1}}% <- the problem was here
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+        }%
+        {%#5 given -- reset counter
+        \@definecounter{#2}\@newctr{#2}[#5]%
+        \expandafter\xdef\csname the#2\endcsname{\@thmcounter{#2}}%
+        \expandafter\xdef\csname the#2\endcsname{%
+               \expandafter\noexpand\csname the#5\endcsname \@thmcountersep%
+                  \@thmcounter{#2}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#2}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }%
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+        }%
+     }%
+     {%#3 given -- number relationship
+        \global\@namedef{the#2}{\@nameuse{the#3}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#3}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}{\let\@temptitle\relax}{\def\@temptitle{:\ ##1}}%
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+     }%
+   }%
+ }
+
 \mdfsetup{
     frametitlealignment=\raggedright,%
     innerbottommargin=2em,%

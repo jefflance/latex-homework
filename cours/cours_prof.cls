@@ -158,6 +158,7 @@
     frametitlealignment=\raggedright,%
     innerbottommargin=2em,%
 }
+% styles
 \tikzset{
     symbol/.style={
         rectangle, draw=white,

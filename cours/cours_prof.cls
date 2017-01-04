@@ -153,6 +153,7 @@
    }%
  }
 
+% global options
 \mdfsetup{
     frametitlealignment=\raggedright,%
     innerbottommargin=2em,%

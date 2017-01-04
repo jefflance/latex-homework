@@ -176,7 +176,7 @@
     xcolor,%
     % hidealllines=true, topline=true, bottomline=true,%
     shadow=true,%
-    background=gray!40,%
+    % backgroundcolor=gray!40,% FOR TEST ONLY
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                 node[symbol] { \faFileTextO };
                },%

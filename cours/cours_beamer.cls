@@ -288,7 +288,7 @@
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
-	\begin{block} {#1}
+	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
 }
@@ -414,9 +414,9 @@
 				}
 			}
 		\stepcounter{applicationcounter}
-		\begin{block}{#2 \cType{applicationcounter}\ }
+		\begin{block}{\faFileTextO \hspace{.125em} #2 \cType{applicationcounter}\ }
 	}{
-		\begin{block}{#2\ }
+		\begin{block}{\faFileTextO \hspace{.125em} #2\ }
 	}
 }{%end
 	\end{block}

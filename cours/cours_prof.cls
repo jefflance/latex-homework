@@ -305,17 +305,17 @@
                 },%
 }
 
-\mdtheorem[style=cmpl, theoremseparator={ - }, theoremspace={}, roundcorner=8pt]{déf}{Définition}
-\mdtheorem[style=cmpl, theoremseparator={ - }, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
-\mdtheorem[style=cmpl, theoremseparator={ - }, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
-\mdtheorem[style=frm, theoremseparator={ - }, theoremspace={}]{pre}{Preuve}
-\mdtheorem[style=qte, theoremseparator={ - }, theoremspace={}]{voc}{Vocabulaire}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
+\mdtheorem[style=qte, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
 \mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
-\mdtheorem[style=warn, theoremseparator={ - }, theoremspace={}]{rmq}{Remarque}
-\mdtheorem[style=frm, theoremseparator={ - }, theoremspace={}]{exe}{Exemple}
-\mdtheorem[style=todo, theoremseparator={ - }, theoremspace={}]{exo}{Exercice}
-\mdtheorem[style=todo, theoremseparator={ - }, theoremspace={}]{app}{Application}
-\mdtheorem[style=todo, theoremseparator={ - }, theoremspace={}]{met}{Méthode}
+\mdtheorem[style=warn, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 %--%
 
 

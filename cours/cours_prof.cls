@@ -108,13 +108,17 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faPencil };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
 }
 \mdfdefinestyle{dash}{%
     linecolor=white,linewidth=1pt,%
@@ -139,21 +143,25 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
+                node[symbol] { \faQuoteLeft }
                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                node[symbol] { \faQuoteRight };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
 }
 \mdfdefinestyle{todo}{%
     linecolor=white,linewidth=1pt,%
@@ -170,13 +178,17 @@
     shadow=true,%
     background=gray!40,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                node[symbol] { \faFileTextO };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
 }
 \mdfdefinestyle{warn}{%
     linecolor=black,linewidth=1pt,%
@@ -190,13 +202,17 @@
     xcolor,%
     hidealllines=true, leftline=true,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                node[symbol] { \faExclamationTriangle };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
 }
 
 \mdtheorem[style=cmpl, theoremseparator={ - }, roundcorner=8pt]{déf}{Définition}

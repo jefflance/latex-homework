@@ -180,7 +180,7 @@
 \mdfdefinestyle{clr}{%
 	linecolor=white,linewidth=0pt,%
 	leftmargin=0,rightmargin=0,%
-	innertopmargin=0,innerbottommargin=0,%
+	innertopmargin=1em,innerbottommargin=1em,%
 	innerleftmargin=.5em,innerrightmargin=.5em,%
 	skipabove=0,skipbelow=0,%
 	frametitlerule=false,%

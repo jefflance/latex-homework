@@ -264,15 +264,24 @@
 	\end{block}
 }
 %
-\NewDocumentEnvironment{ppt}{ g }{%begin
+\NewDocumentEnvironment{ppt}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
-	\IfNoValueTF {#1} {
-		\begin{block} {Propriété}
+  \IfBooleanTF #1
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {}
+		}{
+			\begin{block} {#2}
+		}
 	}{
-		\begin{block} {Propriété - #1}
+		\IfNoValueTF {#2} {
+			\begin{block} {Propriété}
+		}{
+			\begin{block} {Propriété - #2}
+		}
 	}
 }{%end
-	\end{block}
+		\end{block}
 }
 %
 \NewDocumentEnvironment{pre}{ g }{%begin

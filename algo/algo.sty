@@ -20,11 +20,17 @@
 % \RequirePackage{commun}
 
 % ALGORITHMIE
-\RequirePackage{algorithmicx}
+\RequirePackage{algpseudocode,algorithm,algorithmicx}
 %-- %
 
 
 
 % AlgoBox
-\algblock[variables]{VARIABLES}{}
-\algblock[algorithme]{DEBUT_ALGORITHME}{FIN_ALGORITHME}
+\NewDocumentEnvironment{code}{ G{algobox} }{%begin
+  \algnewcommand{\variables}{\State\textbf{VARIABLES}}
+  \algblock[algorithme]{DEBUT_ALGORITHME}{FIN_ALGORITHME}
+
+  \begin{algorithmic}
+}{%end
+  \end{algorithmic}
+}

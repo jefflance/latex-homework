@@ -23,12 +23,21 @@
 \RequirePackage{algpseudocode,algorithm,algorithmicx}
 %-- %
 
+\newfontfamily\UbuntuMono[Ligatures=TeX]{ubuntumono}
+
 
 
 % AlgoBox
-\NewDocumentEnvironment{code}{ G{algobox} }{%begin
-  \algnewcommand{\variables}{\State\textbf{VARIABLES}}
-  \algblock[algorithme]{DEBUT_ALGORITHME}{FIN_ALGORITHME}
+\algnewcommand{\prend}[2]{\State #1 \textbf{PREND\_LA\_VALEUR} #2}
+\algnewcommand{\vars}[2]{\State \textbf{VARIABLES}}
+
+\NewDocumentEnvironment{algobox}{ }{%begin
+  \UbuntuMono
+  % \algsetblockx[variables]{bVARS}{eVARS}{}{1cm}{\textbf{VARIABLES}}{}
+  % \algblockx[traitement]{debut}{fin}{\textbf{\UbuntuMono DEBUT\_ALGORITHME}}{\textbf{\UbuntuMono FIN\_ALGORITHME}}
+  \algsetblockx[traitement]{debut}{fin}{}{1cm}{\textbf{DEBUT\_ALGORITHME}}{\textbf{FIN\_ALGORITHME}}
+
+  % \algnewcommand{\PREND}[2]{\State #1 \textbf{PREND\_LA\_VALEUR} #2}
 
   \begin{algorithmic}
 }{%end

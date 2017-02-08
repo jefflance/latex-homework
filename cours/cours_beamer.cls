@@ -264,15 +264,24 @@
 	\end{block}
 }
 %
-\NewDocumentEnvironment{ppt}{ g }{%begin
+\NewDocumentEnvironment{ppt}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
-	\IfNoValueTF {#1} {
-		\begin{block} {Propriété}
+  \IfBooleanTF #1
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {}
+		}{
+			\begin{block} {#2}
+		}
 	}{
-		\begin{block} {Propriété - #1}
+		\IfNoValueTF {#2} {
+			\begin{block} {Propriété}
+		}{
+			\begin{block} {Propriété - #2}
+		}
 	}
 }{%end
-	\end{block}
+		\end{block}
 }
 %
 \NewDocumentEnvironment{pre}{ g }{%begin
@@ -288,7 +297,7 @@
 %
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
-	\begin{block} {#1}
+	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
 }
@@ -414,9 +423,9 @@
 				}
 			}
 		\stepcounter{applicationcounter}
-		\begin{block}{#2 \cType{applicationcounter}\ }
+		\begin{block}{\faFileTextO \hspace{.125em} #2 \cType{applicationcounter}\ }
 	}{
-		\begin{block}{#2\ }
+		\begin{block}{\faFileTextO \hspace{.125em} #2\ }
 	}
 }{%end
 	\end{block}

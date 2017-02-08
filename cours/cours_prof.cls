@@ -65,10 +65,100 @@
 \graphicspath{{images/}}
 
 % mdframed
+% Fix for package see : http://tex.stackexchange.com/questions/179790/mdframed-how-to-change-the-separator-between-the-label-and-the-title-of-a-non-n#179794
+\DeclareDocumentCommand{\mdtheorem}{ O{} m o m o }%
+ {\ifcsdef{#2}%
+   {\mdf@PackageWarning{Environment #2 already exits\MessageBreak}}%
+   {%
+    \IfNoValueTF {#3}%
+     {%#3 not given -- number relationship
+      \IfNoValueTF {#5}%
+        {%#3+#5 not given
+        \@definecounter{#2}%
+        \expandafter\xdef\csname the#2\endcsname{\@thmcounter{#2}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#2}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }%
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}{\let\@temptitle\relax}{\def\@temptitle{\mdf@theoremseparator\ ##1}}% <- the problem was here
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+        }%
+        {%#5 given -- reset counter
+        \@definecounter{#2}\@newctr{#2}[#5]%
+        \expandafter\xdef\csname the#2\endcsname{\@thmcounter{#2}}%
+        \expandafter\xdef\csname the#2\endcsname{%
+               \expandafter\noexpand\csname the#5\endcsname \@thmcountersep%
+                  \@thmcounter{#2}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#2}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }%
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+        }%
+     }%
+     {%#3 given -- number relationship
+        \global\@namedef{the#2}{\@nameuse{the#3}}%
+        \newenvironment{#2}[1][]{%
+          \refstepcounter{#3}%
+          \ifstrempty{##1}%
+            {\let\@temptitle\relax}%
+            {%
+             \def\@temptitle{\mdf@theoremseparator%
+                             \mdf@theoremspace%
+                             \mdf@theoremtitlefont%
+                             ##1}%
+             \mdf@thm@caption{#2}{{#4}{\csname the#2\endcsname}{##1}}%
+             }
+          \begin{mdframed}[#1,frametitle={\strut#4\ \csname the#2\endcsname%
+                                          \@temptitle}]}%
+          {\end{mdframed}}%
+        \newenvironment{#2*}[1][]{%
+          \ifstrempty{##1}{\let\@temptitle\relax}{\def\@temptitle{:\ ##1}}%
+          \begin{mdframed}[#1,frametitle={\strut#4\@temptitle}]}%
+          {\end{mdframed}}%
+     }%
+   }%
+ }
+
+% global options
 \mdfsetup{
     frametitlealignment=\raggedright,%
     innerbottommargin=2em,%
 }
+% styles
 \tikzset{
     symbol/.style={
         rectangle, draw=white,
@@ -90,7 +180,7 @@
 \mdfdefinestyle{clr}{%
 	linecolor=white,linewidth=0pt,%
 	leftmargin=0,rightmargin=0,%
-	innertopmargin=0,innerbottommargin=0,%
+	innertopmargin=1em,innerbottommargin=1em,%
 	innerleftmargin=.5em,innerrightmargin=.5em,%
 	skipabove=0,skipbelow=0,%
 	frametitlerule=false,%
@@ -108,13 +198,17 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                node[symbol] { \faPencil };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faPencil} };},%
+                 node[symbol] { \faPencil };
+                },%
 }
 \mdfdefinestyle{dash}{%
     linecolor=white,linewidth=1pt,%
@@ -139,21 +233,25 @@
     nobreak=true,%
     xcolor,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
+                node[symbol] { \faQuoteLeft }
                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                node[symbol] { \faQuoteRight };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faQuoteLeft} },%
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faicon{\faQuoteRight} };},%
+                 node[symbol] { \faQuoteLeft }
+                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+                 node[symbol] { \faQuoteRight };
+                },%
 }
 \mdfdefinestyle{todo}{%
     linecolor=white,linewidth=1pt,%
@@ -168,15 +266,19 @@
     xcolor,%
     % hidealllines=true, topline=true, bottomline=true,%
     shadow=true,%
-    background=gray!40,%
+    % backgroundcolor=gray!40,% FOR TEST ONLY
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                node[symbol] { \faFileTextO };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\faFileTextO} };},%
+                 node[symbol] { \faFileTextO };
+                },%
 }
 \mdfdefinestyle{warn}{%
     linecolor=black,linewidth=1pt,%
@@ -190,26 +292,30 @@
     xcolor,%
     hidealllines=true, leftline=true,%
     firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                node[symbol] { \faExclamationTriangle };
+               },%
     secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
     middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
     singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faicon{\fa-exclamation-triangle} };},%
+                 node[symbol] { \faExclamationTriangle };
+                },%
 }
 
-\mdtheorem[style=cmpl, theoremseparator={ - }, roundcorner=8pt]{déf}{Définition}
-\mdtheorem[style=cmpl, theoremseparator={ - }, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
-\mdtheorem[style=cmpl, theoremseparator={ - }, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
-\mdtheorem[style=frm, theoremseparator={ - }]{pre}{Preuve}
-\mdtheorem[style=qte, theoremseparator={ - }]{voc}{Vocabulaire}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
+\mdtheorem[style=qte, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
 \mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
-\mdtheorem[style=warn, theoremseparator={ - }]{rmq}{Remarque}
-\mdtheorem[style=frm, theoremseparator={ - }]{exe}{Exemple}
-\mdtheorem[style=todo, theoremseparator={ - }]{exo}{Exercice}
-\mdtheorem[style=todo, theoremseparator={ - }]{app}{Application}
-\mdtheorem[style=todo, theoremseparator={ - }]{met}{Méthode}
+\mdtheorem[style=warn, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
+\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 %--%
 
 
@@ -253,7 +359,11 @@
     \subsection{#1}
 }
 
+<<<<<<< HEAD
 % text ghosting
+=======
+% % text ghosting
+>>>>>>> master
 % \NewDocumentCommand \ghost { } {%
 %     \color{white}
 % }

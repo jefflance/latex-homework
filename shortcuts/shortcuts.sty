@@ -1,4 +1,4 @@
-%%%
+gx%%%
 %%%
 %%% Extensions : shoDtcuts.sty
 %%% Version : 1.0
@@ -11,10 +11,11 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{shortcuts}[2016/05/16
-                            Définitions de raccourcis vers des macros, v1.0]
+\ProvidesPackage{shortcuts}[2016/05/16 Définitions de raccourcis vers des macros, v1.0]
 
 
+%% MACROS : DEBUT
+\makeatletter
 
 %-- Environments
 % itemize
@@ -61,7 +62,6 @@
 }
 
 % ensembles
-
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
@@ -141,4 +141,5 @@
     }
 }
 
-%--%
+\makeatother
+%% MACROS : FIN

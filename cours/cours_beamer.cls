@@ -156,7 +156,7 @@
 \makeatletter
 
 %-- Macros personnelles
-% \titre
+% \titre{TITRE}{ANNÉE}{AUTEUR}{LIEU}
 % defini le titre du document
 \newcommand{\titre}[4]{%
 	\title{#1}
@@ -184,7 +184,7 @@
 }
 
 
-% \partie | \sspartie
+% \partie{TITRE} et \sspartie{TITRE}
 % definie un slide de titre pour une (sous)section
 \newcounter{partiecounter}
 \newcounter{sspartiecounter}
@@ -233,6 +233,8 @@
 % blocks
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque, methode.
+%
+% déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor{block title}{fg=red,bg=blush!10!white}
 	\IfBooleanTF #1
@@ -253,6 +255,7 @@
 		\end{block}
 }
 %
+% thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!90!white}
 	\IfNoValueTF {#1} {
@@ -264,6 +267,7 @@
 	\end{block}
 }
 %
+% ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
   \IfBooleanTF #1
@@ -284,6 +288,7 @@
 		\end{block}
 }
 %
+% pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
 	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
 	\IfNoValueTF {#1} {
@@ -295,6 +300,7 @@
 	\end{block}
 }
 %
+% rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
@@ -302,6 +308,7 @@
 	\end{block}
 }
 %
+% met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
 	\setbeamercolor{block title}{fg=black,bg=amber!75!white}%
@@ -348,6 +355,7 @@
 	\end{block}
 }
 %
+% exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}%
 	\begin{block} {#1}
@@ -355,6 +363,7 @@
 	\end{block}
 }
 %
+% exo<0|i|I|a|A|1>(TITRE)
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
 	\setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}%
@@ -393,6 +402,7 @@
 	\end{block}
 }
 %
+% app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
   \setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}%

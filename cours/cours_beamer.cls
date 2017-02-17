@@ -29,7 +29,7 @@
 \RequirePackage{xkeyval}
 %--%
 
-
+\makeatletter
 
 %-- definitions
 % firstcolor
@@ -152,8 +152,6 @@
 %--%
 
 
-%% MACROS : DEBUT
-\makeatletter
 
 %-- Macros personnelles
 % \titre{TITRE}{ANNÉE}{AUTEUR}{LIEU}
@@ -465,4 +463,3 @@
 % - %
 
 \makeatother
-%% MACROS : FIN

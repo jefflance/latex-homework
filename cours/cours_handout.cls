@@ -32,15 +32,13 @@
 \RequirePackage{pgfpages}
 %--%
 
-
+\makeatletter
 
 %-- paramètrages
 \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
 %--%
 
 
-%% MACROS : DEBUT
-\makeatletter
 
 %-- Macros personnelles
 %--%
@@ -50,4 +48,3 @@
 % - %
 
 \makeatother
-%% MACROS : FIN

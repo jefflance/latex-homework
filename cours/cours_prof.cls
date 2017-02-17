@@ -167,142 +167,142 @@
     }
 }
 \mdfdefinestyle{frm}{%
-    linecolor=black,linewidth=1pt,%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=.5em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
+  linecolor=black,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
 }
 \mdfdefinestyle{clr}{%
-	linecolor=white,linewidth=0pt,%
-	leftmargin=0,rightmargin=0,%
-	innertopmargin=1em,innerbottommargin=1em,%
-	innerleftmargin=.5em,innerrightmargin=.5em,%
-	skipabove=0,skipbelow=0,%
-	frametitlerule=false,%
-	frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-	xcolor,%
+  linecolor=white,linewidth=0pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  xcolor,%
 }
 \mdfdefinestyle{cmpl}{%
-    linecolor=black,linewidth=1pt,%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
-    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faPencil };
-               },%
-    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faPencil };
-                },%
-    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faPencil };
-                },%
-    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faPencil };
-                },%
+  linecolor=black,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faPencil };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
 }
 \mdfdefinestyle{dash}{%
-    linecolor=white,linewidth=1pt,%
-    tikzsetting={draw=black,dashed,line width=1pt},%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=.5em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,dashed,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
 }
 \mdfdefinestyle{qte}{%
-    linecolor=white,linewidth=1pt,%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
-    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faQuoteLeft }
-                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                node[symbol] { \faQuoteRight };
-               },%
-    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faQuoteLeft }
-                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                 node[symbol] { \faQuoteRight };
-                },%
-    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faQuoteLeft }
-                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                 node[symbol] { \faQuoteRight };
-                },%
-    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faQuoteLeft }
-                 \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
-                 node[symbol] { \faQuoteRight };
-                },%
+  linecolor=white,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faQuoteLeft }
+              \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+              node[symbol] { \faQuoteRight };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft }
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft }
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft }
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
 }
 \mdfdefinestyle{todo}{%
-    linecolor=white,linewidth=1pt,%
-    tikzsetting={draw=black,line width=1pt},%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
-    % hidealllines=true, topline=true, bottomline=true,%
-    shadow=true,%
-    % backgroundcolor=gray!40,% FOR TEST ONLY
-    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faFileTextO };
-               },%
-    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faFileTextO };
-                },%
-    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faFileTextO };
-                },%
-    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faFileTextO };
-                },%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  % hidealllines=true, topline=true, bottomline=true,%
+  shadow=true,%
+  % backgroundcolor=gray!40,% FOR TEST ONLY
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faFileTextO };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faFileTextO };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faFileTextO };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faFileTextO };
+              },%
 }
 \mdfdefinestyle{warn}{%
-    linecolor=black,linewidth=1pt,%
-    leftmargin=0,rightmargin=0,%
-    innertopmargin=1em,innerbottommargin=1em,%
-    innerleftmargin=1em,innerrightmargin=.5em,%
-    skipabove=0,skipbelow=0,%
-    frametitlerule=false,%
-    frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-    nobreak=true,%
-    xcolor,%
-    hidealllines=true, leftline=true,%
-    firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                node[symbol] { \faExclamationTriangle };
-               },%
-    secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faExclamationTriangle };
-                },%
-    middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faExclamationTriangle };
-                },%
-    singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-                 node[symbol] { \faExclamationTriangle };
-                },%
+  linecolor=black,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faExclamationTriangle };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
 }
 
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}

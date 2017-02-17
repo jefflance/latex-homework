@@ -63,7 +63,7 @@
 
 
 
-%-- paramètrages
+%-- parametrages
 \graphicspath{{images/}}
 \addmediapath{{videos/}}
 
@@ -167,7 +167,7 @@
 }
 
 
-% \debut | \fin
+% \debut et \fin
 % renvoie les slides d'intro et de cloture du document
 \newcommand{\debut}{%
 	\begin{frame}
@@ -461,7 +461,7 @@
 %--%
 
 
-% Macros modifiées
+% Macros modifiees
 % - %
 
 \makeatother

@@ -36,7 +36,7 @@
 \RequirePackage{pageslts}
 %--%
 
-
+\makeatletter
 
 %-- paramétrages
 % metapost
@@ -320,9 +320,6 @@
 
 
 
-%% MACROS : DEBUT
-\makeatletter
-
 % Fix error from KOMA-Script scrartcl class.
 \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 
@@ -366,4 +363,3 @@
 %-- %
 
 \makeatother
-%% MACROS : FIN

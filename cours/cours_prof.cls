@@ -180,7 +180,7 @@
 \mdfdefinestyle{clr}{%
   linecolor=white,linewidth=0pt,%
   leftmargin=0,rightmargin=0,%
-  innertopmargin=1em,innerbottommargin=1em,%
+  innertopmargin=.5em,innerbottommargin=.5em,%
   innerleftmargin=.5em,innerrightmargin=.5em,%
   skipabove=0,skipbelow=0,%
   frametitlerule=false,%
@@ -233,22 +233,22 @@
   nobreak=true,%
   xcolor,%
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-              node[symbol] { \faQuoteLeft }
+              node[symbol] { \faQuoteLeft };
               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
               node[symbol] { \faQuoteRight };
              },%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faQuoteLeft }
+               node[symbol] { \faQuoteLeft };
                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
                node[symbol] { \faQuoteRight };
               },%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faQuoteLeft }
+               node[symbol] { \faQuoteLeft };
                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
                node[symbol] { \faQuoteRight };
               },%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faQuoteLeft }
+               node[symbol] { \faQuoteLeft };
                \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
                node[symbol] { \faQuoteRight };
               },%
@@ -306,13 +306,14 @@
 }
 
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{défn}{Définition}
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
 \mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
 \mdtheorem[style=qte, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
 \mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
 \mdtheorem[style=warn, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
-\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
+\mdtheorem[style=dash, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{met}{Méthode}

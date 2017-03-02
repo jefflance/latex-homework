@@ -39,6 +39,22 @@
 % texte gras
 \newcommand{\tb}[1]{\textbf{#1}}
 
+% \createColor{couleur}
+% Create a macro which can be accessed with the name \couleur.
+% This macro make the following text to be colored in couleur.
+\newcommand\createColor[1]{%
+\expandafter\newcommand\csname #1\endcsname{\color{#1}}}
+
+% Put text in white for ghosting text in some docs.
+\NewDocumentCommand \ghost { } {%
+    \color{white}
+}
+
+% Put text in red.
+\NewDocumentCommand \red { } {%
+    \color{red}
+}
+
 %-- Texte
 % c'est-à-dire
 \NewDocumentCommand \cad { } {
@@ -138,5 +154,8 @@
         }
     }
 }
+
+
+
 
 \makeatother

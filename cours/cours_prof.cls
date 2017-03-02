@@ -308,7 +308,9 @@
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
 \mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{défn}{Définition}
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thmn}{Théorème}
 \mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{pptn}{Propriété}
 \mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
 \mdtheorem[style=qte, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
 \mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}

@@ -166,7 +166,8 @@
         overlay
     }
 }
-\mdfdefinestyle{frm}{%
+% default: a standard square frame with thick border
+\mdfdefinestyle{default}{%
   linecolor=black,linewidth=1pt,%
   leftmargin=0,rightmargin=0,%
   innertopmargin=1em,innerbottommargin=1em,%
@@ -177,7 +178,8 @@
   nobreak=true,%
   xcolor,%
 }
-\mdfdefinestyle{clr}{%
+% clear: a no-border frame
+\mdfdefinestyle{clear}{%
   linecolor=white,linewidth=0pt,%
   leftmargin=0,rightmargin=0,%
   innertopmargin=.5em,innerbottommargin=.5em,%
@@ -187,7 +189,8 @@
   frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
   xcolor,%
 }
-\mdfdefinestyle{cmpl}{%
+% complete: a square frame with a pencil icon in upper left corner
+\mdfdefinestyle{complete}{%
   linecolor=black,linewidth=1pt,%
   leftmargin=0,rightmargin=0,%
   innertopmargin=1em,innerbottommargin=1em,%
@@ -210,9 +213,10 @@
                node[symbol] { \faPencil };
               },%
 }
-\mdfdefinestyle{dash}{%
+% dashed: dashed square frame
+\mdfdefinestyle{dotted}{%
   linecolor=white,linewidth=1pt,%
-  tikzsetting={draw=black,dashed,line width=1pt},%
+  tikzsetting={draw=black,dotted,line width=1pt},%
   leftmargin=0,rightmargin=0,%
   innertopmargin=1em,innerbottommargin=1em,%
   innerleftmargin=.5em,innerrightmargin=.5em,%
@@ -222,7 +226,9 @@
   nobreak=true,%
   xcolor,%
 }
-\mdfdefinestyle{qte}{%
+% quote: frame with no borders but with a beginning quote at upper left and
+%        an ending quote at lower right
+\mdfdefinestyle{quote}{%
   linecolor=white,linewidth=1pt,%
   leftmargin=0,rightmargin=0,%
   innertopmargin=1em,innerbottommargin=1em,%
@@ -253,6 +259,7 @@
                node[symbol] { \faQuoteRight };
               },%
 }
+% todo: a shadowed square frame with a file text icon at upper left
 \mdfdefinestyle{todo}{%
   linecolor=white,linewidth=1pt,%
   tikzsetting={draw=black,line width=1pt},%
@@ -280,7 +287,36 @@
                node[symbol] { \faFileTextO };
               },%
 }
-\mdfdefinestyle{warn}{%
+% todo: a shadowed square frame with a light bulb icon at upper left
+\mdfdefinestyle{idea}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true, % topline=true, bottomline=true,%
+  % shadow=true,%
+  % backgroundcolor=gray!40,% FOR TEST ONLY
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faLightbulbO };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+}
+% warn: frame with only left border and warning icon at upper left
+\mdfdefinestyle{warning}{%
   linecolor=black,linewidth=1pt,%
   leftmargin=0,rightmargin=0,%
   innertopmargin=1em,innerbottommargin=1em,%
@@ -305,20 +341,20 @@
               },%
 }
 
-\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
-\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{défn}{Définition}
-\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
-\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thmn}{Théorème}
-\mdtheorem[style=cmpl, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
-\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{pptn}{Propriété}
-\mdtheorem[style=frm, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
-\mdtheorem[style=qte, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
-\mdtheorem[style=qte, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
-\mdtheorem[style=warn, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
-\mdtheorem[style=dash, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
+\mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{déf}{Définition}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}, roundcorner=8pt]{défn}{Définition}
+\mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thm}{Théorème}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thmn}{Théorème}
+\mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{pptn}{Propriété}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
+\mdtheorem[style=quote, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
+\mdtheorem[style=quote, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
+\mdtheorem[style=warning, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
+\mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
-\mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
+\mdtheorem[style=idea, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 %--%
 
 

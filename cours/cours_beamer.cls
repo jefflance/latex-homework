@@ -338,15 +338,15 @@
 		}
 		\stepcounter{methodecounter}
 		\IfNoValueTF {#2} {
-			\begin{block}{Méthode \cType{methodecounter}\ }
+			\begin{block}{\faLightbulbO \hspace{.125em} Méthode \cType{methodecounter}\ }
 		}{
-			\begin{block}{Méthode \cType{methodecounter}\ - #2}
+			\begin{block}{\faLightbulbO \hspace{.125em} Méthode \cType{methodecounter}\ - #2}
 		}
 	}{
 		\IfNoValueTF {#2} {
-			\begin{block}{Méthode\ }
+			\begin{block}{\faLightbulbO \hspace{.125em} Méthode\ }
 		}{
-			\begin{block}{Méthode\ - #2}
+			\begin{block}{\faLightbulbO \hspace{.125em} Méthode\ - #2}
 		}
 	}
 }{%end

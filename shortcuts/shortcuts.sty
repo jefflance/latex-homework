@@ -39,15 +39,15 @@
 % texte gras
 \newcommand{\tb}[1]{\textbf{#1}}
 
-% \createColor{couleur}
+% \newColorCommand{couleur}
 % Create a macro which can be accessed with the name \couleur.
 % This macro make the following text to be colored in couleur.
-\newcommand\createColor[1]{%
+\newcommand\newColorCommand[1]{%
 \expandafter\newcommand\csname #1\endcsname{\color{#1}}}
 
-% Put text in some colors.
-\createColor{red}
-\createColor{white}
+% Create new color commands
+\newColorCommand{red}
+\newColorCommand{white}
 
 % Another shortcut for white text.
 \NewDocumentCommand \ghost { } {%

@@ -347,8 +347,10 @@
 \mdtheorem[style=default, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{thmn}{Théorème}
 \mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{ppt}{Propriété}
 \mdtheorem[style=default, theoremseparator={ -}, theoremspace={}, outerlinewidth=1pt, outerlinecolor=black]{pptn}{Propriété}
-\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
-\mdtheorem[style=quote, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
+\mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}]{pre}{Preuve}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}]{pren}{Preuve}
+\mdtheorem[style=complete, theoremseparator={ -}, theoremspace={}]{voc}{Vocabulaire}
+\mdtheorem[style=default, theoremseparator={ -}, theoremspace={}]{vocn}{Vocabulaire}
 \mdtheorem[style=quote, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
 \mdtheorem[style=warning, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
 \mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}

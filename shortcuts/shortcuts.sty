@@ -11,7 +11,8 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{shortcuts}[2016/05/16 Définitions de raccourcis vers des macros, v1.0]
+\ProvidesPackage{shortcuts}[2016/05/16 Définitions de raccourcis vers des macros
+                                       existantes, v1.0]
 
 \makeatletter
 
@@ -38,16 +39,6 @@
 %-- Typo
 % texte gras
 \newcommand{\tb}[1]{\textbf{#1}}
-
-% \newColorCommand{couleur}
-% Create a macro which can be accessed with the name \couleur.
-% This macro make the following text to be colored in couleur.
-\newcommand\newColorCommand[1]{%
-\expandafter\newcommand\csname #1\endcsname{\color{#1}}}
-
-% Create new color commands
-\newColorCommand{red}
-\newColorCommand{white}
 
 % Another shortcut for white text.
 \NewDocumentCommand \ghost { } {%

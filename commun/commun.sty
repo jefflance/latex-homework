@@ -125,17 +125,19 @@
 % }
 
 % polices
-\newfontfamily\Comic[Ligatures=TeX]{Comic Sans MS}
-\newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
 \newfontfamily\Annie[Ligatures=TeX]{Annie Use Your Telescope}
 \newfontfamily\Architects[Ligatures=TeX]{Architects Daughter}
-\newfontfamily\Julee[Ligatures=TeX]{Julee}
+\newfontfamily\Bristol[Ligatures=TeX]{Bristol}
+\newfontfamily\Comic[Ligatures=TeX]{Comic Sans MS}
 \newfontfamily\Delius[Ligatures=TeX]{Delius}
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
+\newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
+\newfontfamily\Handlee[Ligatures=TeX]{Handlee}
+\newfontfamily\Julee[Ligatures=TeX]{Julee}
 \newfontfamily\NixieOne[Ligatures=TeX]{Nixie One}
+\newfontfamily\PenguinAttack[Ligatures=TeX]{PenguinAttack}
 \newfontfamily\PokemonHollow[Ligatures=TeX]{Pokemon Hollow}
 \newfontfamily\PokemonSolid[Ligatures=TeX]{Pokemon Solid}
-\newfontfamily\PenguinAttack[Ligatures=TeX]{PenguinAttack}
 \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
 % tentative pour une commande généraliste
 % \NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
@@ -151,6 +153,15 @@
   }
 }
 
+% \newColorCommand{color}
+% Create a macro which can be accessed with the name "\color".
+% This macro make the following text to be colored in color.
+\newcommand\newColorCommand[1]{%
+\expandafter\newcommand\csname #1\endcsname{\color{#1}}}
+
+% Create new color commands
+\newColorCommand{red}
+\newColorCommand{white}
 %--%
 
 

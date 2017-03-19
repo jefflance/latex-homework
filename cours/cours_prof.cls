@@ -8,7 +8,8 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cours_prof}[2016/11/09 Document de cours imprimable A4 pour prof ou élève, V1.0]
+\ProvidesClass{cours_prof}[2016/11/09 Document de cours imprimable A4 pour
+                           prof ou élève, V1.0]
 
 
 

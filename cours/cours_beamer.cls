@@ -12,14 +12,16 @@
 
 
 
-%-- classe de base
+
+%-- PARENT CLASS
 % inutile de passer l'option [utf8] puisque chargee dans commun.sty
 \LoadClassWithOptions{beamer}
-%--%
+%---------------
 
 
 
-%-- extensions
+
+%-- PACKAGES CALLS
 % perso
 \RequirePackage{couleurs}
 \RequirePackage{commun}
@@ -27,14 +29,17 @@
 % autres
 \RequirePackage{media9}
 \RequirePackage{xkeyval}
-%--%
+%-----------------
 
 \makeatletter
 
-%-- definitions
-% firstcolor
+
+
+
+%-- DEF OPTIONS
+% firstcolor / secondcolor
 % 	option de classe
-%	  couleur générale du beamer
+%	  couleurs générales du beamer
 %
 %   "classical" way
 %   \def\firstcolor{lapislazuli}%
@@ -46,7 +51,7 @@
 %   \define@key{cours_beamer.cls}{secondcolor}[-\firstcolor]{%
 %     \def\secondcolor{#1}%
 %   }
-%--%
+
 \DeclareOptionX{firstcolor}[lapislazuli]{%
   \def\firstcolor{#1}%
 }
@@ -54,44 +59,51 @@
   \def\secondcolor{#1}%
 }
 
-
-
-%-- options
 \ExecuteOptionsX{firstcolor, secondcolor}
 \ProcessOptionsX
-%--%
+%--------------
 
 
 
-%-- parametrages
+%-- SETTINGS
+
 \graphicspath{{images/}}
 \addmediapath{{videos/}}
 
-% theme beamer
+
+%%% THEME BEAMER %%%
 \usetheme{Madrid}
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme{professionalfonts}
 \usecolortheme[named=\firstcolor]{structure}
 \setbeamertemplate{footline}{}
+%%%%%%%%%%%%%%%%%%%%
 
-% enumerate
+
+%%% ENUMERATE %%%
 \setbeamerfont{enumerate item}{family=\rmfamily}
 \setbeamercolor{enumerate item}{fg=black}
 \setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
+%%%%%%%%%%%%%%%%%
 
-% itemize
+
+%%% ITEMIZE %%%
 \setbeamertemplate{itemize item}[circle]
 \setbeamercolor{itemize item}{fg=black}
 \setbeamertemplate{itemize subitem}{\textendash}
+%%%%%%%%%%%%%%%
 
-% navigation
+
+%%% NAVIGATION %%%
 \setbeamertemplate{navigation symbols}{%
 	\insertframenavigationsymbol
 	\insertsectionnavigationsymbol
 }
+%%%%%%%%%%%%%%%%%%
 
-% ToC
+
+%%% ToC %%%
 % change l'espace vertical entre les sections
 \patchcmd{\beamer@sectionintoc}
 {\vfill}
@@ -115,8 +127,10 @@
 \setbeamercolor{section in toc}{fg=\secondcolor}
 \setbeamertemplate{subsection in toc}[bullets]
 \setbeamercolor{subsection in toc}{fg=\firstcolor}
+%%%%%%%%%%%
 
-% mdframed
+
+%%% MDFRAMED %%%
 \pgfdeclarehorizontalshading{partiebkg}{100bp}{
 	color(0bp)=(white!40);color(100bp)=(black!0)
 }
@@ -149,11 +163,15 @@
 		}
 	}
 }
-%--%
+%%%%%%%%%%%%%%%%
+
+
+%-----------
 
 
 
-%-- Macros personnelles
+%-- OWN COMMANDS
+
 % \titre{TITRE}{ANNÉE}{AUTEUR}{LIEU}
 % defini le titre du document
 \newcommand{\titre}[4]{%
@@ -164,7 +182,6 @@
 	\institute{#4}
 }
 
-
 % \debut et \fin
 % renvoie les slides d'intro et de cloture du document
 \newcommand{\debut}{%
@@ -172,7 +189,7 @@
 		\titlepage
 	\end{frame}
 }
-%
+
 \newcommand{\fin}{%
 	\section*{Plan}
 	\begin{frame}
@@ -180,7 +197,6 @@
 		\tableofcontents
 	\end{frame}
 }
-
 
 % \partie{TITRE} et \sspartie{TITRE}
 % definie un slide de titre pour une (sous)section
@@ -200,7 +216,7 @@
 		\end{center}
 	\end{frame}
 }
-%
+
 \NewDocumentCommand \sspartie { G{Sous-Partie} } {%
 	\def\cType{\arabic}
 	\stepcounter{sspartiecounter}
@@ -213,7 +229,6 @@
 		\end{center}
 	\end{frame}
 }
-
 
 % \ftitre
 % definie le titre des frames de section et de sous-section en fonction
@@ -228,10 +243,10 @@
 }
 
 
-% blocks
+%%% BLOCKS %%%
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque, methode.
-%
+
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor{block title}{fg=red,bg=blush!10!white}
@@ -252,7 +267,7 @@
 }{%end
 		\end{block}
 }
-%
+
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=red!90!white}
@@ -264,7 +279,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
@@ -285,7 +300,7 @@
 }{%end
 		\end{block}
 }
-%
+
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
 	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
@@ -297,7 +312,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
@@ -305,7 +320,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
@@ -352,7 +367,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}%
@@ -360,7 +375,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % exo<0|i|I|a|A|1>(TITRE)
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
@@ -399,7 +414,7 @@
 }{%end
 	\end{block}
 }
-%
+
 % app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
@@ -438,6 +453,7 @@
 }{%end
 	\end{block}
 }
+%%%%%%%%%%%%%%
 
 
 % \includemovie
@@ -456,10 +472,15 @@
 		}%
 	]{}{VPlayer.swf}%
 }
-%--%
 
 
-% Macros modifiees
-% - %
+%---------------
+
+
+
+
+%-- MODIFIED COMMANDS
+
+%--------------------
 
 \makeatother

@@ -397,10 +397,6 @@
     \subsection{#1}
 }
 
-% % text ghosting
-% \NewDocumentCommand \ghost { } {%
-%     \color{white}
-% }
 %-- %
 
 

@@ -371,7 +371,7 @@
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
 	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}%
-	\begin{block} {#1}
+	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
 	\end{block}
 }

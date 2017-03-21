@@ -226,6 +226,21 @@
   frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
   nobreak=true,%
   xcolor,%
+  %hidealllines=true, leftline=true, % topline=true, bottomline=true,%
+  % shadow=true,%
+  % backgroundcolor=gray!40,% FOR TEST ONLY
+  % firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+  %             node[symbol] { \faLightbulbO };
+  %            },%
+  % secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+  %              node[symbol] { \faLightbulbO };
+  %             },%
+  % middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+  %              node[symbol] { \faLightbulbO };
+  %             },%
+  % singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+  %              node[symbol] { \faLightbulbO };
+  %             },%
 }
 % quote: frame with no borders but with a beginning quote at upper left and
 %        an ending quote at lower right

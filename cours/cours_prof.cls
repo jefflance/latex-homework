@@ -401,6 +401,99 @@
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
+
+% Redirect all standard previously defined environments to their starred version
+% as they don't display numbering.
+\RenewDocumentEnvironment{déf}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{déf*}
+  }{
+    \begin{déf*}[#1]
+  }
+}{%end
+  \end{déf*}
+}
+
+\RenewDocumentEnvironment{thm}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{thm*}
+  }{
+    \begin{thm*}[#1]
+  }
+}{%end
+  \end{thm*}
+}
+
+\RenewDocumentEnvironment{ppt}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{ppt*}
+  }{
+    \begin{ppt*}[#1]
+  }
+}{%end
+  \end{ppt*}
+}
+
+\RenewDocumentEnvironment{exe}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{exe*}
+  }{
+    \begin{exe*}[#1]
+  }
+}{%end
+  \end{exe*}
+}
+
+\RenewDocumentEnvironment{qte}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{qte*}
+  }{
+    \begin{qte*}[#1]
+  }
+}{%end
+  \end{qte*}
+}
+
+\RenewDocumentEnvironment{rmq}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{rmq*}
+  }{
+    \begin{rmq*}[#1]
+  }
+}{%end
+  \end{rmq*}
+}
+
+\RenewDocumentEnvironment{voc}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{voc*}
+  }{
+    \begin{voc*}[#1]
+  }
+}{%end
+  \end{voc*}
+}
+
+\RenewDocumentEnvironment{app}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{app*}
+  }{
+    \begin{app*}[#1]
+  }
+}{%end
+  \end{app*}
+}
+
+\RenewDocumentEnvironment{met}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{met*}
+  }{
+    \begin{met*}[#1]
+  }
+}{%end
+  \end{met*}
+}
+
 %--%
 
 

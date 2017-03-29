@@ -303,7 +303,7 @@
                node[symbol] { \faFileTextO };
               },%
 }
-% todo: a shadowed square frame with a light bulb icon at upper left
+% idea: a shadowed square frame with a light bulb icon at upper left
 \mdfdefinestyle{idea}{%
   linecolor=white,linewidth=1pt,%
   tikzsetting={draw=black,line width=1pt},%
@@ -329,6 +329,34 @@
               },%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
                node[symbol] { \faLightbulbO };
+              },%
+}
+% method: a shadowed square frame with cogs icon at upper left
+\mdfdefinestyle{method}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true, % topline=true, bottomline=true,%
+  % shadow=true,%
+  % backgroundcolor=gray!40,% FOR TEST ONLY
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faCogs };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
               },%
 }
 % warn: frame with only left border and warning icon at upper left
@@ -372,7 +400,7 @@
 \mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
-\mdtheorem[style=idea, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
+\mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 %--%
 
 

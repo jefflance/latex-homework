@@ -69,6 +69,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
+\RequirePackage{tipfr}
 
 % tableau
 \RequirePackage{array}
@@ -155,6 +156,7 @@
 \newfontfamily\PokemonHollow[Ligatures=TeX]{Pokemon Hollow}
 \newfontfamily\PokemonSolid[Ligatures=TeX]{Pokemon Solid}
 \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
+\newfontfamily\TrebuchetMS[Ligatures=TeX]{Trebuchet MS}
 % tentative pour une commande généraliste
 % \NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
 % 	\fontencoding{#2}%
@@ -174,9 +176,19 @@
 % Create new color commands
 \newColorCommand{red}
 \newColorCommand{white}
+\newColorCommand{gray}
 %%%%%%%%%%%%%%%%
 
 
+%%% TiKZ %%%
+% Define the possibility to make (dis)appear something in a beamer.
+\tikzset{
+  invisible/.style={opacity=0},
+  visible on/.style={alt=#1{}{invisible}},
+  alt/.code args={<#1>#2#3}{%
+      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+    },
+}
 %---------------
 
 

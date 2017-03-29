@@ -36,6 +36,11 @@
 ehthumbs.db
 Thumbs.db
 
+# Apps generated dirs/files #
+#############################
+# emacs
+auto
+
 # Excluded  #
 #############
 SIunits

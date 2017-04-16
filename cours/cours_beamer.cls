@@ -65,8 +65,8 @@
 
 
 
-%-- SETTINGS
 
+%-- SETTINGS
 \graphicspath{{images/}}
 \addmediapath{{videos/}}
 
@@ -164,9 +164,8 @@
 	}
 }
 %%%%%%%%%%%%%%%%
-
-
 %-----------
+
 
 
 
@@ -473,14 +472,9 @@
 	]{}{VPlayer.swf}%
 }
 
-
 %---------------
 
 
 
-
-%-- MODIFIED COMMANDS
-
-%--------------------
 
 \makeatother

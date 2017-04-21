@@ -414,6 +414,16 @@
   \end{déf*}
 }
 
+\RenewDocumentEnvironment{défn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{défn*}
+  }{
+    \begin{défn*}[#1]
+  }
+}{%end
+  \end{défn*}
+}
+
 \RenewDocumentEnvironment{thm}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{thm*}
@@ -432,6 +442,16 @@
   }
 }{%end
   \end{ppt*}
+}
+
+\RenewDocumentEnvironment{pptn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{pptn*}
+  }{
+    \begin{pptn*}[#1]
+  }
+}{%end
+  \end{pptn*}
 }
 
 \RenewDocumentEnvironment{exe}{ o } {%begin

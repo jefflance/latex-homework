@@ -33,14 +33,14 @@
 
 % langue
 \ifluatex
-	\RequirePackage{polyglossia}					% => babel
-	\setdefaultlanguage{french}						% => inputenc
-	\RequirePackage{luatextra}						% charge fontspec => fontenc
+	\RequirePackage{polyglossia}		% => babel
+	\setdefaultlanguage{french}		% => inputenc
+	\RequirePackage{luatextra}		% charge fontspec => fontenc
 	\defaultfontfeatures{Ligatures=TeX}
 \else
-	\RequirePackage[francais]{babel}			% => polyglossia
-	\RequirePackage[utf8]{inputenc}				% => fontspec
-	\RequirePackage[T1]{fontenc}					% => fontspec
+	\RequirePackage[francais]{babel}	% => polyglossia
+	\RequirePackage[utf8]{inputenc}		% => fontspec
+	\RequirePackage[T1]{fontenc}		% => fontspec
 \fi
 
 % polices
@@ -69,6 +69,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
+\RequirePackage{tabvar}
 
 % tableau
 \RequirePackage{array}
@@ -79,6 +80,9 @@
 % mise en page
 \RequirePackage{varwidth}
 \RequirePackage{adjustbox}
+
+% texte
+\RequirePackage[dash,phantomtext]{dashundergaps}
 %-----------------
 
 \makeatletter
@@ -87,7 +91,6 @@
 
 
 %-- NEW COMMANDS
-
 
 %%% TABLEAU %%%
 % Commandes d'alignement du contenu dans la colonne de largeur <largeur>.
@@ -119,11 +122,27 @@
 
 
 %%% TEXTE %%%
+%% \underdash[color]{text}
+%\newcommand\underdash[1][black]{% <- règle la couleur du texte
+%  \bgroup
+%  \ifdim\ULdepth=\maxdimen\settodepth\ULdepth{(j}\advance\ULdepth.4pt\fi
+%  \markoverwith{\kern0.2em% <- règle l'espacement avant un pointillé
+%    \vtop{
+%      \kern0.5ex% <- règle l'altitude des pointillés
+%      {\color{black}% <- règle la couleur des pointillés
+%       \hrule width.4em% <- règle la largeur des pointillés
+%      }
+%    }
+%    \kern0.2em% <- règle l'espacement après un pointillé
+%  }
+%  \color{#1}\ULon
+%}
+
 % \hcancel[color][size]{text}
 % Barrer du texte avec la couleur color et l'épaisseur size.
 \newcommand\hcancel[2][black]{
 	\setbox0=\hbox{$#2$}%
-	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{2pt}}}}#2
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2
 }
 % \NewDocumentCommand \hcancel { O{black} O{1pt} } {
 % 	\setbox0=\hbox{$#3$}%
@@ -162,6 +181,7 @@
 \newfontfamily\Annie[Ligatures=TeX]{Annie Use Your Telescope}
 \newfontfamily\Architects[Ligatures=TeX]{Architects Daughter}
 \newfontfamily\Bristol[Ligatures=TeX]{Bristol}
+\newfontfamily\ChelseaMarket[Ligatures=TeX]{Chelsea Market}
 \newfontfamily\Comic[Ligatures=TeX]{Comic Sans MS}
 \newfontfamily\Delius[Ligatures=TeX]{Delius}
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
@@ -195,19 +215,6 @@
 \newColorCommand{white}
 \newColorCommand{gray}
 %%%%%%%%%%%%%%%%
-
-
-%%% TiKZ %%%
-% Define the possibility to make (dis)appear something in a beamer.
-\tikzset{
-  invisible/.style={opacity=0},
-  visible on/.style={alt=#1{}{invisible}},
-  alt/.code args={<#1>#2#3}{%
-      \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
-    },
-}
-%%%%%%%%%%%%
-
 
 %---------------
 

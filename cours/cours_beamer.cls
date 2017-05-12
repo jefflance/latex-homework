@@ -312,6 +312,18 @@
 	\end{block}
 }
 
+% voc(TITRE)
+\NewDocumentEnvironment{voc}{ g }{%begin
+	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
+	\IfNoValueTF {#1} {
+		\begin{block} {Vocabulaire}
+	}{
+		\begin{block} {#1}
+	}
+}{%end
+	\end{block}
+}
+
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
 	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
@@ -455,6 +467,19 @@
 %%%%%%%%%%%%%%
 
 
+%%% TiKZ %%%
+% Define the possibility to make (dis)appear something in a beamer.
+\tikzset{
+  invisible/.style={opacity=0},
+  visible on/.style={alt=#1{}{invisible}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
+%%%%%%%%%%%%
+
+
+%%% AUTRES %%%
 % \includemovie
 % permet d'inclure une video dans une frame
 \newcommand{\includemovie}[3]{%
@@ -471,6 +496,15 @@
 		}%
 	]{}{VPlayer.swf}%
 }
+%%%%%%%%%%%%%%
+
+
+%%% Continue numbering in lists %%%
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+\resetcounteronoverlays{saveenumi}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %---------------
 

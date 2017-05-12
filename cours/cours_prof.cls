@@ -19,7 +19,7 @@
 
 
 
-%-- extensions
+%-- PACKAGES
 % PERSONNELLES
 % commun: contient des définitions et extensions de base pour tout.
 \RequirePackage{commun}
@@ -39,7 +39,7 @@
 
 \makeatletter
 
-%-- paramétrages
+%-- SETTINGS
 % metapost
 \ifpdf
   \DeclareGraphicsRule{*}{mps}{*}{}
@@ -303,8 +303,8 @@
                node[symbol] { \faFileTextO };
               },%
 }
-% idea: a shadowed square frame with a light bulb icon at upper left
-\mdfdefinestyle{idea}{%
+% tips: a shadowed square frame with a light bulb icon at upper left
+\mdfdefinestyle{tips}{%
   linecolor=white,linewidth=1pt,%
   tikzsetting={draw=black,line width=1pt},%
   leftmargin=0,rightmargin=0,%
@@ -494,6 +494,16 @@
   \end{voc*}
 }
 
+\RenewDocumentEnvironment{vocn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{vocn*}
+  }{
+    \begin{vocn*}[#1]
+  }
+}{%end
+  \end{vocn*}
+}
+
 \RenewDocumentEnvironment{app}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{app*}
@@ -522,8 +532,8 @@
 \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 
 %-- Macros personnelles
-% debut
-\NewDocumentCommand \debut { G{Titre} G{Sous-titre} } {%
+% titre
+\NewDocumentCommand \titre { G{Titre} G{Sous-titre} } {%
   \title{#1}
   \subtitle{#2}
   \date{}

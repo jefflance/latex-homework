@@ -434,6 +434,16 @@
   \end{thm*}
 }
 
+\RenewDocumentEnvironment{thmn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{thmn*}
+  }{
+    \begin{thmn*}[#1]
+  }
+}{%end
+  \end{thmn*}
+}
+
 \RenewDocumentEnvironment{ppt}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{ppt*}
@@ -452,6 +462,26 @@
   }
 }{%end
   \end{pptn*}
+}
+
+\RenewDocumentEnvironment{pre}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{pre*}
+  }{
+    \begin{pre*}[#1]
+  }
+}{%end
+  \end{pre*}
+}
+
+\RenewDocumentEnvironment{pren}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{pren*}
+  }{
+    \begin{pren*}[#1]
+  }
+}{%end
+  \end{pren*}
 }
 
 \RenewDocumentEnvironment{exe}{ o } {%begin

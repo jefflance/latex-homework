@@ -266,6 +266,8 @@
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor{block title}{fg=definition,bg=definition!10!white}
+	\setbeamercolor{enumerate item}{fg=definition}
+	\setbeamercolor{itemize item}{fg=definition}  
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -287,6 +289,8 @@
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=theorem!90!white}
+	\setbeamercolor{enumerate item}{fg=theorem}
+	\setbeamercolor{itemize item}{fg=theorem}  
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
 	}{
@@ -299,7 +303,9 @@
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
 	\setbeamercolor{block title}{fg=white,bg=property!90!white}
-  \IfBooleanTF #1
+	\setbeamercolor{enumerate item}{fg=property}
+	\setbeamercolor{itemize item}{fg=property}  
+	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
 			\begin{block} {}
@@ -320,6 +326,8 @@
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
 	\setbeamercolor{block title}{fg=proof,bg=proof!10!white}
+	\setbeamercolor{enumerate item}{fg=proof}
+	\setbeamercolor{itemize item}{fg=proff}  
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
 	}{
@@ -332,6 +340,8 @@
 % voc(TITRE)
 \NewDocumentEnvironment{voc}{ g }{%begin
 	\setbeamercolor{block title}{fg=vocabulary,bg=vocabulary!10!white}
+	\setbeamercolor{enumerate item}{fg=vocabulary}
+	\setbeamercolor{itemize item}{fg=vocabulary}  
 	\IfNoValueTF {#1} {
 		\begin{block} {Vocabulaire}
 	}{
@@ -343,7 +353,9 @@
 
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
-	\setbeamercolor{block title}{fg=remark,bg=remark!10!white}%fg=white,bg=cerisepink!80!white}%
+	\setbeamercolor{block title}{fg=remark,bg=remark!10!white}
+	\setbeamercolor{enumerate item}{fg=remark}
+	\setbeamercolor{itemize item}{fg=remark}  
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -352,7 +364,9 @@
 % met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
-	\setbeamercolor{block title}{fg=black,bg=method!75!white}%
+	\setbeamercolor{block title}{fg=black,bg=method!75!white}
+	\setbeamercolor{enumerate item}{fg=method}
+	\setbeamercolor{itemize item}{fg=method}  
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 		{
@@ -398,7 +412,9 @@
 
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
-	\setbeamercolor{block title}{fg=example,bg=example!10!white}%
+	\setbeamercolor{block title}{fg=example,bg=example!10!white}
+	\setbeamercolor{enumerate item}{fg=example}
+	\setbeamercolor{itemize item}{fg=example}  
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -407,7 +423,9 @@
 % exo<0|i|I|a|A|1>(TITRE)
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
-	\setbeamercolor{block title}{fg=white,bg=exercise!90!white}%
+	\setbeamercolor{block title}{fg=white,bg=exercise!90!white}
+	\setbeamercolor{enumerate item}{fg=exercise}
+	\setbeamercolor{itemize item}{fg=exercise}  
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{
@@ -446,7 +464,9 @@
 % app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
-  \setbeamercolor{block title}{fg=white,bg=application!90!white}%
+	\setbeamercolor{block title}{fg=white,bg=application!90!white}
+	\setbeamercolor{enumerate item}{fg=application}
+	\setbeamercolor{itemize item}{fg=application}  
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{

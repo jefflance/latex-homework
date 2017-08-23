@@ -71,12 +71,29 @@
 \addmediapath{{videos/}}
 
 
-%%% THEME BEAMER %%%
+%%% COLORS USED IN BLOCKS %%%
+% Colors used in block and environments
+% I don't like the default flashy green and the blue so i redefined it
+\colorlet{green}{green!40!gray}
+\colorlet{blue}{airforceblue}
+
+\colorlet{definition}{red}
+\colorlet{theorem}{red}
+\colorlet{property}{red}
+\colorlet{proof}{purple}
+\colorlet{vocabulary}{blue}
+\colorlet{remark}{red}
+\colorlet{method}{orange}
+\colorlet{example}{green}
+\colorlet{exercise}{blue}
+\colorlet{application}{blue}
+
+
+%%% DEFAULT BEAMER THEME OPTIONS %%%
 \usetheme{Madrid}
 \useinnertheme{circles}
 \useoutertheme{default}
 \usefonttheme{professionalfonts}
-\usecolortheme[named=\firstcolor]{structure}
 \setbeamertemplate{footline}{}
 %%%%%%%%%%%%%%%%%%%%
 
@@ -248,7 +265,7 @@
 
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
-	\setbeamercolor{block title}{fg=red,bg=blush!10!white}
+	\setbeamercolor{block title}{fg=definition,bg=definition!10!white}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -269,7 +286,7 @@
 
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
-	\setbeamercolor{block title}{fg=white,bg=red!90!white}
+	\setbeamercolor{block title}{fg=white,bg=theorem!90!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
 	}{
@@ -281,7 +298,7 @@
 
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
-	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
+	\setbeamercolor{block title}{fg=white,bg=property!90!white}
   \IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -302,7 +319,7 @@
 
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
-	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
+	\setbeamercolor{block title}{fg=proof,bg=proof!10!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
 	}{
@@ -314,7 +331,7 @@
 
 % voc(TITRE)
 \NewDocumentEnvironment{voc}{ g }{%begin
-	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
+	\setbeamercolor{block title}{fg=vocabulary,bg=vocabulary!10!white}
 	\IfNoValueTF {#1} {
 		\begin{block} {Vocabulaire}
 	}{
@@ -326,7 +343,7 @@
 
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
-	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}%fg=white,bg=cerisepink!80!white}%
+	\setbeamercolor{block title}{fg=remark,bg=remark!10!white}%fg=white,bg=cerisepink!80!white}%
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -335,7 +352,7 @@
 % met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
-	\setbeamercolor{block title}{fg=black,bg=amber!75!white}%
+	\setbeamercolor{block title}{fg=black,bg=method!75!white}%
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 		{
@@ -381,7 +398,7 @@
 
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
-	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}%
+	\setbeamercolor{block title}{fg=example,bg=example!10!white}%
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -390,7 +407,7 @@
 % exo<0|i|I|a|A|1>(TITRE)
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
-	\setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}%
+	\setbeamercolor{block title}{fg=white,bg=exercise!90!white}%
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{
@@ -429,7 +446,7 @@
 % app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
-  \setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}%
+  \setbeamercolor{block title}{fg=white,bg=application!90!white}%
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{

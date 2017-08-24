@@ -12,16 +12,24 @@
 
 
 
+%
+%
+% Parent class
+%
+%
 
-%-- PARENT CLASS
 % inutile de passer l'option [utf8] puisque chargee dans commun.sty
 \LoadClassWithOptions{beamer}
 %---------------
 
 
 
+%
+%
+% Packages
+%
+%
 
-%-- PACKAGES CALLS
 % perso
 \RequirePackage{couleurs}
 \RequirePackage{commun}
@@ -36,12 +44,17 @@
 
 
 
-%-- DEF OPTIONS
+%
+%
+% Class options parameters
+%
+%
+
 % firstcolor / secondcolor
 % 	option de classe
 %	  couleurs générales du beamer
 %
-%   "classical" way
+%   The "classical" way:
 %   \def\firstcolor{lapislazuli}%
 %   \define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
 %     \def\firstcolor{#1}%
@@ -52,8 +65,8 @@
 %     \def\secondcolor{#1}%
 %   }
 
-\DeclareOptionX{firstcolor}[lapislazuli]{%
-  \def\firstcolor{#1}%
+\DeclareOptionX{main1}[main1]{%
+  \def\main1{#1}%
 }
 \DeclareOptionX{secondcolor}[-\firstcolor]{%
   \def\secondcolor{#1}%
@@ -71,16 +84,18 @@
 \addmediapath{{videos/}}
 
 
-%%% DEFAULT COLORS USED IN BLOCKS %%%
-% Colors used in block and environments
+%%% DEFAULT COLORS USED %%%
 % I don't like the default flashy green and the blue so i redefined it
 \colorlet{green}{green!40!gray}
 \colorlet{blue}{airforceblue}
-
+% Default colors of sections and subsections if not defined in theme
+\colorlet{main1}{red}
+\colorlet{main2}{blue}
+% Colors used in block and environments if not defined in theme
 \colorlet{definition}{red}
 \colorlet{theorem}{red}
 \colorlet{property}{red}
-\colorlet{proof}{purple}
+\colorlet{proof}{violet}
 \colorlet{vocabulary}{blue}
 \colorlet{remark}{red}
 \colorlet{method}{orange}
@@ -142,6 +157,7 @@
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
 \setbeamercolor{section in toc}{fg=main1}
+\setbeamercolor{section number projected}{fg=main1}
 \setbeamertemplate{subsection in toc}[bullets]
 \setbeamercolor{subsection in toc}{fg=main2}
 %%%%%%%%%%%
@@ -158,7 +174,7 @@
 \mdfdefinestyle{partie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={\secondcolor},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=main1,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -171,7 +187,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=\firstcolor,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=main2,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -227,7 +243,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \textcolor{\secondcolor}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \textcolor{main1}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -240,7 +256,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{\firstcolor}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{main2}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}

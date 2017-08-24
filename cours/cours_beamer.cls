@@ -37,29 +37,29 @@
 
 
 %-- DEF OPTIONS
-% firstcolor / secondcolor
+% sectioncolor / subsectioncolor
 % 	option de classe
 %	  couleurs générales du beamer
 %
 %   "classical" way
-%   \def\firstcolor{lapislazuli}%
-%   \define@key{cours_beamer.cls}{firstcolor}[lapislazuli]{%
-%     \def\firstcolor{#1}%
+%   \def\sectioncolor{red}%
+%   \define@key{cours_beamer.cls}{section}[red]{%
+%     \def\sectioncolor{#1}%
 %   }
 %
-%   \def\secondcolor{-\firstcolor}%
-%   \define@key{cours_beamer.cls}{secondcolor}[-\firstcolor]{%
-%     \def\secondcolor{#1}%
+%   \def\subsectioncolor{blue}%
+%   \define@key{cours_beamer.cls}{subsectioncolor}[blue]{%
+%     \def\subsectioncolor{#1}%
 %   }
 
-\DeclareOptionX{firstcolor}[lapislazuli]{%
-  \def\firstcolor{#1}%
+\DeclareOptionX{sectioncolor}[red]{%
+  \def\sectioncolor{#1}%
 }
-\DeclareOptionX{secondcolor}[-\firstcolor]{%
-  \def\secondcolor{#1}%
+\DeclareOptionX{subsectioncolor}[blue]{%
+  \def\subsectioncolor{#1}%
 }
 
-\ExecuteOptionsX{firstcolor, secondcolor}
+\ExecuteOptionsX{sectioncolor, subsectioncolor}
 \ProcessOptionsX
 %--------------
 
@@ -141,9 +141,9 @@
 	}
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
-\setbeamercolor{section in toc}{fg=\secondcolor}
+\setbeamercolor{section in toc}{fg=\subsectioncolor}
 \setbeamertemplate{subsection in toc}[bullets]
-\setbeamercolor{subsection in toc}{fg=\firstcolor}
+\setbeamercolor{subsection in toc}{fg=\subsectioncolor}
 %%%%%%%%%%%
 
 
@@ -158,7 +158,7 @@
 \mdfdefinestyle{partie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={\secondcolor},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor={\sectioncolor},roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -171,7 +171,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=\firstcolor,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=\subsectioncolor,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -227,7 +227,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \textcolor{\secondcolor}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \textcolor{\sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -240,7 +240,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{\firstcolor}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{\subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}

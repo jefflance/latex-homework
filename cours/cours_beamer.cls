@@ -88,6 +88,8 @@
 \colorlet{exercise}{blue}
 \colorlet{application}{blue}
 
+\colorlet{sectioncolor}{\sectioncolor}
+\colorlet{subsectioncolor}{\subsectioncolor}
 
 %%% DEFAULT BEAMER THEME OPTIONS %%%
 \usetheme{Madrid}
@@ -141,9 +143,9 @@
 	}
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
-\setbeamercolor{section in toc}{fg=\subsectioncolor}
+\setbeamercolor{section in toc}{fg=sectioncolor}
 \setbeamertemplate{subsection in toc}[bullets]
-\setbeamercolor{subsection in toc}{fg=\subsectioncolor}
+\setbeamercolor{subsection in toc}{fg=subsectioncolor}
 %%%%%%%%%%%
 
 
@@ -158,7 +160,7 @@
 \mdfdefinestyle{partie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={\sectioncolor},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor={sectioncolor},roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -171,7 +173,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=\subsectioncolor,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=subsectioncolor,roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -227,7 +229,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \textcolor{\sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \textcolor{sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -240,7 +242,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{\subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}

@@ -52,10 +52,10 @@
 %     \def\subsectioncolor{#1}%
 %   }
 
-\DeclareOptionX{sectioncolor}[red]{%
+\DeclareOptionX{sectioncolor}[debianred]{%
   \def\sectioncolor{#1}%
 }
-\DeclareOptionX{subsectioncolor}[blue]{%
+\DeclareOptionX{subsectioncolor}[lapislazuli]{%
   \def\subsectioncolor{#1}%
 }
 

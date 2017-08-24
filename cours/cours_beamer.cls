@@ -52,15 +52,15 @@
 %     \def\subsectioncolor{#1}%
 %   }
 
-\DeclareOptionX{sectioncolor}[debianred]{%
-  \def\sectioncolor{#1}%
-}
-\DeclareOptionX{subsectioncolor}[lapislazuli]{%
-  \def\subsectioncolor{#1}%
-}
+% \DeclareOptionX{sectioncolor}[debianred]{%
+%   \def\sectioncolor{#1}%
+% }
+% \DeclareOptionX{subsectioncolor}[lapislazuli]{%
+%   \def\subsectioncolor{#1}%
+% }
 
-\ExecuteOptionsX{sectioncolor, subsectioncolor}
-\ProcessOptionsX
+% \ExecuteOptionsX{sectioncolor, subsectioncolor}
+% \ProcessOptionsX
 %--------------
 
 

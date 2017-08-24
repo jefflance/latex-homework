@@ -80,7 +80,7 @@
 \colorlet{definition}{red}
 \colorlet{theorem}{red}
 \colorlet{property}{red}
-\colorlet{proof}{purple}
+\colorlet{proof}{violet}
 \colorlet{vocabulary}{blue}
 \colorlet{remark}{red}
 \colorlet{method}{orange}

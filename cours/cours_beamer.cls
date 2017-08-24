@@ -88,8 +88,8 @@
 \colorlet{exercise}{blue}
 \colorlet{application}{blue}
 
-\colorlet{sectioncolor}{\sectioncolor}
-\colorlet{subsectioncolor}{\subsectioncolor}
+\colorlet{sectioncolor}{debianred}
+\colorlet{subsectioncolor}{lapislazuli}
 
 %%% DEFAULT BEAMER THEME OPTIONS %%%
 \usetheme{Madrid}

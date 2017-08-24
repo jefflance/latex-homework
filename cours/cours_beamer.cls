@@ -71,7 +71,7 @@
 \addmediapath{{videos/}}
 
 
-%%% DEFAULT COLORS USED IN BLOCKS %%%
+%%% COLORS USED IN BLOCKS %%%
 % Colors used in block and environments
 % I don't like the default flashy green and the blue so i redefined it
 \colorlet{green}{green!40!gray}
@@ -141,9 +141,9 @@
 	}
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
-\setbeamercolor{section in toc}{fg=main1}
+\setbeamercolor{section in toc}{fg=\secondcolor}
 \setbeamertemplate{subsection in toc}[bullets]
-\setbeamercolor{subsection in toc}{fg=main2}
+\setbeamercolor{subsection in toc}{fg=\firstcolor}
 %%%%%%%%%%%
 
 

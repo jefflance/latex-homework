@@ -77,7 +77,7 @@
 % \colorlet{green}{green!40!gray}
 % \colorlet{blue}{airforceblue}
 
-% If colors are not set through a theme we set a default value
+% Colors of blocks like: definition, theorem, property, etc...
 \setbeamercolor*{definition}{fg=red,bg=blush!10!white}
 \setbeamercolor*{theorem}{fg=white,bg=red!90!white}
 \setbeamercolor*{property}{fg=white,bg=brickred!90!white}
@@ -89,8 +89,11 @@
 \setbeamercolor*{exercise}{fg=white,bg=airforceblue!90!white}
 \setbeamercolor*{application}{fg=white,bg=airforceblue!90!white}
 
-\colorlet{sectioncolor}{debianred}
-\colorlet{subsectioncolor}{lapislazuli}
+% Colors of sections and subsections
+\setbeamercolor*{sectioncolor}{fg=debianred}
+\setbeamercolor*{subsectioncolor}{fg=lapislazuli}
+
+
 
 %%% DEFAULT BEAMER THEME OPTIONS %%%
 \usetheme{Madrid}
@@ -144,9 +147,9 @@
 	}
 }
 \setbeamertemplate{section in toc}[sections numbered roman]
-\setbeamercolor{section in toc}{fg=sectioncolor}
+\setbeamercolor{section in toc}{parent=sectioncolor}
 \setbeamertemplate{subsection in toc}[bullets]
-\setbeamercolor{subsection in toc}{fg=subsectioncolor}
+\setbeamercolor{subsection in toc}{parent=subsectioncolor}
 %%%%%%%%%%%
 
 
@@ -161,7 +164,7 @@
 \mdfdefinestyle{partie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={sectioncolor},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor={\usebeamercolor[fg]{sectioncolor}},roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -174,7 +177,7 @@
 \mdfdefinestyle{sspartie}{
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=subsectioncolor,roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor={\usebeamercolor[fg]{subsectioncolor}},roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -230,7 +233,7 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \textcolor{sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \usebeamercolor[fg]{sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
@@ -243,12 +246,12 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \textcolor{subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \usebeamercolor[fg]{subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
-}
-
+ }
+  
 % \ftitre
 % definie le titre des frames de section et de sous-section en fonction
 % des (sous)sections actuellement definies

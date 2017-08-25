@@ -74,19 +74,19 @@
 %%% COLORS USED IN BLOCKS %%%
 % Colors used in block and environments
 % I don't like the default flashy green and the blue so i redefined it
-\colorlet{green}{green!40!gray}
-\colorlet{blue}{airforceblue}
+% \colorlet{green}{green!40!gray}
+% \colorlet{blue}{airforceblue}
 
-\colorlet{definition}{red}
-\colorlet{theorem}{red}
-\colorlet{property}{red}
-\colorlet{proof}{violet}
-\colorlet{vocabulary}{blue}
-\colorlet{remark}{red}
-\colorlet{method}{orange}
-\colorlet{example}{green}
-\colorlet{exercise}{blue}
-\colorlet{application}{blue}
+\setbeamercolor*{definition}{fg=red,bg=blush!10!white}
+\setbeamercolor*{theorem}{fg=white,bg=red!90!white}
+\setbeamercolor*{property}{fg=white,bg=brickred!90!white}
+\setbeamercolor*{proof}{fg=hanblue,bg=airforceblue!10!white}
+\setbeamercolor*{vocabulary}{fg=hanblue,bg=airforceblue!10!white}
+\setbeamercolor*{remark}{fg=blush,bg=blush!10!white}
+\setbeamercolor*{method}{fg=black,bg=amber!75!white}
+\setbeamercolor*{example}{fg=darkspringgreen,bg=green!10!white}
+\setbeamercolor*{exercise}{fg=white,bg=airforceblue!90!white}
+\setbeamercolor*{application}{fg=white,bg=airforceblue!90!white}
 
 \colorlet{sectioncolor}{debianred}
 \colorlet{subsectioncolor}{lapislazuli}
@@ -267,7 +267,7 @@
 
 % Auxiliary command to set color of certain element of beamer
 \NewDocumentCommand \setbeamercolorto { g }{%
-  	\setbeamercolor*{block title}{fg=#1,bg=#1!10!white}
+  	% \setbeamercolor*{block title}{fg=#1,bg=#1!10!white}
   	\setbeamercolor*{enumerate item}{fg=#1}
     \setbeamercolor*{enumerate subitem}{fg=#1}
     \setbeamercolor*{enumerate subsubitem}{fg=#1}
@@ -279,7 +279,8 @@
 
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
-	\setbeamercolorto{definition}
+	\setbeamercolor*{block title}{fg=definition,bg=blush!10!white}
+  	\setbeamercolorto{definition}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -300,6 +301,7 @@
 
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
+  	\setbeamercolor{block title}{fg=theorem,bg=red!90!white}
 	\setbeamercolorto{theorem}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
@@ -312,6 +314,7 @@
 
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
+  	\setbeamercolor{block title}{fg=white,bg=brickred!90!white}
 	\setbeamercolorto{property}
 	\IfBooleanTF #1
 	{
@@ -333,6 +336,7 @@
 
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
+  	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
 	\setbeamercolorto{proof}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
@@ -345,7 +349,8 @@
 
 % voc(TITRE)
 \NewDocumentEnvironment{voc}{ g }{%begin
-	\setbeamercolorto{vocabulary}
+	\setbeamercolor{block title}{fg=hanblue,bg=airforceblue!10!white}
+  	\setbeamercolorto{vocabulary}
 	\IfNoValueTF {#1} {
 		\begin{block} {Vocabulaire}
 	}{
@@ -357,6 +362,7 @@
 
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
+  	\setbeamercolor{block title}{fg=blush,bg=blush!10!white}
 	\setbeamercolorto{remark}
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
@@ -366,6 +372,7 @@
 % met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
+  	\setbeamercolor{block title}{fg=black,bg=amber!75!white}
 	\setbeamercolorto{method}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
@@ -412,6 +419,7 @@
 
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
+  	\setbeamercolor{block title}{fg=darkspringgreen,bg=green!10!white}
 	\setbeamercolorto{example}
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
@@ -421,6 +429,7 @@
 % exo<0|i|I|a|A|1>(TITRE)
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
+	\setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}
 	\setbeamercolorto{exercise}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
@@ -460,6 +469,7 @@
 % app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
+  	\setbeamercolor{block title}{fg=white,bg=airforceblue!90!white}
 	\setbeamercolorto{application}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }

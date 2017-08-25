@@ -162,9 +162,10 @@
 	color(0bp)=(white!40);color(100bp)=(black!0)
 }
 \mdfdefinestyle{partie}{
+  	% \usebeamercolor{sectioncolor}
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={\usebeamercolor[fg]{sectioncolor}},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=red, roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -175,9 +176,10 @@
 }
 %
 \mdfdefinestyle{sspartie}{
+	% \usebeamercolor{subsectioncolor}
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor={\usebeamercolor[fg]{subsectioncolor}},roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=airforceblue, roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -226,6 +228,7 @@
 \newcounter{sspartiecounter}
 
 \NewDocumentCommand \partie { G{Partie} } {%
+  	\usebeamercolor{sectioncolor}
 	\def\cType{\Roman}
 	\stepcounter{partiecounter}
 	\setcounter{sspartiecounter}{0}
@@ -233,25 +236,26 @@
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=partie]
-				\centering \usebeamercolor[fg]{sectioncolor}{\textbf{ \cType{partiecounter}. #1}}
+				\centering \textcolor{sectioncolor.fg}{\textbf{ \cType{partiecounter}. #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
 }
 
 \NewDocumentCommand \sspartie { G{Sous-Partie} } {%
+  	\usebeamercolor{subsectioncolor}
 	\def\cType{\arabic}
 	\stepcounter{sspartiecounter}
 	\subsection{#1}
 	\begin{frame}
 		\begin{center}
 			\begin{mdframed}[style=sspartie]
-				\centering \usebeamercolor[fg]{subsectioncolor}{\textbf{ \cType{sspartiecounter}) #1}}
+				\centering \textcolor{subsectioncolor.fg}{\textbf{ \cType{sspartiecounter}) #1}}
 			\end{mdframed}
 		\end{center}
 	\end{frame}
- }
-  
+}
+
 % \ftitre
 % definie le titre des frames de section et de sous-section en fonction
 % des (sous)sections actuellement definies
@@ -269,21 +273,21 @@
 % definition de divers blocks personnels : definition, theoreme, exemple,
 % exercice (avec numerotation), remarque, method.
 
-% Auxiliary command to set color of certain element of beamer
-\NewDocumentCommand \setbeamercolorto { g }{%
-  	\setbeamercolor*{enumerate item}{fg=#1.fg}
-    \setbeamercolor*{enumerate subitem}{fg=#1.fg}
-    \setbeamercolor*{enumerate subsubitem}{fg=#1.fg}
-	\setbeamercolor*{itemize item}{fg=#1.fg}
-    \setbeamercolor*{itemize subitem}{fg=#1.fg}
-    \setbeamercolor*{itemize subsubitem}{fg=#1.fg}
-	\setbeamercolor*{item}{fg=#1.fg}
-}
+% Auxiliary command to set color of item of lists
+%\NewDocumentCommand \setbeamercolorofitem { g }{%
+%    \setbeamercolor*{enumerate item}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{enumerate subitem}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{enumerate subsubitem}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{itemize item}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{itemize subitem}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{itemize subsubitem}{use=#1,fg=#1.fg}
+%    \setbeamercolor*{item}{use=#1,fg=#1.fg}
+%}
 
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
-	\setbeamercolor*{block title}{parent=definition}
-  	\setbeamercolorto{definition}
+  	\setbeamercolor*{block title}{parent=definition}
+%  	\setbeamercolorofitem{definition}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -305,7 +309,7 @@
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
   	\setbeamercolor*{block title}{parent=theorem}
-	\setbeamercolorto{theorem}
+%  	\setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
 	}{
@@ -318,7 +322,7 @@
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
   	\setbeamercolor*{block title}{parent=property}
-	\setbeamercolorto{property}
+%  	\setbeamercolorofitem{property}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -340,7 +344,7 @@
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
   	\setbeamercolor*{block title}{parent=proof}
-	\setbeamercolorto{proof}
+%  	\setbeamercolorofitem{proof}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
 	}{
@@ -353,7 +357,7 @@
 % voc(TITRE)
 \NewDocumentEnvironment{voc}{ g }{%begin
 	\setbeamercolor*{block title}{parent=vocabulary}
-  	\setbeamercolorto{vocabulary}
+%	\setbeamercolorofitem{vocabulary}
 	\IfNoValueTF {#1} {
 		\begin{block} {Vocabulaire}
 	}{
@@ -366,7 +370,7 @@
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
   	\setbeamercolor*{block title}{parent=remark}
-	\setbeamercolorto{remark}
+%  	\setbeamercolorofitem{remark}
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -376,7 +380,7 @@
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
   	\setbeamercolor*{block title}{parent=method}
-	\setbeamercolorto{method}
+%  	\setbeamercolorofitem{method}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 		{
@@ -423,7 +427,7 @@
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
   	\setbeamercolor*{block title}{parent=example}
-	\setbeamercolorto{example}
+%  	\setbeamercolorofitem{example}
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -433,7 +437,7 @@
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
 	\setbeamercolor*{block title}{parent=exercise}
-	\setbeamercolorto{exercise}
+%	\setbeamercolorofitem{exercise}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{
@@ -473,7 +477,7 @@
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
   	\setbeamercolor*{block title}{parent=application}
-	\setbeamercolorto{application}
+%  	\setbeamercolorofitem{application}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{

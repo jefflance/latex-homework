@@ -162,10 +162,9 @@
 	color(0bp)=(white!40);color(100bp)=(black!0)
 }
 \mdfdefinestyle{partie}{
-  	% \usebeamercolor{sectioncolor}
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=red, roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=sectioncolor.fg, roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={
@@ -176,10 +175,9 @@
 }
 %
 \mdfdefinestyle{sspartie}{
-	% \usebeamercolor{subsectioncolor}
 	outerlinewidth=1em, outerlinecolor=white,%
 	% leftmargin=-1em, rightmargin=-1em,%
-	middlelinewidth=1.2pt, linecolor=airforceblue, roundcorner=5pt,%
+	middlelinewidth=1.2pt, linecolor=subsectioncolor.fg, roundcorner=5pt,%
 	apptotikzsetting={
 		\tikzset{
 			mdfbackground/.append style={

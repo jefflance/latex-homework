@@ -146,9 +146,17 @@
 		\inserttocsection\par
 	}
 }
+\defbeamertemplate{subsection in toc}{subsections numbered arabic}{%
+	\leavevmode\leftskip=1.5em%
+	{\bfseries
+		\MakeUppercase{\inserttocsubsectionnumber)}\ %
+		\inserttocsubsection\par
+	}
+}
+
 \setbeamertemplate{section in toc}[sections numbered roman]
 \setbeamercolor{section in toc}{parent=sectioncolor}
-\setbeamertemplate{subsection in toc}[bullets]
+\setbeamertemplate{subsection in toc}[subsections numbered arabic]
 \setbeamercolor{subsection in toc}{parent=subsectioncolor}
 %%%%%%%%%%%
 

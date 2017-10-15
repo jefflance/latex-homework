@@ -215,9 +215,11 @@
 % \debut et \fin
 % renvoie les slides d'intro et de cloture du document
 \newcommand{\debut}{%
-	\begin{frame}
-		\titlepage
-	\end{frame}
+  \begin{frame}[plain]
+	\titlepage
+  \end{frame}
+  \addtocounter{framenumber}{-1}
+
 }
 
 \newcommand{\fin}{%
@@ -312,6 +314,28 @@
 		\end{block}
 }
 
+% défn(*)(TITRE)
+\NewDocumentEnvironment{défn}{ s g }{%begin
+  	\setbeamercolor*{block title}{parent=definition}
+%  	\setbeamercolorofitem{definition}
+	\IfBooleanTF #1
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {\faPencil \hspace{.125em}\ }
+		}{
+			\begin{block} {\faPencil \hspace{.125em}\ #2}
+		}
+	}{
+		\IfNoValueTF {#2} {
+			\begin{block} {\faPencil \hspace{.125em}\ Définition}
+		}{
+			\begin{block} {\faPencil \hspace{.125em}\ Définition - #2}
+		}
+	}
+}{%end
+		\end{block}
+}
+
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
   	\setbeamercolor*{block title}{parent=theorem}
@@ -320,6 +344,19 @@
 		\begin{block} {Théorème}
 	}{
 		\begin{block} {Théorème - #1}
+	}
+}{%end
+	\end{block}
+}
+
+% thmn(TITRE)
+\NewDocumentEnvironment{thmn}{ g }{%begin
+  	\setbeamercolor*{block title}{parent=theorem}
+%  	\setbeamercolorofitem{theorem}
+	\IfNoValueTF {#1} {
+		\begin{block} {\faPencil \hspace{.125em}\ Théorème}
+	}{
+		\begin{block} {\faPencil \hspace{.125em}\ Théorème - #1}
 	}
 }{%end
 	\end{block}
@@ -341,6 +378,28 @@
 			\begin{block} {Propriété}
 		}{
 			\begin{block} {Propriété - #2}
+		}
+	}
+}{%end
+		\end{block}
+}
+
+% pptn(*)(TITRE)
+\NewDocumentEnvironment{pptn}{ s g }{%begin
+  	\setbeamercolor*{block title}{parent=property}
+%  	\setbeamercolorofitem{property}
+	\IfBooleanTF #1
+	{
+		\IfNoValueTF {#2} {
+			\begin{block} {\faPencil \hspace{.125em}\ }
+		}{
+			\begin{block} {\faPencil \hspace{.125em}\ #2}
+		}
+	}{
+		\IfNoValueTF {#2} {
+			\begin{block} {\faPencil \hspace{.125em}\ Propriété}
+		}{
+			\begin{block} {\faPencil \hspace{.125em}\ Propriété - #2}
 		}
 	}
 }{%end
@@ -469,8 +528,8 @@
 						}
 					}
 				}
-			}
-		\stepcounter{exercicecounter}
+            }
+            \stepcounter{exercicecounter}
 		\begin{block}{#2 \cType{exercicecounter}\ }
 	}{
 		\begin{block}{#2\ }

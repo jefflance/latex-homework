@@ -294,7 +294,7 @@
 
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
-  	\setbeamercolor*{block title}{parent=definition}
+	\setbeamercolor*{block title}{parent=definition}
 %  	\setbeamercolorofitem{definition}
 	\IfBooleanTF #1
 	{
@@ -316,7 +316,7 @@
 
 % défn(*)(TITRE)
 \NewDocumentEnvironment{défn}{ s g }{%begin
-  	\setbeamercolor*{block title}{parent=definition}
+	\setbeamercolor*{block title}{parent=definition}
 %  	\setbeamercolorofitem{definition}
 	\IfBooleanTF #1
 	{
@@ -338,7 +338,7 @@
 
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
-  	\setbeamercolor*{block title}{parent=theorem}
+ 	\setbeamercolor*{block title}{parent=theorem}
 %  	\setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
@@ -364,7 +364,7 @@
 
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
-  	\setbeamercolor*{block title}{parent=property}
+ 	\setbeamercolor*{block title}{parent=property}
 %  	\setbeamercolorofitem{property}
 	\IfBooleanTF #1
 	{
@@ -386,7 +386,7 @@
 
 % pptn(*)(TITRE)
 \NewDocumentEnvironment{pptn}{ s g }{%begin
-  	\setbeamercolor*{block title}{parent=property}
+ 	\setbeamercolor*{block title}{parent=property}
 %  	\setbeamercolorofitem{property}
 	\IfBooleanTF #1
 	{
@@ -408,7 +408,7 @@
 
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
-  	\setbeamercolor*{block title}{parent=proof}
+ 	\setbeamercolor*{block title}{parent=proof}
 %  	\setbeamercolorofitem{proof}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
@@ -434,7 +434,7 @@
 
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
-  	\setbeamercolor*{block title}{parent=remark}
+ 	\setbeamercolor*{block title}{parent=remark}
 %  	\setbeamercolorofitem{remark}
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
@@ -444,7 +444,7 @@
 % met<0|i|I|a|A|1>(TITRE)
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
-  	\setbeamercolor*{block title}{parent=method}
+ 	\setbeamercolor*{block title}{parent=method}
 %  	\setbeamercolorofitem{method}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
@@ -491,7 +491,7 @@
 
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
-  	\setbeamercolor*{block title}{parent=example}
+ 	\setbeamercolor*{block title}{parent=example}
 %  	\setbeamercolorofitem{example}
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
@@ -541,7 +541,7 @@
 % app<0|i|I|a|A|1>(TITRE)
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
-  	\setbeamercolor*{block title}{parent=application}
+ 	\setbeamercolor*{block title}{parent=application}
 %  	\setbeamercolorofitem{application}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }

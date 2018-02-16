@@ -14,11 +14,12 @@
 
 
 %-- definitions
-\DeclareOption*{\PassOptionsToClass{\CurrentOption, handout}{cours_beamer}}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{cours_beamer}}
 %--%
 
 %-- options
 % \ExecuteOptions{}
+\PassOptionsToClass{handout}{cours_beamer}
 \ProcessOptions\relax
 %--%
 

@@ -295,7 +295,7 @@
 % déf(*)(TITRE)
 \NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor*{block title}{parent=definition}
-%  	\setbeamercolorofitem{definition}
+ 	% \setbeamercolorofitem{definition}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -317,7 +317,7 @@
 % défn(*)(TITRE)
 \NewDocumentEnvironment{défn}{ s g }{%begin
 	\setbeamercolor*{block title}{parent=definition}
-%  	\setbeamercolorofitem{definition}
+ 	% \setbeamercolorofitem{definition}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -339,7 +339,7 @@
 % thm(TITRE)
 \NewDocumentEnvironment{thm}{ g }{%begin
  	\setbeamercolor*{block title}{parent=theorem}
-%  	\setbeamercolorofitem{theorem}
+ 	% \setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
 		\begin{block} {Théorème}
 	}{
@@ -352,7 +352,7 @@
 % thmn(TITRE)
 \NewDocumentEnvironment{thmn}{ g }{%begin
   	\setbeamercolor*{block title}{parent=theorem}
-%  	\setbeamercolorofitem{theorem}
+ 	% \setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
 		\begin{block} {\faPencil \hspace{.125em}\ Théorème}
 	}{
@@ -365,7 +365,7 @@
 % ppt(*)(TITRE)
 \NewDocumentEnvironment{ppt}{ s g }{%begin
  	\setbeamercolor*{block title}{parent=property}
-%  	\setbeamercolorofitem{property}
+ 	% \setbeamercolorofitem{property}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -387,7 +387,7 @@
 % pptn(*)(TITRE)
 \NewDocumentEnvironment{pptn}{ s g }{%begin
  	\setbeamercolor*{block title}{parent=property}
-%  	\setbeamercolorofitem{property}
+ 	% \setbeamercolorofitem{property}
 	\IfBooleanTF #1
 	{
 		\IfNoValueTF {#2} {
@@ -409,7 +409,7 @@
 % pre(TITRE)
 \NewDocumentEnvironment{pre}{ g }{%begin
  	\setbeamercolor*{block title}{parent=proof}
-%  	\setbeamercolorofitem{proof}
+ 	% \setbeamercolorofitem{proof}
 	\IfNoValueTF {#1} {
 		\begin{block} {Preuve}
 	}{
@@ -422,7 +422,7 @@
 % voc(TITRE)
 \NewDocumentEnvironment{voc}{ g }{%begin
 	\setbeamercolor*{block title}{parent=vocabulary}
-%	\setbeamercolorofitem{vocabulary}
+	% \setbeamercolorofitem{vocabulary}
 	\IfNoValueTF {#1} {
 		\begin{block} {Vocabulaire}
 	}{
@@ -435,7 +435,7 @@
 % rmq(TITRE)
 \NewDocumentEnvironment{rmq}{ G{Remarque} }{%begin
  	\setbeamercolor*{block title}{parent=remark}
-%  	\setbeamercolorofitem{remark}
+ 	% \setbeamercolorofitem{remark}
 	\begin{block} {\faExclamationTriangle \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -445,7 +445,7 @@
 \newcounter{methodecounter}
 \NewDocumentEnvironment{met} { O{0} g }{%begin
  	\setbeamercolor*{block title}{parent=method}
-%  	\setbeamercolorofitem{method}
+ 	% \setbeamercolorofitem{method}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 		{
@@ -492,7 +492,7 @@
 % exe(TITRE)
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
  	\setbeamercolor*{block title}{parent=example}
-%  	\setbeamercolorofitem{example}
+ 	% \setbeamercolorofitem{example}
 	\begin{block} {\faLightbulbO \hspace{.125em} #1}
 }{%end
 	\end{block}
@@ -502,7 +502,7 @@
 \newcounter{exercicecounter}
 \NewDocumentEnvironment{exo} { O{0} G{Exercice} }{%begin
 	\setbeamercolor*{block title}{parent=exercise}
-%	\setbeamercolorofitem{exercise}
+	% \setbeamercolorofitem{exercise}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{
@@ -542,7 +542,7 @@
 \newcounter{applicationcounter}
 \NewDocumentEnvironment{app} { O{0} G{Application} }{%begin
  	\setbeamercolor*{block title}{parent=application}
-%  	\setbeamercolorofitem{application}
+ 	% \setbeamercolorofitem{application}
 	\ifthenelse{ \NOT \equal{#1}{0} }{
 		\ifthenelse{ \equal{#1}{i} }
 			{

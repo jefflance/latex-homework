@@ -32,9 +32,10 @@
 % mise en page
 \RequirePackage{geometry}
 \RequirePackage{scrlayer-scrpage}
-% \RequirePackage{mdframed}
+\RequirePackage{titling}
 \RequirePackage{titlesec}
 \RequirePackage{pageslts}
+\RequirePackage{enumitem}
 %--%
 
 \makeatletter
@@ -54,13 +55,13 @@
 % titre, en-tête, pied de page
 \cofoot*{\thepage\ /\ \pageref{LastPage}}
 \pagestyle{scrheadings}
-\setkomafont{title}{\Comic}
+% \setkomafont{title}{\Comic}
 
 % (sub)sections
-\titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
-\titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
-\renewcommand \thesection{\Roman{section}}
-\renewcommand \thesubsection{\arabic{subsection}}
+% \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
+% \titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
+% \renewcommand \thesection{\Roman{section}}
+% \renewcommand \thesubsection{\arabic{subsection}}
 
 % paths
 \graphicspath{{images/}}
@@ -400,6 +401,7 @@
 \mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
+\mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}
 \mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 
 % Redirect all standard previously defined environments to their starred version
@@ -544,6 +546,16 @@
   \end{app*}
 }
 
+\RenewDocumentEnvironment{appn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{appn*}
+  }{
+    \begin{appn*}[#1]
+  }
+}{%end
+  \end{appn*}
+}
+
 \RenewDocumentEnvironment{met}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{met*}
@@ -564,6 +576,7 @@
 %-- Macros personnelles
 % titre
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} } {%
+  \setlength{\droptitle}{-2cm}
   \title{#1}
   \subtitle{#2}
   \date{}

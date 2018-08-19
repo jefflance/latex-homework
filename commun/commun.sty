@@ -83,6 +83,7 @@
 
 % texte
 \RequirePackage[dash,phantomtext]{dashundergaps}
+\RequirePackage{comment}
 %-----------------
 
 \makeatletter
@@ -90,7 +91,15 @@
 
 
 
-%-- NEW COMMANDS
+%-- SETTINGS
+\newboolean{display}
+\ifthenelse{\boolean{display}}{\includecomment{solution}}{\excludecomment{solution}}
+%-----------
+
+
+
+
+% -- NEW COMMANDS
 
 %%% TABLEAU %%%
 % Commandes d'alignement du contenu dans la colonne de largeur <largeur>.
@@ -122,6 +131,16 @@
 
 
 %%% TEXTE %%%
+% \NewDocumentCommand \solution { s O{solution} g } {
+% 	\IfBooleanTF {#1}
+%   {
+% 		\setboolean{display}{true}
+%   }
+%     {}
+%   \begin{#2}
+%   \end{#2}	 
+% }
+
 %% \underdash[color]{text}
 %\newcommand\underdash[1][black]{% <- règle la couleur du texte
 %  \bgroup
@@ -193,7 +212,7 @@
 \newfontfamily\PokemonHollow[Ligatures=TeX]{Pokemon Hollow}
 \newfontfamily\PokemonSolid[Ligatures=TeX]{Pokemon Solid}
 \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
-\newfontfamily\TrebuchetMS[Ligatures=TeX]{Trebuchet MS}
+% \newfontfamily\TrebuchetMS[Ligatures=TeX]{Trebuchet MS}
 % tentative pour une commande généraliste
 % \NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
 % 	\fontencoding{#2}%

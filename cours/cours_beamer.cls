@@ -105,9 +105,9 @@
 
 
 %%% ENUMERATE %%%
-\setbeamerfont{enumerate item}{family=\rmfamily}
-\setbeamercolor*{enumerate item}{fg=black}
-\setbeamertemplate{enumerate item}{\textbf{\insertenumlabel.}}
+\setbeamerfont{enumerate items}{family=\rmfamily}
+\setbeamercolor*{enumerate items}{fg=black}
+\setbeamertemplate{enumerate items}{\textbf{\insertenumlabel}.}
 %%%%%%%%%%%%%%%%%
 
 

@@ -12,24 +12,29 @@
                            prof ou élève, V1.0]
 
 
-
-%-- classe de base
+%
+%
+% INIT
+%
+%
 \LoadClass[a4paper, 12pt, DIV=24]{scrartcl}
-%\LoadClass[a4paper, 12pt]{article}
-%--%
 
 
 
-%-- PACKAGES
-% PERSONNELLES
-% commun: contient des définitions et extensions de base pour tout.
+%
+%
+% PACKAGES
+%
+%
+
+% Own packages. Those contains some global settings and definitions.
 \RequirePackage{commun}
 \RequirePackage{shortcuts}
 
-% sortie
+% output
 \RequirePackage{comment}
 
-% mise en page
+% layout
 \RequirePackage{geometry}
 \RequirePackage[footsepline, plainfootsepline]{scrlayer-scrpage}
 \RequirePackage{titling}
@@ -37,50 +42,24 @@
 \RequirePackage{pageslts}
 \RequirePackage{enumitem}
 \RequirePackage[]{hyperref}
-%--%
+
+
 
 \makeatletter
 
-%-- SETTINGS
-% metapost
-\ifpdf
-  \DeclareGraphicsRule{*}{mps}{*}{}
-\fi
 
-% tkz
-\usetkzobj{all} % on charge tous les objets
 
-% format de la page
-\geometry{a4paper, includeheadfoot, hmargin=.7cm, vmargin=.5cm, head=14.5pt}
+%
+%
+% FIXES
+%
+%
 
-% titre, en-tête, pied de page
-% fancyhdr version (need \RequirePackage{fancyhdr})
-%\pagestyle{fancy}
-%\fancyhf{}
-%\rhead{Cours - \@title}
-%\cfoot{\thepage\ /\ \pageref{LastPage}}
-%\renewcommand{\headrulewidth}{0pt}
-%\renewcommand{\footrulewidth}{.4pt}
+% Fix error from KOMA-Script scrartcl class.
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 
-% KOMA-Script version (preferred)
-\ohead{}
-\rohead[Cours]{Cours - \@title}
-\cofoot*{\thepage\ /\ \pageref{LastPage}}
-\pagestyle{scrheadings}
-\setkomafont{pagehead}{\normalfont\bfseries}
-\setkomafont{pagefoot}{\normalfont}
-
-% (sub)sections
-% \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
-% \titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
-% \renewcommand \thesection{\Roman{section}}
-% \renewcommand \thesubsection{\arabic{subsection}}
-
-% paths
-\graphicspath{{images/}}
-
-% mdframed
-% Fix for package see : http://tex.stackexchange.com/questions/179790/mdframed-how-to-change-the-separator-between-the-label-and-the-title-of-a-non-n#179794
+% Fix for mdframed package see :
+% http://tex.stackexchange.com/questions/179790/mdframed-how-to-change-the-separator-between-the-label-and-the-title-of-a-non-n#179794
 \DeclareDocumentCommand{\mdtheorem}{ O{} m o m o }%
  {\ifcsdef{#2}%
    {\mdf@PackageWarning{Environment #2 already exits\MessageBreak}}%
@@ -168,6 +147,59 @@
    }%
  }
 
+
+
+%
+%
+% SETTINGS
+%
+%
+
+% metapost
+\ifpdf
+  \DeclareGraphicsRule{*}{mps}{*}{}
+\fi
+
+% tkz
+\usetkzobj{all} % on charge tous les objets
+
+% sizing of the page
+\geometry{a4paper, includeheadfoot, hmargin=.7cm, vmargin=.5cm, head=14.5pt}
+
+% title, header and footer
+
+% KOMA-Script version (preferred)
+\ohead{}
+\rohead[Cours]{Cours - \@title}
+\cofoot*{\thepage\ /\ \pageref{LastPage}}
+\pagestyle{scrheadings}
+\setkomafont{pagehead}{\normalfont\bfseries}
+\setkomafont{pagefoot}{\normalfont}
+
+%-------------------------------------
+% fancyhdr version (need \RequirePackage{fancyhdr} and class article)
+%\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{Cours - \@title}
+%\cfoot{\thepage\ /\ \pageref{LastPage}}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{.4pt}
+%-------------------------------------
+
+%---------------------------------------------------------------------
+% (sub)sections
+% \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
+% \titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
+% \renewcommand \thesection{\Roman{section}}
+% \renewcommand \thesubsection{\arabic{subsection}}
+%---------------------------------------------------------------------
+
+% paths
+\graphicspath{{images/}}
+
+% mdframed
+
+
 % global options
 \mdfsetup{
     frametitlealignment=\raggedright,%
@@ -240,21 +272,6 @@
   frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
   nobreak=true,%
   xcolor,%
-  %hidealllines=true, leftline=true, % topline=true, bottomline=true,%
-  % shadow=true,%
-  % backgroundcolor=gray!40,% FOR TEST ONLY
-  % firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-  %             node[symbol] { \faLightbulbO };
-  %            },%
-  % secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-  %              node[symbol] { \faLightbulbO };
-  %             },%
-  % middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-  %              node[symbol] { \faLightbulbO };
-  %             },%
-  % singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-  %              node[symbol] { \faLightbulbO };
-  %             },%
 }
 % quote: frame with no borders but with a beginning quote at upper left and
 %        an ending quote at lower right
@@ -416,6 +433,14 @@
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}
 \mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
+
+
+
+%
+%
+% MACROS
+%
+%
 
 % Redirect all standard previously defined environments to their starred version
 % as they don't display numbering.
@@ -579,14 +604,6 @@
   \end{met*}
 }
 
-%--%
-
-
-
-% Fix error from KOMA-Script scrartcl class.
-\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
-
-%-- Macros personnelles
 % titre
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} } {%
   \setlength{\droptitle}{-2cm}
@@ -596,9 +613,8 @@
 	\maketitle
 }
 
-% commandes
 % \partie | \sspartie
-% definie un titre pour une (sous)section
+% Define a (sub)section title.
 \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
 \titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
 \renewcommand \thesection{\Roman{section}}
@@ -620,7 +636,6 @@
     \subsection{#1}
 }
 
-%-- %
 
 
 \makeatother

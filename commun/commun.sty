@@ -17,10 +17,13 @@
                                     utilisables partout, v2.0]
 
 
+%
+%
+% PACKAGES
+%
+%
 
-
-%-- PACKAGES CALLS
-% programmation
+% development
 \RequirePackage{xifthen}
 \RequirePackage{ifmtarg}
 \RequirePackage{ifpdf}
@@ -31,7 +34,7 @@
 \RequirePackage{ifluatex}
 \RequirePackage{import}
 
-% langue
+% language
 \ifluatex
 	\RequirePackage{polyglossia}		% => babel
 	\setdefaultlanguage{french}		% => inputenc
@@ -43,14 +46,14 @@
 	\RequirePackage[T1]{fontenc}		% => fontspec
 \fi
 
-% polices
+% fonts
 \RequirePackage{libertine}
 \RequirePackage{pifont}
 \RequirePackage{fontawesome}
 \RequirePackage{eurosym}
 %\RequirePackage{bbding}
 
-% couleur, dessin
+% color and graphics
 \ifluatex
 	\RequirePackage{luacolor}
 \fi
@@ -72,38 +75,46 @@
 \RequirePackage{mathrsfs}
 \RequirePackage{tabvar}
 
-% tableau
+% tables
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
 \RequirePackage{boldline}
 
-% mise en page
+% layout
 \RequirePackage{varwidth}
 \RequirePackage{adjustbox}
 
-% texte
+% text
 \RequirePackage[dash,phantomtext]{dashundergaps}
 \RequirePackage{comment}
-%-----------------
+
+
 
 \makeatletter
 
 
 
+%
+%
+% SETTINGS
+%
+%
 
-%-- SETTINGS
 \newboolean{display}
 \ifthenelse{\boolean{display}}{\includecomment{solution}}{\excludecomment{solution}}
-%-----------
 
 
 
+%
+%
+% MACROS
+%
+%
 
-% -- NEW COMMANDS
+% Tableau
+% Alignment commands of the content in the column with a defined width.
 
-%%% TABLEAU %%%
-% Commandes d'alignement du contenu dans la colonne de largeur <largeur>.
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -126,12 +137,56 @@
 %% rb{largeur} : droite - bas
 %\newcolumntype{rb}[1]{>{\raggedleft}b{#1}}
 
-% Item dans tableau
+% Item in a tab.
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-%%%%%%%%%%%%%%%
 
 
-%%% TEXTE %%%
+
+%
+%
+% Texte
+%
+%
+
+% \hcancel[color][size]{text}
+% Strike text with a color and a defined thickness.
+\newcommand\hcancel[2][black]{
+	\setbox0=\hbox{$#2$}%
+	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2
+}
+
+% \circled{text}
+% Circled text.
+\newcommand*\circled[1]{
+  \tikz[baseline=(char.base)]{
+    \node[shape=circle,draw,inner sep=2pt] (char) {#1};
+  }
+}
+
+% \keystroke{text}
+% Boxed text as a keyboard key.
+% Why: menukeys and tipfr packages don't really run correctly with beamer.
+\newcommand*\keystroke[1]{%
+    \tikz[baseline=(key.base)]
+    \node[%
+    draw,
+    fill=white,
+    drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+    rectangle,
+    rounded corners=2pt,
+    inner sep=1pt,
+    line width=0.5pt,
+    font=\scriptsize\sffamily
+    ](key) {#1\strut}
+    ;
+}
+
+%---------------------------------------------
+% \NewDocumentCommand \hcancel { O{black} O{1pt} } {
+% 	\setbox0=\hbox{$#3$}%
+% 	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{#2}}}} {#3}
+% }
+
 % \NewDocumentCommand \solution { s O{solution} g } {
 % 	\IfBooleanTF {#1}
 %   {
@@ -157,47 +212,16 @@
 %  }
 %  \color{#1}\ULon
 %}
-
-% \hcancel[color][size]{text}
-% Barrer du texte avec la couleur color et l'épaisseur size.
-\newcommand\hcancel[2][black]{
-	\setbox0=\hbox{$#2$}%
-	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2
-}
-% \NewDocumentCommand \hcancel { O{black} O{1pt} } {
-% 	\setbox0=\hbox{$#3$}%
-% 	\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{#2}}}} {#3}
-% }
-
-% \circled{text}
-% TextE encerclé
-\newcommand*\circled[1]{
-  \tikz[baseline=(char.base)]{
-    \node[shape=circle,draw,inner sep=2pt] (char) {#1};
-  }
-}
-
-% \keystroke{text}
-% Texte encadré comme si c'était une touche de clavier.
-% Cause: les packages menukeys et tipfr ne fonctionnent pas correctement avec beamer.
-\newcommand*\keystroke[1]{%
-    \tikz[baseline=(key.base)]
-    \node[%
-    draw,
-    fill=white,
-    drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
-    rectangle,
-    rounded corners=2pt,
-    inner sep=1pt,
-    line width=0.5pt,
-    font=\scriptsize\sffamily
-    ](key) {#1\strut}
-    ;
-}
-%%%%%%%%%%%%%
+%---------------------------------------------
 
 
-%%% POLICES %%%
+
+%
+%
+% Fonts
+%
+%
+
 \newfontfamily\Annie[Ligatures=TeX]{Annie Use Your Telescope}
 \newfontfamily\Architects[Ligatures=TeX]{Architects Daughter}
 \newfontfamily\Bristol[Ligatures=TeX]{Bristol}
@@ -214,37 +238,34 @@
 \newfontfamily\PokemonSolid[Ligatures=TeX]{Pokemon Solid}
 \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
 % \newfontfamily\TrebuchetMS[Ligatures=TeX]{Trebuchet MS}
-% tentative pour une commande généraliste
+
+%--------------------------------------------------------
+% Intent for a more general command.
 % \NewDocumentCommand \setFont { O{\familydefault} O{\encodingdefault} }{%
 % 	\fontencoding{#2}%
 % 	\fontfamily{#1}%
 % 	\selectfont
 % }
-%%%%%%%%%%%%%%%
+%--------------------------------------------------------
 
 
-%%% COULEURS %%%
+
+%
+%
+% Colors
+%
+%
+
 % \newColorCommand{color}
 % Create a macro which can be accessed with the name "\color".
 % This macro make the following text to be colored in color.
 \newcommand\newColorCommand[1]{%
 \expandafter\newcommand\csname #1\endcsname{\color{#1}}}
 
-% Create new color commands
+% Create some color commands
 \newColorCommand{red}
 \newColorCommand{white}
 \newColorCommand{gray}
-%%%%%%%%%%%%%%%%
-
-%---------------
-
-
-
-
-%-- MODIFIED COMMANDS
-
-%--------------------
-
 
 
 

@@ -15,6 +15,7 @@
 
 %-- classe de base
 \LoadClass[a4paper, 12pt, DIV=24]{scrartcl}
+%\LoadClass[a4paper, 12pt]{article}
 %--%
 
 
@@ -26,16 +27,16 @@
 \RequirePackage{shortcuts}
 
 % sortie
-% \RequirePackage[pdftex]{graphicx}
 \RequirePackage{comment}
 
 % mise en page
 \RequirePackage{geometry}
-\RequirePackage{scrlayer-scrpage}
+\RequirePackage[footsepline, plainfootsepline]{scrlayer-scrpage}
 \RequirePackage{titling}
 \RequirePackage{titlesec}
 \RequirePackage{pageslts}
 \RequirePackage{enumitem}
+\RequirePackage[]{hyperref}
 %--%
 
 \makeatletter
@@ -50,12 +51,24 @@
 \usetkzobj{all} % on charge tous les objets
 
 % format de la page
-\geometry{a4paper, hmargin=.7cm, vmargin=2cm}
+\geometry{a4paper, includeheadfoot, hmargin=.7cm, vmargin=.5cm, head=14.5pt}
 
 % titre, en-tête, pied de page
+% fancyhdr version (need \RequirePackage{fancyhdr})
+%\pagestyle{fancy}
+%\fancyhf{}
+%\rhead{Cours - \@title}
+%\cfoot{\thepage\ /\ \pageref{LastPage}}
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{.4pt}
+
+% KOMA-Script version (preferred)
+\ohead{}
+\rohead[Cours]{Cours - \@title}
 \cofoot*{\thepage\ /\ \pageref{LastPage}}
 \pagestyle{scrheadings}
-% \setkomafont{title}{\Comic}
+\setkomafont{pagehead}{\normalfont\bfseries}
+\setkomafont{pagefoot}{\normalfont}
 
 % (sub)sections
 % \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
@@ -577,10 +590,10 @@
 % titre
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} } {%
   \setlength{\droptitle}{-2cm}
-  \title{#1}
+	\title{#1}
   \subtitle{#2}
-  \date{}
-  \maketitle
+	\date{}
+	\maketitle
 }
 
 % commandes

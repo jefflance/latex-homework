@@ -26,15 +26,18 @@
 % PACKAGES
 %
 %
+% Others
+\RequirePackage{xkeyval}
 
 % Own packages. Those contains some global settings and definitions.
 \RequirePackage{commun}
+\RequirePackage{couleurs}
 \RequirePackage{shortcuts}
 
-% output
+% Output
 \RequirePackage{comment}
 
-% layout
+% Layout
 \RequirePackage{geometry}
 \RequirePackage[footsepline, plainfootsepline]{scrlayer-scrpage}
 \RequirePackage{titling}
@@ -46,6 +49,21 @@
 
 
 \makeatletter
+
+
+
+%
+%
+% OPTIONS
+%
+%
+
+\DeclareOptionX{type}[cours]{%
+  \def\type{#1}%
+}
+
+\ExecuteOptionsX{type}
+\ProcessOptionsX
 
 
 
@@ -170,7 +188,16 @@
 
 % KOMA-Script version (preferred)
 \ohead{}
-\rohead[Cours]{Cours - \@title}
+\ifthenelse{ \equal{\type}{activity} }{
+	\IfNoValueTF{ \subtitle }{
+		\rohead[Activité]{Activité}
+	}{
+		\rohead[Activité]{Activité - \@subtitle}
+	}
+	\cohead[\@title]{\@title}
+}{
+	\rohead[Cours]{Cours - \@title}
+}
 \cofoot*{\thepage\ /\ \pageref{LastPage}}
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
@@ -197,8 +224,13 @@
 % paths
 \graphicspath{{images/}}
 
-% mdframed
 
+
+%
+%
+% MDFRAMED
+%
+%
 
 % global options
 \mdfsetup{
@@ -270,7 +302,7 @@
   skipabove=0,skipbelow=0,%
   frametitlerule=false,%
   frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
-  nobreak=true,%
+  nobreak=false,%
   xcolor,%
 }
 % quote: frame with no borders but with a beginning quote at upper left and
@@ -322,16 +354,16 @@
   shadow=true,%
   % backgroundcolor=gray!40,% FOR TEST ONLY
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-              node[symbol] { \faFileTextO };
+              node[symbol] { \faCogs };
              },%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faFileTextO };
+               node[symbol] { \faCogs };
               },%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faFileTextO };
+               node[symbol] { \faCogs };
               },%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faFileTextO };
+               node[symbol] { \faCogs };
               },%
 }
 % tips: a shadowed square frame with a light bulb icon at upper left
@@ -378,16 +410,16 @@
   % shadow=true,%
   % backgroundcolor=gray!40,% FOR TEST ONLY
   firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-              node[symbol] { \faCogs };
+              node[symbol] { \faBookmarkO };
              },%
   secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faCogs };
+               node[symbol] { \faBookmarkO };
               },%
   middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faCogs };
+               node[symbol] { \faBookmarkO };
               },%
   singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
-               node[symbol] { \faCogs };
+               node[symbol] { \faBookmarkO };
               },%
 }
 % warn: frame with only left border and warning icon at upper left
@@ -428,7 +460,9 @@
 \mdtheorem[style=default, theoremseparator={ -}, theoremspace={}]{vocn}{Vocabulaire}
 \mdtheorem[style=quote, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
 \mdtheorem[style=warning, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
+\mdtheorem[style=warning, theoremseparator={}, theoremspace={}]{rmqn}{}
 \mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
+\mdtheorem[style=dotted, theoremseparator={}, theoremspace={}]{exen}{}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}
@@ -534,6 +568,16 @@
   \end{exe*}
 }
 
+\RenewDocumentEnvironment{exen}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{exen*}
+  }{
+    \begin{exen*}[#1]
+  }
+}{%end
+  \end{exen*}
+}
+
 \RenewDocumentEnvironment{qte}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{qte*}
@@ -552,6 +596,16 @@
   }
 }{%end
   \end{rmq*}
+}
+
+\RenewDocumentEnvironment{rmqn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{rmqn*}
+  }{
+    \begin{rmqn*}[#1]
+  }
+}{%end
+  \end{rmqn*}
 }
 
 \RenewDocumentEnvironment{voc}{ o } {%begin
@@ -635,6 +689,12 @@
     \stepcounter{sspartiecounter}
     \subsection{#1}
 }
+
+% lists
+\newlist{questions}{enumerate}{2}
+\setlist[questions]{labelindent=0em, leftmargin=*, labelsep=0.5em}
+\setlist[questions, 1]{label=\textbf{\arabic*.}}
+\setlist[questions, 2]{label=\textbf{\alph*)}}
 
 
 

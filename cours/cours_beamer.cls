@@ -202,7 +202,7 @@
 
 %-- OWN COMMANDS
 
-% \titre{TITRE}{ANNÉE}{AUTEUR}{LIEU}
+% \titre{TITRE}{SOUS-TITRE}{ANNÉE}{LIEU}
 % defini le titre du document
 \newcommand{\titre}[4]{%
 	\title{#1}
@@ -251,7 +251,7 @@
 }
 
 \NewDocumentCommand \sspartie { G{Sous-Partie} } {%
-  	\usebeamercolor{subsectioncolor}
+ 	\usebeamercolor{subsectioncolor}
 	\def\cType{\arabic}
 	\stepcounter{sspartiecounter}
 	\subsection{#1}
@@ -474,15 +474,15 @@
 		}
 		\stepcounter{methodecounter}
 		\IfNoValueTF {#2} {
-			\begin{block}{\faCogs \hspace{.125em} Méthode \cType{methodecounter}\ }
+			\begin{block}{\faBookmarkO \hspace{.125em} Méthode \cType{methodecounter}\ }
 		}{
-			\begin{block}{\faCogs \hspace{.125em} Méthode \cType{methodecounter}\ - #2}
+			\begin{block}{\faBookmarkO \hspace{.125em} Méthode \cType{methodecounter}\ - #2}
 		}
 	}{
 		\IfNoValueTF {#2} {
-			\begin{block}{\faCogs \hspace{.125em} Méthode\ }
+			\begin{block}{\faBookmarkO \hspace{.125em} Méthode\ }
 		}{
-			\begin{block}{\faCogs \hspace{.125em} Méthode\ - #2}
+			\begin{block}{\faBookmarkO \hspace{.125em} Méthode\ - #2}
 		}
 	}
 }{%end
@@ -493,7 +493,7 @@
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
  	\setbeamercolor*{block title}{parent=example}
  	% \setbeamercolorofitem{example}
-	\begin{block} {\faLightbulbO \hspace{.125em} #1}
+	\begin{block} {\faPaperclip \hspace{.125em} #1}
 }{%end
 	\end{block}
 }
@@ -570,9 +570,9 @@
 				}
 			}
 		\stepcounter{applicationcounter}
-		\begin{block}{\faFileTextO \hspace{.125em} #2 \cType{applicationcounter}\ }
+		\begin{block}{\faCogs \hspace{.125em} #2 \cType{applicationcounter}\ }
 	}{
-		\begin{block}{\faFileTextO \hspace{.125em} #2\ }
+		\begin{block}{\faCogs \hspace{.125em} #2\ }
 	}
 }{%end
 	\end{block}

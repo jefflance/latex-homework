@@ -74,6 +74,7 @@
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
 \RequirePackage{tabvar}
+\RequirePackage{xlop}
 
 % tables
 \RequirePackage{array}
@@ -88,6 +89,7 @@
 % text
 \RequirePackage[dash,phantomtext]{dashundergaps}
 \RequirePackage{comment}
+\RequirePackage{caption}
 
 
 
@@ -181,6 +183,16 @@
     ;
 }
 
+
+
+%
+%
+% Captions
+%
+%
+
+\DeclareCaptionFormat{source}{\textbf{\textit{source#2}} #3}
+
 %---------------------------------------------
 % \NewDocumentCommand \hcancel { O{black} O{1pt} } {
 % 	\setbox0=\hbox{$#3$}%
@@ -232,6 +244,7 @@
 \newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
 \newfontfamily\Handlee[Ligatures=TeX]{Handlee}
 \newfontfamily\Julee[Ligatures=TeX]{Julee}
+\newfontfamily\Morse[Ligatures=TeX]{Morse}
 \newfontfamily\NixieOne[Ligatures=TeX]{Nixie One}
 \newfontfamily\PenguinAttack[Ligatures=TeX]{PenguinAttack}
 \newfontfamily\PokemonHollow[Ligatures=TeX]{Pokemon Hollow}
@@ -264,8 +277,23 @@
 
 % Create some color commands
 \newColorCommand{red}
+\newColorCommand{black}
 \newColorCommand{white}
 \newColorCommand{gray}
+\newColorCommand{lapislazuli}
+
+
+
+%
+%
+% Maths
+%
+%
+
+\newcommand\OPoval[3]{%
+	\dimen1=#2\opcolumnwidth
+	\ovalnode{#1}
+		{\kern\dimen1 #3\kern\dimen1}}
 
 
 

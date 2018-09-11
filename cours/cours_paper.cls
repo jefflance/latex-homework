@@ -1,6 +1,6 @@
 %%%
 %%%
-%%% Classe : cours_prof.cls
+%%% Classe : cours_paper.cls
 %%% Version : 1.0
 %%% Date : 09/11/16
 %%% Auteur : Jeff LANCE
@@ -8,7 +8,7 @@
 %%%
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{cours_prof}[2016/11/09 Document de cours imprimable A4 pour
+\ProvidesClass{cours_paper}[2016/11/09 Document de cours en A4 pour
                            prof ou élève, V1.0]
 
 
@@ -17,7 +17,8 @@
 % INIT
 %
 %
-\LoadClass[a4paper, 12pt, DIV=24]{scrartcl}
+\LoadClassWithOptions{scrartcl}
+%\LoadClass[a4paper, 12pt, DIV=24]{scrartcl}
 
 
 
@@ -62,6 +63,7 @@
   \def\type{#1}%
 }
 
+\ExecuteOptions{a4paper, DIV=24}
 \ExecuteOptionsX{type}
 \ProcessOptionsX
 
@@ -188,16 +190,25 @@
 
 % KOMA-Script version (preferred)
 \ohead{}
+
 \ifthenelse{ \equal{\type}{activity} }{
 	\IfNoValueTF{ \subtitle }{
+		\cohead[\@title]{\@title}
 		\rohead[Activité]{Activité}
 	}{
+		\cohead[\@title]{\@title}
 		\rohead[Activité]{Activité - \@subtitle}
 	}
-	\cohead[\@title]{\@title}
+	
 }{
-	\rohead[Cours]{Cours - \@title}
+	\ifthenelse{ \equal{\type}{exercise} }{
+		\cohead[\@title]{\@title}
+		\rohead[Exercices]{Exercices}
+	}{
+		\rohead[Cours]{Cours - \@title}
+	}
 }
+
 \cofoot*{\thepage\ /\ \pageref{LastPage}}
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
@@ -659,7 +670,7 @@
 }
 
 % titre
-\NewDocumentCommand \titre { G{Titre} G{Sous-titre} } {%
+\NewDocumentCommand \titre { G{Titre} G{Sous-titre} }{%
   \setlength{\droptitle}{-2cm}
 	\title{#1}
   \subtitle{#2}
@@ -695,6 +706,29 @@
 \setlist[questions]{labelindent=0em, leftmargin=*, labelsep=0.5em}
 \setlist[questions, 1]{label=\textbf{\arabic*.}}
 \setlist[questions, 2]{label=\textbf{\alph*)}}
+
+\newlist{questinl}{enumerate*}{1}
+\setlist*[questinl]{label=\textbf{\alph*)}}
+
+\setlist[enumerate, 1]{label=\textbf{\arabic*.}, leftmargin=*, labelsep=.5em}
+\setlist[enumerate, 2]{label=\textbf{\alph*)}}
+
+\setlist[description]{font=\sffamily\bfseries}
+
+% amsthm
+\newtheoremstyle{exostyle} 
+	{\topsep}% espace avant 
+	{\topsep}% espace apres 
+	{}% Police utilisee par le style de thm 
+	{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
+	{\bfseries}% Police du titre de thm 
+	{}% Signe de ponctuation apres le titre du thm 
+	{\newline}% Espace apres le titre du thm (\newline = linebreak)
+	{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
+
+\theoremstyle{exostyle}
+\newtheorem{exercice}{Exercice}
+%
 
 
 

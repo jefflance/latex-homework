@@ -51,30 +51,42 @@
 \RequirePackage{pifont}
 \RequirePackage{fontawesome}
 \RequirePackage{eurosym}
-%\RequirePackage{bbding}
+\RequirePackage{frcursive}
 
 % color and graphics
 \ifluatex
 	\RequirePackage{luacolor}
 \fi
-\RequirePackage{xcolor}
+%\RequirePackage[table,xcdraw]{xcolor} % there's a bug when used with some mdframed content
+\RequirePackage[]{xcolor}
 \RequirePackage[framemethod=tikz]{mdframed}
 \RequirePackage{graphicx}
 \RequirePackage{transparent}
+\RequirePackage{fancybox}
+\RequirePackage[tikz]{bclogo}
 
 % maths
-\RequirePackage{amsmath}
+\RequirePackage{amsmath, amsthm}
 \RequirePackage{amssymb}
 \RequirePackage{tkz-euclide}
 \usetikzlibrary{shadows}
 \RequirePackage{calc}
+% \RequirePackage{pgffor,pgfmath} % loaded by tikz
 \RequirePackage{pgfplots}
-\pgfplotsset{compat=1.13}
-\RequirePackage{siunitx}
+\pgfplotsset{compat=1.16}
+\RequirePackage[output-decimal-marker={,}]{siunitx}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
-\RequirePackage{tabvar}
 \RequirePackage{xlop}
+
+% tableaux de signe
+%\RequirePackage{tabvar}    % replaced by pdftabvar from pdfadd
+\RequirePackage{fp}
+\RequirePackage[luatex]{pict2e}
+\RequirePackage{picture}
+\RequirePackage{color}
+\input pdftabvar
+%
 
 % tables
 \RequirePackage{array}
@@ -85,9 +97,10 @@
 % layout
 \RequirePackage{varwidth}
 \RequirePackage{adjustbox}
+\RequirePackage{lscape}
 
 % text
-\RequirePackage[dash,phantomtext]{dashundergaps}
+\RequirePackage[dash]{dashundergaps}
 \RequirePackage{comment}
 \RequirePackage{caption}
 
@@ -103,9 +116,8 @@
 %
 %
 
-\newboolean{display}
-\ifthenelse{\boolean{display}}{\includecomment{solution}}{\excludecomment{solution}}
-
+% \providetoggle{display}
+% \toggletrue{display}
 
 
 %
@@ -183,6 +195,42 @@
     ;
 }
 
+\NewDocumentCommand \getrandomletter { s G{1} G{26} }{%
+  \IfBooleanTF { #1 }{
+    \pgfmathrandominteger{\zzz}{#2}{#3}\csname pgffor@Alpha\endcsname{\zzz}
+  }{
+    \pgfmathrandominteger{\zzz}{#2}{#3}\csname pgffor@alpha\endcsname{\zzz}
+  }
+}
+
+\NewDocumentCommand \getbool { }{%
+	\pgfmathtruncatemacro{\random}{rnd}
+	%\pgfmathparse{notless(\random, .5)}
+	\pgfmathparse{(\random > .5) ? true : false}
+	\pgfmathresult
+}
+
+% \NewDocumentCommand \displaysolutions { }{%
+%   \iftoggle{display}{
+%     \textbf{Solutions}
+%     \includecomment{solution}
+%   }{
+%     \excludecomment{solution}
+%   }
+% }
+
+
+
+%
+%
+% BCLOGO
+%
+%
+
+\renewcommand\bcStyleTitre[1]{\textbf{#1}}
+\newcommand\bcexample{\centering \normalsize \faPaperclip}
+\newcommand\bcremark{\centering \normalsize \faExclamationTriangle}
+
 
 
 %
@@ -206,7 +254,7 @@
 %   }
 %     {}
 %   \begin{#2}
-%   \end{#2}	 
+%   \end{#2}
 % }
 
 %% \underdash[color]{text}

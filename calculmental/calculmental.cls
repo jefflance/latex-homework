@@ -99,21 +99,24 @@
 }
 
 
+% \titre{TITRE}{SOUS-TITRE}{ANNÉE}{LIEU}
+% defini le titre du document
 \newcommand{\titre}[4]{%
 	\title{#1}
-	\subtitle{Calcul Mental}
-	\date{#2}
-	\author{#3}
+	\subtitle{#2}
+	\date{#3}
+	\author{Calcul mental}
 	\institute{#4}
 }
 
 
 \NewDocumentCommand \debut { s }{%
-	\begin{frame}
+	\begin{frame}[plain]
 		\titlepage
-
 		\transduration{3}
-	\end{frame}
+  \end{frame}
+
+  \addtocounter{framenumber}{-1}
 
 	\begin{frame}
 		\centering

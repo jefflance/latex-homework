@@ -478,6 +478,7 @@
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}
 \mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
+\mdtheorem[style=clear, theoremseparator={}, theoremspace={}]{metn}{}
 
 
 
@@ -669,6 +670,16 @@
   \end{met*}
 }
 
+\RenewDocumentEnvironment{metn}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{metn*}
+  }{
+    \begin{metn*}[#1]
+  }
+}{%end
+  \end{metn*}
+}
+
 % titre
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} }{%
   \setlength{\droptitle}{-2cm}
@@ -707,8 +718,8 @@
 \setlist[questions, 1]{label=\textbf{\arabic*.}}
 \setlist[questions, 2]{label=\textbf{\alph*)}}
 
-\newlist{questinl}{enumerate*}{1}
-\setlist*[questinl]{label=\textbf{\alph*)}}
+\newlist{questionsl}{enumerate*}{1}
+\setlist*[questionsl]{label=\textbf{\alph*)}}
 
 \setlist[enumerate, 1]{label=\textbf{\arabic*.}, leftmargin=*, labelsep=.5em}
 \setlist[enumerate, 2]{label=\textbf{\alph*)}}

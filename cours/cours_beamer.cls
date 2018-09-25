@@ -219,7 +219,6 @@
 	\titlepage
   \end{frame}
   \addtocounter{framenumber}{-1}
-
 }
 
 \newcommand{\fin}{%

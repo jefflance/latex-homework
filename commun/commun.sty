@@ -132,6 +132,7 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{M}[1]{>{\centering}m{#1}}
 %% lh{largeur} : gauche - haut
 %\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
 %% ch{largeur} : centre - haut
@@ -203,21 +204,11 @@
   }
 }
 
-\NewDocumentCommand \getbool { }{%
-	\pgfmathtruncatemacro{\random}{rnd}
-	%\pgfmathparse{notless(\random, .5)}
-	\pgfmathparse{(\random > .5) ? true : false}
+\NewDocumentCommand \@getletter{ G{1} G{26} }{
+	\pgfmathsetmacro{\random}{rnd}
+	\pgfmathparse{\random >= 0.5 ? "\noexpand\getrandomletter{#1}{#2}" : "\noexpand\getrandomletter*{#1}{#2}"}
 	\pgfmathresult
 }
-
-% \NewDocumentCommand \displaysolutions { }{%
-%   \iftoggle{display}{
-%     \textbf{Solutions}
-%     \includecomment{solution}
-%   }{
-%     \excludecomment{solution}
-%   }
-% }
 
 
 

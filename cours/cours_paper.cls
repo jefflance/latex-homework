@@ -315,6 +315,18 @@
   frametitlebackgroundcolor=white!0,%innertopmargin=\topskip,%
   nobreak=false,%
   xcolor,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
 }
 % quote: frame with no borders but with a beginning quote at upper left and
 %        an ending quote at lower right
@@ -726,20 +738,20 @@
 
 \setlist[description]{font=\sffamily\bfseries}
 
-% amsthm
-\newtheoremstyle{exostyle} 
-	{\topsep}% espace avant 
-	{\topsep}% espace apres 
-	{}% Police utilisee par le style de thm 
-	{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-	{\bfseries}% Police du titre de thm 
-	{}% Signe de ponctuation apres le titre du thm 
-	{\newline}% Espace apres le titre du thm (\newline = linebreak)
-	{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
-
-\theoremstyle{exostyle}
-\newtheorem{exercice}{Exercice}
+%% amsthm
+%\newtheoremstyle{exostyle} 
+%	{\topsep}% espace avant 
+%	{\topsep}% espace apres 
+%	{}% Police utilisee par le style de thm 
+%	{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
+%	{\bfseries}% Police du titre de thm 
+%	{}% Signe de ponctuation apres le titre du thm 
+%	{\newline}% Espace apres le titre du thm (\newline = linebreak)
+%	{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
 %
+%\theoremstyle{exostyle}
+%\newtheorem{exercice}{Exercice}
+%%
 
 
 

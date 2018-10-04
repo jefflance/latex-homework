@@ -16,7 +16,11 @@
 
 \makeatletter
 
-%-- Environments
+%
+%
+% ENVIRONMENTS
+%
+%
 % itemize
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
@@ -36,13 +40,16 @@
 
 
 
-%-- Typo
+%
+%
+% TEXT
+%
+%
 % Another shortcut for white text.
 \NewDocumentCommand \ghost { } {%
     \white
 }
 
-%-- Texte
 % c'est-à-dire
 \NewDocumentCommand \cad { } {
 	{c'est-à-dire}
@@ -51,7 +58,13 @@
 	{C'est-à-dire}
 }
 
-%-- Maths
+
+
+%
+%
+% MATHS
+%
+%
 % vecteurs i et j
 % utilise la syntax du package xparse non appelé dans le préambule de ce
 % fichier.
@@ -62,22 +75,39 @@
 	\ensuremath{ \vec{\jmath} }
 }
 
+% repère (base vectorielle) (O;i;j)
+\NewDocumentCommand \oij { } {
+  \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\right) }
+}
+
+% repère (O;I;I)
+\NewDocumentCommand \OIJ { } {
+  \ensuremath{ \left(O\; ;\; I\; ;\; J\right) }
+}
+
 % redéfinition du signe vectoriel
-\renewcommand{\Vec}[1]{\overrightarrow{#1\vphantom(}}
+\renewcommand{\Vec}[1]{
+  \overrightarrow{#1\vphantom(}
+}
+
+% écriture dans un système positionnel
+\newcommand{\base}[2]{
+  \ensuremath{ \overline{#1\vphantom(}^{#2} }
+}
 
 % ensembles
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{R} \setminus \{0\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0\}}\!\!\!
         }{
-            \ensuremath{\!\!\! \mathbb{R} \setminus \{0, #2\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0, #2\}}\!\!\!
         }
     }{
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{R} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{R}}\!\!\!
         }{
-            \ensuremath{\!\!\! \mathbb{R} \setminus \{#2\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{#2\}}\!\!\!
         }
     }
 }

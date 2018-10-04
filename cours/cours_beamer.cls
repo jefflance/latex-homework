@@ -292,7 +292,7 @@
 %}
 
 % déf(*)(TITRE)
-\NewDocumentEnvironment{déf}{ s g }{%begin
+\NewDocumentEnvironment{défn}{ s g }{%begin
 	\setbeamercolor*{block title}{parent=definition}
  	% \setbeamercolorofitem{definition}
 	\IfBooleanTF #1
@@ -314,7 +314,7 @@
 }
 
 % défn(*)(TITRE)
-\NewDocumentEnvironment{défn}{ s g }{%begin
+\NewDocumentEnvironment{déf}{ s g }{%begin
 	\setbeamercolor*{block title}{parent=definition}
  	% \setbeamercolorofitem{definition}
 	\IfBooleanTF #1
@@ -336,7 +336,7 @@
 }
 
 % thm(TITRE)
-\NewDocumentEnvironment{thm}{ g }{%begin
+\NewDocumentEnvironment{thmn}{ g }{%begin
  	\setbeamercolor*{block title}{parent=theorem}
  	% \setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
@@ -349,7 +349,7 @@
 }
 
 % thmn(TITRE)
-\NewDocumentEnvironment{thmn}{ g }{%begin
+\NewDocumentEnvironment{thm}{ g }{%begin
   	\setbeamercolor*{block title}{parent=theorem}
  	% \setbeamercolorofitem{theorem}
 	\IfNoValueTF {#1} {
@@ -362,7 +362,7 @@
 }
 
 % ppt(*)(TITRE)
-\NewDocumentEnvironment{ppt}{ s g }{%begin
+\NewDocumentEnvironment{pptn}{ s g }{%begin
  	\setbeamercolor*{block title}{parent=property}
  	% \setbeamercolorofitem{property}
 	\IfBooleanTF #1
@@ -384,7 +384,7 @@
 }
 
 % pptn(*)(TITRE)
-\NewDocumentEnvironment{pptn}{ s g }{%begin
+\NewDocumentEnvironment{ppt}{ s g }{%begin
  	\setbeamercolor*{block title}{parent=property}
  	% \setbeamercolorofitem{property}
 	\IfBooleanTF #1
@@ -492,7 +492,7 @@
 \NewDocumentEnvironment{exe}{ G{Exemple} }{%begin
  	\setbeamercolor*{block title}{parent=example}
  	% \setbeamercolorofitem{example}
-	\begin{block} {\faPaperclip \hspace{.125em} #1}
+	\begin{block} {\faEye \hspace{.125em} #1}
 }{%end
 	\end{block}
 }

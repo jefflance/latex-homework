@@ -45,7 +45,7 @@
 % TEXT
 %
 %
-% Another shortcut for white text.
+% another shortcut to whiting text.
 \NewDocumentCommand \ghost { } {%
     \white
 }
@@ -65,9 +65,7 @@
 % MATHS
 %
 %
-% vecteurs i et j
-% utilise la syntax du package xparse non appelé dans le préambule de ce
-% fichier.
+% i & j vectors
 \NewDocumentCommand \veci { } {
 	\ensuremath{ \vec{\imath} }
 }
@@ -75,27 +73,32 @@
 	\ensuremath{ \vec{\jmath} }
 }
 
-% repère (base vectorielle) (O;i;j)
+% frame (O;i;j)
 \NewDocumentCommand \oij { } {
   \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\right) }
 }
 
-% repère (O;I;I)
+% frame (O;I;I)
 \NewDocumentCommand \OIJ { } {
   \ensuremath{ \left(O\; ;\; I\; ;\; J\right) }
 }
 
-% redéfinition du signe vectoriel
+% frame (O;x;y)
+\NewDocumentCommand \oxy { } {
+  \ensuremath{ \left(O\; ;\; x\; ;\; y\right) }
+}
+
+% vector arrow redefinition
 \renewcommand{\Vec}[1]{
   \overrightarrow{#1\vphantom(}
 }
 
-% écriture dans un système positionnel
+% positional notation
 \newcommand{\base}[2]{
   \ensuremath{ \overline{#1\vphantom(}^{#2} }
 }
 
-% ensembles
+% sets: N, Z, D, Q, R\Q and R with possibility to minus some numbers
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {

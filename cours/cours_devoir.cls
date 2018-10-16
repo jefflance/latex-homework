@@ -62,8 +62,13 @@
   \def\type{#1}%
 }
 
-\ExecuteOptions{a4paper, DIV=24}
+\DeclareOptionX{size}[a4paper]{%
+  \def\size{#1}%
+}
+
+\ExecuteOptions{DIV=24}
 \ExecuteOptionsX{type}
+\ExecuteOptionsX{size}
 \ProcessOptionsX
 
 
@@ -91,10 +96,14 @@
 \fi
 
 % tkz
-\usetkzobj{all} % on charge tous les objets
+\usetkzobj{all} % loading all tkz objects
 
-% sizing of the page
-\geometry{a4paper, includeheadfoot, hmargin=.7cm, vmargin=.5cm, head=14.5pt}
+% sizing of the page, depending on the size parameter of the class
+\ifthenelse{ \equal{\size}{a5} }{
+  \geometry{a5paper, landscape, includeheadfoot, hmargin=.8cm, vmargin=.8cm, head=14.5pt}
+}{
+  \geometry{a4paper, includeheadfoot, hmargin=.8cm, vmargin=.8cm, head=14.5pt}
+}
 
 % title, header and footer
 \ihead[]{}
@@ -105,7 +114,6 @@
 \ofoot[]{}
 
 % KOMA-Script version (preferred)
-
 \ifthenelse{ \equal{\type}{ds} }{
  	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}]{\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}}
   \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
@@ -117,12 +125,21 @@
 	\ifthenelse{ \equal{\type}{dm} }{
    	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]{\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
     \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
-    \rohead[Le \@date]{Le \@date}
+    \rohead[\@date]{\@date}
     \cehead[]{}
     \lehead[]{}
     \rehead[]{}
 	}{
-  
+    \ifthenelse{ \equal{\type}{int} }{
+      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}]{\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}}
+      \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
+      \rohead[\@date]{\@date}
+      \cehead[]{}
+      \lehead[]{}
+      \rehead[]{}
+    }{
+    % nothing
+    }
 	}
 }
 
@@ -142,7 +159,7 @@
 %
 %
 
-% lists
+% new lists definitions
 \newlist{questions}{enumerate}{2}
 \setlist[questions]{labelindent=0em, leftmargin=*, labelsep=0.5em}
 \setlist[questions, 1]{label=\textbf{\arabic*.}}
@@ -156,9 +173,91 @@
 
 \setlist[description]{font=\sffamily\bfseries}
 
-%
+
+% print a "Please, turn the page" at bottom right of the page
 \NewDocumentCommand \turnpage{ }{
   \rofoot[\textit{Tourner la page, svp} \faHandORight]{\textit{Tourner la page, svp} \faHandORight}
 }
+
+
+% amsthm style for exercises
+\newtheoremstyle{exostyle} 
+{\topsep}% espace avant 
+{\topsep}% espace apres 
+{}% Police utilisee par le style de thm 
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
+{\bfseries}% Police du titre de thm 
+{}% Signe de ponctuation apres le titre du thm 
+{\newline}% Espace apres le titre du thm (\newline = linebreak)
+{%
+  \if\relax\detokenize{#3}\relax
+  % no optional argument
+  \else
+  \makebox[0pt][l]{\hspace{.9\textwidth}\normalfont\itshape#3}%
+  \fi
+  \thmname{#1}\thmnumber{ #2}%
+}
+
+\theoremstyle{exostyle}
+\newtheorem{exercice}{Exercice}
+\newtheorem{exercice*}[exercice]{\faPencil \ Exercice}
+
+
+% amsthm proofs customization
+\newenvironment{solution}
+  {\begin{proof}[\textbf{Solution}]}
+  {\end{proof}}
+
+%
+%
+% TODO: Replace amsthm exercices with xsim
+%
+%
+%\usepackage{xsim}
+%
+%\DeclareExerciseTranslations{exercise}{
+%  Fallback = exercise,
+%  English  = exercise,
+%  French   = exercice
+%}
+%
+%\DeclareExerciseType{exercice}{
+%  exercise-env = exercice ,
+%  solution-env = answer ,
+%  exercise-name = Exercice ,
+%  solution-name = Solution ,
+%  exercise-template = exercice ,
+%  solution-template = exercice
+%}
+%
+%\DeclareExerciseEnvironmentTemplate{exercice}{%
+%  \subsection*
+%  {%
+%    \XSIMmixedcase{\GetExerciseName}\nobreakspace
+%    \GetExerciseProperty{counter}%
+%    \IfInsideSolutionF
+%    {%
+%      \GetExercisePropertyT{subtitle}
+%      { {\normalfont\itshape\PropertyValue}}%
+%    }%
+%  }
+%  \GetExercisePropertyT{points}
+%  {%
+%    \hspace{.9\textwidth}\\
+%    {%
+%      \IfInsideSolutionF{\rule{1.2cm}{1pt}\slash}%
+%      \printgoal{\PropertyValue}
+%      \GetExercisePropertyT{bonus-points}{~(+\printgoal{\PropertyValue})}%
+%      ~\XSIMtranslate {point-abbr}%
+%    }%
+%  }%
+%}
+%{}
+
+% text customization
+\NewDocumentCommand \conclusion{ }{
+  \underline{Conclusion :}
+}
+
 
 \makeatother

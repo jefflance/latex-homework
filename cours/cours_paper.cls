@@ -692,6 +692,7 @@
   \end{metn*}
 }
 
+
 % titre
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} }{%
   \setlength{\droptitle}{-2cm}
@@ -700,6 +701,7 @@
 	\date{}
 	\maketitle
 }
+
 
 % \partie | \sspartie
 % Define a (sub)section title.
@@ -724,7 +726,8 @@
     \subsection{#1}
 }
 
-% lists
+
+% new lists definitions
 \newlist{questions}{enumerate}{2}
 \setlist[questions]{labelindent=0em, leftmargin=*, labelsep=0.5em}
 \setlist[questions, 1]{label=\textbf{\arabic*.}}
@@ -738,20 +741,20 @@
 
 \setlist[description]{font=\sffamily\bfseries}
 
-%% amsthm
-%\newtheoremstyle{exostyle} 
-%	{\topsep}% espace avant 
-%	{\topsep}% espace apres 
-%	{}% Police utilisee par le style de thm 
-%	{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-%	{\bfseries}% Police du titre de thm 
-%	{}% Signe de ponctuation apres le titre du thm 
-%	{\newline}% Espace apres le titre du thm (\newline = linebreak)
-%	{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
-%
-%\theoremstyle{exostyle}
-%\newtheorem{exercice}{Exercice}
-%%
+
+% ams theorem style for exercises
+\newtheoremstyle{exostyle}
+{\topsep}% espace avant 
+{\topsep}% espace apres 
+{}% Police utilisee par le style de thm 
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
+{\bfseries}% Police du titre de thm 
+{}% Signe de ponctuation apres le titre du thm 
+{\newline}% Espace apres le titre du thm (\newline = linebreak)
+{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
+
+\theoremstyle{exostyle}
+\newtheorem{exercice}{Exercice}
 
 
 

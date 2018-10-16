@@ -106,6 +106,7 @@
 \RequirePackage{caption}
 \RequirePackage[outputdir=./build]{minted}
 \RequirePackage{inconsolata}
+\RequirePackage{tasks}
 
 
 \makeatletter
@@ -259,46 +260,7 @@
 
 %
 %
-% AMSTHM
-%
-%
-\newtheoremstyle{exostyle1} 
-{\topsep}% espace avant 
-{\topsep}% espace apres 
-{}% Police utilisee par le style de thm 
-{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-{\bfseries}% Police du titre de thm 
-{}% Signe de ponctuation apres le titre du thm 
-{\newline}% Espace apres le titre du thm (\newline = linebreak)
-{\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
-
-\newtheoremstyle{exostyle2} 
-{\topsep}% espace avant 
-{\topsep}% espace apres 
-{}% Police utilisee par le style de thm 
-{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-{\bfseries}% Police du titre de thm 
-{}% Signe de ponctuation apres le titre du thm 
-{\newline}% Espace apres le titre du thm (\newline = linebreak)
-{%
-  \if\relax\detokenize{#3}\relax
-  % no optional argument
-  \else
-  \makebox[0pt][l]{\hspace{.9\textwidth}\normalfont\itshape#3}%
-  \fi
-  \thmname{#1}\thmnumber{ #2}%
-}
-
-\theoremstyle{exostyle2}
-\newtheorem{exercice}{Exercice}
-\newtheorem{exercice*}[exercice]{\faPencil \ Exercice}
-%
-
-
-
-%
-%
-% Captions
+% CAPTIONS
 %
 %
 
@@ -341,7 +303,7 @@
 
 %
 %
-% Fonts
+% FONTS
 %
 %
 
@@ -376,7 +338,7 @@
 
 %
 %
-% Colors
+% COLORS
 %
 %
 
@@ -397,7 +359,7 @@
 
 %
 %
-% Maths
+% MATHS
 %
 %
 
@@ -406,6 +368,14 @@
 	\ovalnode{#1}
 		{\kern\dimen1 #3\kern\dimen1}}
 
+
+
+%
+%
+% FIGURES
+%
+%
+\NewDocumentCommand \fig {  }{ }
 
 
 \makeatother

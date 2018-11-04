@@ -53,6 +53,7 @@
 \RequirePackage{fontawesome}
 \RequirePackage{eurosym}
 \RequirePackage{frcursive}
+\RequirePackage{emerald}
 
 % color and graphics
 \ifluatex
@@ -107,6 +108,8 @@
 \RequirePackage[outputdir=./build]{minted}
 \RequirePackage{inconsolata}
 \RequirePackage{tasks}
+%--
+
 
 
 \makeatletter
@@ -121,6 +124,7 @@
 
 % Set the default monospaced font
 \setmonofont[StylisticSet=3]{Inconsolatazi4}
+%--
 
 
 
@@ -157,6 +161,7 @@
 
 % Item in a tab.
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+%--
 
 
 
@@ -230,6 +235,7 @@
     \kern\dimexpr-\fboxsep-\fboxrule\relax
   }\par\kern#2
 }
+%--
 
 
 
@@ -243,6 +249,7 @@
 \newminted[python]{python}{style=bw, fontsize=\small, bgcolor=white, autogobble, frame=lines, breaklines, escapeinside=||, xleftmargin=0em, xrightmargin=0em, numbersep=.2em}
 \newmintinline{python}{style=autumn, fontsize=\small, bgcolor=friendlybg, autogobble, encoding=utf8}
 \renewcommand{\theFancyVerbLine}{\sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
+%--
 
 
 
@@ -255,6 +262,7 @@
 \renewcommand\bcStyleTitre[1]{\textbf{#1}}
 \newcommand\bcexample{\centering \normalsize \faPaperclip}
 \newcommand\bcremark{\centering \normalsize \faExclamationTriangle}
+%--
 
 
 
@@ -298,6 +306,7 @@
 %  \color{#1}\ULon
 %}
 %---------------------------------------------
+%--
 
 
 
@@ -317,6 +326,7 @@
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
 \newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
 \newfontfamily\Handlee[Ligatures=TeX]{Handlee}
+\newfontfamily\Jd[Ligatures=TeX]{JD}
 \newfontfamily\Julee[Ligatures=TeX]{Julee}
 \newfontfamily\Morse[Ligatures=TeX]{Morse}
 \newfontfamily\NixieOne[Ligatures=TeX]{Nixie One}
@@ -334,6 +344,8 @@
 % 	\selectfont
 % }
 %--------------------------------------------------------
+
+%--
 
 
 
@@ -355,6 +367,7 @@
 \newColorCommand{white}
 \newColorCommand{gray}
 \newColorCommand{lapislazuli}
+%--
 
 
 
@@ -368,6 +381,7 @@
 	\dimen1=#2\opcolumnwidth
 	\ovalnode{#1}
 		{\kern\dimen1 #3\kern\dimen1}}
+%--
 
 
 
@@ -376,7 +390,10 @@
 % FIGURES
 %
 %
+
 \NewDocumentCommand \fig {  }{ }
+%--
+
 
 
 \makeatother

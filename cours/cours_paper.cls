@@ -27,6 +27,7 @@
 % PACKAGES
 %
 %
+
 % Others
 \RequirePackage{xkeyval}
 
@@ -46,6 +47,7 @@
 \RequirePackage{pageslts}
 \RequirePackage{enumitem}
 \RequirePackage[]{hyperref}
+%--
 
 
 
@@ -66,6 +68,7 @@
 \ExecuteOptions{a4paper, DIV=24}
 \ExecuteOptionsX{type}
 \ProcessOptionsX
+%--
 
 
 
@@ -166,6 +169,7 @@
      }%
    }%
  }
+%--
 
 
 
@@ -199,7 +203,7 @@
 		\cohead[\@title]{\@title}
 		\rohead[Activité]{Activité - \@subtitle}
 	}
-	
+
 }{
 	\ifthenelse{ \equal{\type}{exercise} }{
 		\cohead[\@title]{\@title}
@@ -234,6 +238,7 @@
 
 % paths
 \graphicspath{{images/}}
+%--
 
 
 
@@ -491,6 +496,7 @@
 \mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}
 \mdtheorem[style=method, theoremseparator={ -}, theoremspace={}]{met}{Méthode}
 \mdtheorem[style=clear, theoremseparator={}, theoremspace={}]{metn}{}
+%--
 
 
 
@@ -744,17 +750,18 @@
 
 % ams theorem style for exercises
 \newtheoremstyle{exostyle}
-{\topsep}% espace avant 
-{\topsep}% espace apres 
-{}% Police utilisee par le style de thm 
-{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-{\bfseries}% Police du titre de thm 
-{}% Signe de ponctuation apres le titre du thm 
+{\topsep}% espace avant
+{\topsep}% espace apres
+{}% Police utilisee par le style de thm
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe)
+{\bfseries}% Police du titre de thm
+{}% Signe de ponctuation apres le titre du thm
 {\newline}% Espace apres le titre du thm (\newline = linebreak)
 {\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}} % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
 
 \theoremstyle{exostyle}
 \newtheorem{exercice}{Exercice}
+%--
 
 
 

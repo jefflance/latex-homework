@@ -100,9 +100,19 @@
 
 % sizing of the page, depending on the size parameter of the class
 \ifthenelse{ \equal{\size}{a5} }{
-  \geometry{a5paper, landscape, includeheadfoot, hmargin=.8cm, vmargin=.8cm, head=14.5pt}
+  \geometry{
+    a5paper,
+    landscape,
+    includeheadfoot,
+    hmargin=.8cm,
+    vmargin=.8cm,
+    head=14.5pt}
 }{
-  \geometry{a4paper, includeheadfoot, hmargin=.8cm, vmargin=.8cm, head=14.5pt}
+  \geometry{a4paper,
+    includeheadfoot,
+    hmargin=.8cm,
+    vmargin=.8cm,
+    head=14.5pt}
 }
 
 % title, header and footer
@@ -115,7 +125,8 @@
 
 % KOMA-Script version (preferred)
 \ifthenelse{ \equal{\type}{ds} }{
- 	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}]{\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}}
+ 	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}]
+    {\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}}
   \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
   \rohead[Le \@date]{Le \@date}
   \cehead[]{}
@@ -123,7 +134,8 @@
   \rehead[]{}
 }{
 	\ifthenelse{ \equal{\type}{dm} }{
-   	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]{\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
+   	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
+      {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
     \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
     \rohead[\@date]{\@date}
     \cehead[]{}
@@ -131,7 +143,8 @@
     \rehead[]{}
 	}{
     \ifthenelse{ \equal{\type}{int} }{
-      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}]{\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}}
+      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}]
+        {\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}}
       \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
       \rohead[\@date]{\@date}
       \cehead[]{}
@@ -176,18 +189,19 @@
 
 % print a "Please, turn the page" at bottom right of the page
 \NewDocumentCommand \turnpage{ }{
-  \rofoot[\textit{Tourner la page, svp} \faHandORight]{\textit{Tourner la page, svp} \faHandORight}
+  \rofoot[\textit{Tourner la page, svp} \faHandORight]
+    {\textit{Tourner la page, svp} \faHandORight}
 }
 
 
 % amsthm style for exercises
-\newtheoremstyle{exostyle} 
-{\topsep}% espace avant 
-{\topsep}% espace apres 
-{}% Police utilisee par le style de thm 
-{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
-{\bfseries}% Police du titre de thm 
-{}% Signe de ponctuation apres le titre du thm 
+\newtheoremstyle{exostyle}
+{\topsep}% espace avant
+{\topsep}% espace apres
+{}% Police utilisee par le style de thm
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe)
+{\bfseries}% Police du titre de thm
+{}% Signe de ponctuation apres le titre du thm
 {\newline}% Espace apres le titre du thm (\newline = linebreak)
 {%
   \if\relax\detokenize{#3}\relax

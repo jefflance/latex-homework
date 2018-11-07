@@ -194,7 +194,10 @@
     \node[%
     draw,
     fill=white,
-    drop shadow={shadow xshift=0.25ex,shadow yshift=-0.25ex,fill=black,opacity=0.75},
+    drop shadow={shadow xshift=0.25ex,
+                 shadow yshift=-0.25ex,
+                 fill=black,
+                 opacity=0.75},
     rectangle,
     rounded corners=2pt,
     inner sep=1pt,
@@ -219,7 +222,9 @@
 % Choose a letter between start an end. The letter maybe in uppercase or in lowercase.
 \NewDocumentCommand \@getletter{ G{1} G{26} }{
 	\pgfmathsetmacro{\random}{rnd}
-	\pgfmathparse{\random >= 0.5 ? "\noexpand\getrandomletter{#1}{#2}" : "\noexpand\getrandomletter*{#1}{#2}"}
+	\pgfmathparse{\random >= 0.5 ?
+                "\noexpand\getrandomletter{#1}{#2}" :
+                "\noexpand\getrandomletter*{#1}{#2}"}
 	\pgfmathresult
 }
 
@@ -246,9 +251,23 @@
 %
 
 \definecolor{friendlybg}{HTML}{F0F0F0}
-\newminted[python]{python}{style=bw, fontsize=\small, bgcolor=white, autogobble, frame=lines, breaklines, escapeinside=||, xleftmargin=0em, xrightmargin=0em, numbersep=.2em}
-\newmintinline{python}{style=autumn, fontsize=\small, bgcolor=friendlybg, autogobble, encoding=utf8}
-\renewcommand{\theFancyVerbLine}{\sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
+\newminted[python]{python}{style=bw,
+                           fontsize=\small,
+                           bgcolor=white,
+                           autogobble,
+                           frame=lines,
+                           breaklines,
+                           escapeinside=||,
+                           xleftmargin=0em,
+                           xrightmargin=0em,
+                           numbersep=.2em}
+\newmintinline{python}{style=autumn,
+                       fontsize=\small,
+                       bgcolor=friendlybg,
+                       autogobble,
+                       encoding=utf8}
+\renewcommand{\theFancyVerbLine}{
+  \sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
 %--
 
 
@@ -326,7 +345,6 @@
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
 \newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
 \newfontfamily\Handlee[Ligatures=TeX]{Handlee}
-\newfontfamily\Jd[Ligatures=TeX]{JD}
 \newfontfamily\Julee[Ligatures=TeX]{Julee}
 \newfontfamily\Morse[Ligatures=TeX]{Morse}
 \newfontfamily\NixieOne[Ligatures=TeX]{Nixie One}

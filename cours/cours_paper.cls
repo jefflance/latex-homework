@@ -713,11 +713,14 @@
 % Define a (sub)section title.
 \titleformat{\section}[block]{\sffamily\bfseries\Large}{\thesection.}{.5em}{}[]
 \titleformat{\subsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\thesubsection)}{.5em}{}[]
+\titleformat{\subsubsection}[block]{\sffamily\bfseries\large\hspace{2em}}{\circled{\thesubsubsection}}{.5em}{}[]
 \renewcommand \thesection{\Roman{section}}
 \renewcommand \thesubsection{\arabic{subsection}}
+\renewcommand \thesubsubsection{\alph{subsubsection}}
 
 \newcounter{partiecounter}
 \newcounter{sspartiecounter}
+\newcounter{ssspartiecounter}
 
 \NewDocumentCommand \partie { G{Partie} } {%
     \def\cType{\Roman}
@@ -730,6 +733,12 @@
     \def\cType{\arabic}
     \stepcounter{sspartiecounter}
     \subsection{#1}
+}
+%
+\NewDocumentCommand \ssspartie { G{Sous-sous-Partie} } {%
+    \def\cType{\alph}
+    \stepcounter{ssspartiecounter}
+    \subsubsection{#1}
 }
 
 

@@ -71,7 +71,7 @@
 \RequirePackage{amsmath, amsthm}
 \RequirePackage{amssymb}
 \RequirePackage{tkz-euclide}
-\usetikzlibrary{shadows}
+\usetikzlibrary{snakes, shadows}
 \RequirePackage{calc}
 % \RequirePackage{pgffor,pgfmath} % loaded by tikz
 \RequirePackage{pgfplots}
@@ -94,12 +94,14 @@
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{multicol}
+\RequirePackage{multirow}
 \RequirePackage{boldline}
 
 % layout
 \RequirePackage{varwidth}
 \RequirePackage{adjustbox}
 \RequirePackage{lscape}
+\RequirePackage{multicol}
 
 % text
 \RequirePackage[dash]{dashundergaps}
@@ -124,6 +126,11 @@
 
 % Set the default monospaced font
 \setmonofont[StylisticSet=3]{Inconsolatazi4}
+
+% tasks
+\settasks{
+  label-format = {\bfseries}
+}
 %--
 
 
@@ -219,7 +226,7 @@
 }
 
 % \@getletter{start}{end}
-% Choose a letter between start an end. The letter maybe in uppercase or in lowercase.
+% Choose a letter between start an end.The letter maybe in uppercase or in lowercase.
 \NewDocumentCommand \@getletter{ G{1} G{26} }{
 	\pgfmathsetmacro{\random}{rnd}
 	\pgfmathparse{\random >= 0.5 ?
@@ -279,8 +286,9 @@
 %
 
 \renewcommand\bcStyleTitre[1]{\textbf{#1}}
-\newcommand\bcexample{\centering \normalsize \faPaperclip}
-\newcommand\bcremark{\centering \normalsize \faExclamationTriangle}
+\newcommand\bcexemple{\centering \normalsize \faPaperclip}
+\newcommand\bcremarque{\centering \normalsize \faExclamationTriangle}
+\newcommand\bclivre{\centering \normalsize \faBook}
 %--
 
 
@@ -403,13 +411,23 @@
 
 
 
+% %
+% %
+% % FIGURES
+% %
+% %
 %
-%
-% FIGURES
-%
-%
-
-\NewDocumentCommand \fig {  }{ }
+% \NewDocumentCommand \fig { O{1} m }{
+%   \IfFileExists{#2}{
+%     \begin{center}
+%       \includegraphics[scale=#1]{images/#2}
+%     \end{center}
+%   }{
+%     \begin{center}
+%       \textbf{Fichier {\normalfont\slshape #2} non trouvé !}
+%     \end{center}
+%   }
+% }
 %--
 
 

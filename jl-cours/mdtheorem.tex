@@ -1,0 +1,263 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% MDTHEOREM
+%
+%
+
+
+%% New theorem declarations and redirection of all standard previously defined
+%% environments to their starred version as they don't display numbering.
+%%
+
+% definition
+\mdtheorem[style=pencil, theoremseparator={},
+           theoremspace={}, roundcorner=6pt]{@def1}{Définition}
+\mdtheorem[style=nologo, theoremseparator={},
+           theoremspace={}, roundcorner=6pt]{@def2}{Définition}
+
+\RenewDocumentEnvironment{@def1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@def1*}
+  }{
+    \begin{@def1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@def1*}
+}
+
+\RenewDocumentEnvironment{@def2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@def2*}
+  }{
+    \begin{@def2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@def2*}
+}
+
+% theoreme
+\mdtheorem[style=pencil, theoremseparator={},
+           theoremspace={}, roundcorner=6pt,
+           outerlinewidth=1pt, outerlinecolor=black]{@thm1}{Théorème}
+\mdtheorem[style=nologo, theoremseparator={},
+           theoremspace={}, roundcorner=6pt,
+           outerlinewidth=1pt, outerlinecolor=black]{@thm2}{Théorème}
+
+\RenewDocumentEnvironment{@thm1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@thm1*}
+  }{
+    \begin{@thm1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@thm1*}
+}
+
+\RenewDocumentEnvironment{@thm2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@thm2*}
+  }{
+    \begin{@thm2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@thm2*}
+}
+
+% propriete
+\mdtheorem[style=pencil, theoremseparator={}, theoremspace={},
+           outerlinewidth=1pt, outerlinecolor=black]{@ppt1}{Propriété}
+\mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
+           outerlinewidth=1pt, outerlinecolor=black]{@ppt2}{Propriété}
+
+\RenewDocumentEnvironment{@ppt1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@ppt1*}
+  }{
+    \begin{@ppt1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@ppt1*}
+}
+
+\RenewDocumentEnvironment{@ppt2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@ppt2*}
+  }{
+    \begin{@ppt2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@ppt2*}
+}
+
+% demonstration
+\mdtheorem[style=pencil, theoremseparator={},
+           theoremspace={}]{@dem1}{Démonstration}
+\mdtheorem[style=nologo, theoremseparator={},
+           theoremspace={}]{@dem2}{Démonstration}
+
+\RenewDocumentEnvironment{@dem1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@dem1*}
+  }{
+    \begin{@dem1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@dem1*}
+}
+
+\RenewDocumentEnvironment{@dem2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@dem2*}
+  }{
+    \begin{@dem2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@dem2*}
+}
+
+% vocabulaire
+\mdtheorem[style=pencil, theoremseparator={},
+           theoremspace={}]{@voc1}{Vocabulaire}
+\mdtheorem[style=nologo, theoremseparator={},
+          theoremspace={}]{@voc2}{Vocabulaire}
+
+\RenewDocumentEnvironment{@voc1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@voc1*}
+  }{
+    \begin{@voc1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@voc1*}
+}
+
+\RenewDocumentEnvironment{@voc2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@voc2*}
+  }{
+    \begin{@voc2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@voc2*}
+}
+
+% commentaire
+\mdtheorem[style=quote, frametitle=none,
+           frametitleaboveskip=0em, frametitlebelowskip=0em]{@com}{}
+
+\RenewDocumentEnvironment{@com}{ o } {%begin
+ \IfNoValueTF {#1} {
+   \begin{@com*}
+ }{
+   \begin{@com*}[#1]
+ }
+}{%end
+\end{@com*}
+}
+
+% remarque
+\mdtheorem[style=warning, theoremseparator={ -},
+           theoremspace={}]{@rmq1}{Remarque(s)}
+\mdtheorem[style=warning, theoremseparator={},
+           theoremspace={}]{@rmq2}{}
+
+\RenewDocumentEnvironment{@rmq1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@rmq1*}
+  }{
+    \begin{@rmq1*}[#1]
+  }
+}{%end
+  \end{@rmq1*}
+}
+
+\RenewDocumentEnvironment{@rmq2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@rmq2*}
+  }{
+    \begin{@rmq2*}[#1]
+  }
+}{%end
+  \end{@rmq2*}
+}
+
+% exemple
+\mdtheorem[style=eye, theoremseparator={ -}, theoremspace={}]{@exe1}{ Exemple(s)}
+\mdtheorem[style=eye, theoremseparator={}, theoremspace={}]{@exe2}{}
+
+\RenewDocumentEnvironment{@exe1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@exe1*}
+  }{
+    \begin{@exe1*}[#1]
+  }
+}{%end
+  \end{@exe1*}
+}
+
+\RenewDocumentEnvironment{@exe2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@exe2*}
+  }{
+    \begin{@exe2*}[#1]
+  }
+}{%end
+  \end{@exe2*}
+}
+
+% application
+\mdtheorem[style=cogs, theoremseparator={ -},
+           theoremspace={}]{@app}{Application}
+
+\RenewDocumentEnvironment{@app}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@app*}
+  }{
+    \begin{@app*}[#1]
+  }
+}{%end
+  \end{@app*}
+}
+
+% methode
+\mdtheorem[style=bookmark, theoremseparator={ -},
+           theoremspace={}]{@met1}{Méthode}
+\mdtheorem[style=noborder, theoremseparator={},
+           theoremspace={}]{@met2}{}
+
+\RenewDocumentEnvironment{@met1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@met1*}
+  }{
+    \begin{@met1*}[#1]
+  }
+}{%end
+  \end{@met1*}
+}
+
+\RenewDocumentEnvironment{@met2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@met2*}
+  }{
+    \begin{@met2*}[#1]
+  }
+}{%end
+  \end{@met2*}
+}
+
+% exercice
+\newtheoremstyle{@exe}
+  {\topsep}% espace avant
+  {\topsep}% espace apres
+  {}% Police utilisee par le style de thm
+  {}% Indentation (vide = aucune, \parindent = indentation paragraphe)
+  {\bfseries}% Police du titre de thm
+  {}% Signe de ponctuation apres le titre du thm
+  {\newline}% Espace apres le titre du thm (\newline = linebreak)
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ - \normalfont{\textit{#3}}}}
+  % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
+
+\theoremstyle{@exe}
+\newtheorem{exercice}{Exercice}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

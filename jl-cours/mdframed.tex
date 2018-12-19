@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% MDFRAMED
+%
+%
+
+
+%% global options
+%%
+\mdfsetup{
+    frametitlealignment=\raggedright,%
+    innerbottommargin=2em,%
+}
+
+%% styles
+%%
+\tikzset{
+    symbol/.style={
+        rectangle, draw=white,
+        fill=white, scale=1,
+        overlay
+    }
+}
+
+% nologo: a standard square frame with thick border and without a logo
+\mdfdefinestyle{nologo}{%
+  linecolor=black,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+}
+% noborder: a no border frame
+\mdfdefinestyle{noborder}{%
+  linecolor=white,linewidth=0pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=.5em,innerbottommargin=.5em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  xcolor,%
+}
+% pencil: a square frame with a pencil icon in upper left corner
+\mdfdefinestyle{pencil}{%
+  linecolor=black,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faPencil };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faPencil };
+              },%
+}
+% eye: square frame with an eye logo
+\mdfdefinestyle{eye}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=.5pt},%
+  leftmargin=2pt,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=.5em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=false,%
+  xcolor,%
+  hidealllines=true, leftline=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faEye };
+  },%
+}
+% comment: frame with no borders but with a beginning quote at upper left and
+%          an ending quote at lower right
+\mdfdefinestyle{comment}{%
+  linecolor=white,linewidth=1pt,%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faQuoteLeft };
+              \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+              node[symbol] { \faQuoteRight };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft };
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft };
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faQuoteLeft };
+               \path let \p1=(P), \p2=(O) in ($(\x1,.4)+(0,\y2)$)
+               node[symbol] { \faQuoteRight };
+              },%
+}
+% cogs: a shadowed square frame with a file text icon at upper left
+\mdfdefinestyle{cogs}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  shadow=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faCogs };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faCogs };
+              },%
+}
+% tips: a shadowed square frame with a light bulb icon at upper left
+\mdfdefinestyle{tips}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faLightbulbO };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faLightbulbO };
+              },%
+}
+% bookmark: a shadowed square frame with cogs icon at upper left
+\mdfdefinestyle{bookmark}{%
+  linecolor=white,linewidth=1pt,%
+  tikzsetting={draw=black,line width=1pt},%
+  leftmargin=0,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faBookmarkO };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faBookmarkO };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faBookmarkO };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faBookmarkO };
+              },%
+}
+% warn: frame with only left border and warning icon at upper left
+\mdfdefinestyle{warning}{%
+  linecolor=white,linewidth=1pt,%
+  innerlinewidth=1pt,outerlinewidth=1pt,
+  tikzsetting={draw=black,
+               decorate,
+               decoration={snake, amplitude=.5mm},
+               line width=.5pt},%
+  leftmargin=2pt,rightmargin=0,%
+  innertopmargin=1em,innerbottommargin=1em,%
+  innerleftmargin=1em,innerrightmargin=.5em,%
+  skipabove=0,skipbelow=0,%
+  frametitlerule=false,%
+  frametitlebackgroundcolor=white!0,%
+  nobreak=true,%
+  xcolor,%
+  hidealllines=true, leftline=true,%
+  firstextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+              node[symbol] { \faExclamationTriangle };
+             },%
+  secondextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
+  middleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
+  singleextra={\path let \p1=(P), \p2=(O) in ($(\x2,-.4)+1.0*(0,\y1)$)
+               node[symbol] { \faExclamationTriangle };
+              },%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

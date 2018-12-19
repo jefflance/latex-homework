@@ -1,0 +1,64 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% MDFRAMED
+%
+%
+
+%% partie (sections) settings.
+%%
+\pgfdeclarehorizontalshading{partiebkg}{100bp}{
+	color(0bp)=(white!40);color(100bp)=(black!0)
+}
+
+\mdfdefinestyle{partie}{
+	outerlinewidth=1em, outerlinecolor=white,%
+	% leftmargin=-1em, rightmargin=-1em,%
+	middlelinewidth=1.2pt, linecolor=sectioncolor.fg, roundcorner=5pt,%
+	apptotikzsetting={
+		\tikzset{
+			mdfbackground/.append style={
+				shading=partiebkg
+			}
+		}
+	}
+}
+
+%% sspartie (sections) settings.
+%%
+\pgfdeclarehorizontalshading{sspartiebkg}{100bp}{
+	color(0bp)=(white!40);color(100bp)=(black!0)
+}
+
+\mdfdefinestyle{sspartie}{
+	outerlinewidth=1em, outerlinecolor=white,%
+	% leftmargin=-1em, rightmargin=-1em,%
+	middlelinewidth=1.2pt, linecolor=subsectioncolor.fg, roundcorner=5pt,%
+	apptotikzsetting={
+		\tikzset{
+			mdfbackground/.append style={
+				shading=partiebkg
+			}
+		}
+	}
+}
+
+%% ssspartie (sections) settings.
+%%
+\pgfdeclarehorizontalshading{ssspartiebkg}{100bp}{
+	color(0bp)=(white!40);color(100bp)=(black!0)
+}
+
+\mdfdefinestyle{ssspartie}{
+	outerlinewidth=1em, outerlinecolor=white,%
+	% leftmargin=-1em, rightmargin=-1em,%
+	middlelinewidth=1.2pt, linecolor=white, roundcorner=5pt,%
+	apptotikzsetting={
+		\tikzset{
+			mdfbackground/.append style={
+				shading=partiebkg
+			}
+		}
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

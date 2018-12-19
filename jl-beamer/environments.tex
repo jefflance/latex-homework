@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% ENVIRONMENTS
+%
+%
+
+%% definition
+%%
+\RenewDocumentEnvironment{definition}{ s o }{
+  \setbeamercolor*{block title}{parent=definition}
+  \IfBooleanTF {#1} {
+    % if starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faPencil \hspace{.125em}\ Définition}
+    }{
+      % if subtitle
+      \begin{block} {\faPencil \hspace{.125em}\
+                     Définition \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: without logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {Définition}
+    }{
+      % if subtitle
+      \begin{block} {Définition \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% theoreme
+%%
+\NewDocumentEnvironment{theoreme}{ s o }{
+  \setbeamercolor*{block title}{parent=theoreme}
+  \IfBooleanTF {#1} {
+    % if starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faPencil \hspace{.125em}\ Théorème}
+    }{
+      % if subtitle
+      \begin{block} {\faPencil \hspace{.125em}\
+                     Théorème \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: without logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {Théorème}
+    }{
+      % if subtitle
+      \begin{block} {Théorème \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% propriete
+%%
+\NewDocumentEnvironment{propriete}{ s o }{
+  \setbeamercolor*{block title}{parent=propriete}
+  \IfBooleanTF {#1} {
+    % if starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faPencil \hspace{.125em}\ Propriété}
+    }{
+      % if subtitle
+      \begin{block} {\faPencil \hspace{.125em}\
+                     Propriété \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: without logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {Propriété}
+    }{
+      % if subtitle
+      \begin{block} {Propriété \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% demonstration
+%%
+\NewDocumentEnvironment{demonstration}{ s o }{
+  \setbeamercolor*{block title}{parent=demonstration}
+  \IfBooleanTF {#1} {
+    % if starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faPencil \hspace{.125em}\ Démonstration}
+    }{
+      % if subtitle
+      \begin{block} {\faPencil \hspace{.125em}\
+                     Démonstration \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: without logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {Démonstration}
+    }{
+      % if subtitle
+      \begin{block} {Démonstration \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% vocabulaire
+%%
+\NewDocumentEnvironment{vocabulaire}{ s o }{
+  \setbeamercolor*{block title}{parent=vocabulaire}
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {}
+    }{
+      % if subtitle
+      \begin{block} {\normalfont\slshape#2}
+    }
+  }{
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {Vocabulaire}
+    }{
+      % if subtitle
+      \begin{block} {Vocabulaire \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% remarque
+%%
+\NewDocumentEnvironment{remarque}{ s o }{
+  \setbeamercolor*{block title}{parent=remarque}
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faExclamationTriangle \hspace{.125em}}
+    }{
+      % if subtitle
+      \begin{block} {\faExclamationTriangle \hspace{.125em}\
+                     \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faExclamationTriangle \hspace{.125em}\ Remarque(s)}
+    }{
+      % if subtitle
+      \begin{block} {\faExclamationTriangle \hspace{.125em}\
+                     Remarque(s) \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% exemple
+%%
+\NewDocumentEnvironment{exemple}{ s o }{
+  \setbeamercolor*{block title}{parent=exemple}
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faEye \hspace{.125em}}
+    }{
+      % if subtitle
+      \begin{block} {\faEye \hspace{.125em}\
+                     \hfill{\normalfont\slshape#2}}
+    }
+  }{
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faEye \hspace{.125em}\ Exemple(s)}
+    }{
+      % if subtitle
+      \begin{block} {\faEye \hspace{.125em}\
+                     Exemple(s) \hfill{\normalfont\slshape#2}}
+    }
+  }
+}{
+  \end{block}
+}
+
+%% application
+%%
+\NewDocumentEnvironment{application}{ o }{
+  \setbeamercolor*{block title}{parent=application}
+
+  \IfNoValueTF {#1} {
+    % if no subtitle
+    \begin{block} {\faCogs \hspace{.125em} Application}
+  }{
+    % if subtitle
+    \begin{block} {\faCogs \hspace{.125em}\ #1}
+  }
+}{
+  \end{block}
+}
+
+%% commentaire
+%%
+\NewDocumentEnvironment{commentaire}{ s }{
+  \setbeamercolor*{block title}{parent=commentaire}
+
+  \IfBooleanTF {#1} {
+    % with logo
+    \begin{block} {\faQuoteLeft \hspace{.125em}}
+  }{
+    % without logo
+    \begin{block} {}
+  }
+}{
+  \end{block}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

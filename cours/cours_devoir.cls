@@ -188,14 +188,32 @@
 
 
 % print a "Please, turn the page" at bottom right of the page
-\NewDocumentCommand \turnpage{ }{
+\NewDocumentCommand \devprintturnpage{ }{
   \rofoot[\textit{Tourner la page, svp} \faHandORight]
     {\textit{Tourner la page, svp} \faHandORight}
 }
 
 
+% print the main directives of the test
+\NewDocumentCommand \devprintdirectives{ }{
+  \begin{center}
+    \fbox{
+      \parbox{.9\textwidth}{
+        \centering
+        Le prêt de matériel et de documents personnels sont interdits.\\
+        Le barème est donné à titre indicatif : il pourra être légèrement différent.\\
+        Les exercices peuvent être traités dans n’importe quel ordre mais attention à bien reporter les numéros des questions.\\
+        Il sera tenu compte dans la notation du soin apporté à la copie et de la clarté des raisonnements.\\
+        Si présent, le symbole \faPencil\ indique que tout ou partie de l'exercice est à réaliser sur l’énoncé.
+      }
+    }
+  \end{center}
+  
+  \vspace{.2cm}
+}
+
 % amsthm style for exercises
-\newtheoremstyle{exostyle}
+\newtheoremstyle{exostyle1}
 {\topsep}% espace avant
 {\topsep}% espace apres
 {}% Police utilisee par le style de thm
@@ -212,10 +230,29 @@
   \thmname{#1}\thmnumber{ #2}%
 }
 
-\theoremstyle{exostyle}
+\newtheoremstyle{exostyle2}
+{\topsep}% espace avant
+{\topsep}% espace apres
+{}% Police utilisee par le style de thm
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe)
+{\bfseries}% Police du titre de thm
+{}% Signe de ponctuation apres le titre du thm
+{\newline}% Espace apres le titre du thm (\newline = linebreak)
+{%
+  \if\relax\detokenize{#3}\relax
+  % no optional argument
+  \else
+  \makebox[0pt][l]{\hspace{.9\textwidth}\normalfont\itshape#3}%
+  \fi
+  \thmname{#1 }%
+}
+
+\theoremstyle{exostyle1}
 \newtheorem{exercice}{Exercice}
 \newtheorem{exercice*}[exercice]{\faPencil \ Exercice}
 
+\theoremstyle{exostyle2}
+\newtheorem{exercice**}{Exercice}
 
 % amsthm proofs customization
 \newenvironment{solution}
@@ -269,7 +306,7 @@
 %{}
 
 % text customization
-\NewDocumentCommand \conclusion{ }{
+\NewDocumentCommand \devprintconc{ }{
   \underline{Conclusion :}
 }
 

@@ -489,8 +489,8 @@
 \mdtheorem[style=quote, frametitle=none, frametitleaboveskip=0em, frametitlebelowskip=0em]{qte}{}
 \mdtheorem[style=warning, theoremseparator={ -}, theoremspace={}]{rmq}{Remarque}
 \mdtheorem[style=warning, theoremseparator={}, theoremspace={}]{rmqn}{}
-\mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{Exemple}
-\mdtheorem[style=dotted, theoremseparator={}, theoremspace={}]{exen}{}
+\mdtheorem[style=dotted, theoremseparator={ -}, theoremspace={}]{exe}{ Exemple}
+\mdtheorem[style=dotted, theoremseparator={}, theoremspace={}]{exen}{ }
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{exo}{Exercice}
 \mdtheorem[style=todo, theoremseparator={ -}, theoremspace={}]{app}{Application}
 \mdtheorem[style=todo, theoremseparator={}, theoremspace={}]{appn}{}

@@ -257,20 +257,6 @@
 }
 
 % application
-% \NewDocumentEnvironment{application}{ o }{
-%   \IfNoValueTF {#1} {
-%       % if no subtitle
-%       \begin{@app}
-%         \noindent
-%     }{
-%       % if subtitle
-%       \begin{@app}[#1]
-%         \noindent
-%     }
-% }{
-%   \end{@app}
-% }
-
 \NewDocumentEnvironment{application}{ s o }{
   \IfBooleanTF {#1} {
     % if starred: without logo and title

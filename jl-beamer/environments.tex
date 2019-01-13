@@ -204,15 +204,28 @@
 
 %% application
 %%
-\NewDocumentEnvironment{application}{ o }{
+\NewDocumentEnvironment{application}{ s o }{
   \setbeamercolor*{block title}{parent=application}
-
-  \IfNoValueTF {#1} {
-    % if no subtitle
-    \begin{block} {\faCogs \hspace{.125em} Application}
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faCogs \hspace{.125em}}
+    }{
+      % if subtitle
+      \begin{block} {\faCogs \hspace{.125em}\
+                     \hfill{\normalfont\slshape#2}}
+    }
   }{
-    % if subtitle
-    \begin{block} {\faCogs \hspace{.125em}\ #1}
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faCogs \hspace{.125em}\ Application}
+    }{
+      % if subtitle
+      \begin{block} {\faCogs \hspace{.125em}\
+                     Application \hfill{\normalfont\slshape#2}}
+    }
   }
 }{
   \end{block}
@@ -221,14 +234,42 @@
 %% commentaire
 %%
 \NewDocumentEnvironment{commentaire}{ s }{
-  \setbeamercolor*{block title}{parent=commentaire}
-
-  \IfBooleanTF {#1} {
+  % \setbeamercolor*{block title}{parent=commentaire}
+  \IfBooleanF {#1} {
     % with logo
-    \begin{block} {\faQuoteLeft \hspace{.125em}}
+    \faQuoteLeft\\
+  }
+}{
+  \IfBooleanF {#1} {
+    % with logo
+    \normalsize\hfill\faQuoteRight
+  }
+}
+
+%% methode
+%%
+\NewDocumentEnvironment{methode}{ s o }{
+  \setbeamercolor*{block title}{parent=methode}
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faBookmarkO \hspace{.125em}}
+    }{
+      % if subtitle
+      \begin{block} {\faBookmarkO \hspace{.125em}\
+                     \hfill{\normalfont\slshape#2}}
+    }
   }{
-    % without logo
-    \begin{block} {}
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{block} {\faBookmarkO \hspace{.125em}\ Méthode}
+    }{
+      % if subtitle
+      \begin{block} {\faBookmarkO \hspace{.125em}\
+                     Méthode \hfill{\normalfont\slshape#2}}
+    }
   }
 }{
   \end{block}

@@ -257,18 +257,50 @@
 }
 
 % application
-\NewDocumentEnvironment{application}{ o }{
-  \IfNoValueTF {#1} {
+% \NewDocumentEnvironment{application}{ o }{
+%   \IfNoValueTF {#1} {
+%       % if no subtitle
+%       \begin{@app}
+%         \noindent
+%     }{
+%       % if subtitle
+%       \begin{@app}[#1]
+%         \noindent
+%     }
+% }{
+%   \end{@app}
+% }
+
+\NewDocumentEnvironment{application}{ s o }{
+  \IfBooleanTF {#1} {
+    % if starred: without logo and title
+    \IfNoValueTF {#2} {
       % if no subtitle
-      \begin{@app}
+      \begin{@app2}
         \noindent
     }{
       % if subtitle
-      \begin{@app}[#1]
+      \begin{@app2}[#2]
         \noindent
     }
+  }{
+    % if not starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@app1}
+        \noindent
+    }{
+      % if subtitle
+      \begin{@app1}[#2]
+        \noindent
+    }
+  }
 }{
-  \end{@app}
+  \IfBooleanTF {#1} {
+    \end{@app2}
+  }{
+    \end{@app1}
+  }
 }
 
 % methode

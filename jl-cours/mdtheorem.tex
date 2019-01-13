@@ -207,16 +207,16 @@
 }
 
 % application
-\mdtheorem[style=cogs, theoremseparator={ -},
+\mdtheorem[style=cogs, theoremseparator={},
            theoremspace={}]{@app1}{Application}
-\mdtheorem[style=cogs, theoremseparator={ -},
+\mdtheorem[style=cogs, theoremseparator={},
           theoremspace={}]{@app2}{}
 
 \RenewDocumentEnvironment{@app1}{ o } {%begin
   \IfNoValueTF {#1} {
     \begin{@app1*}
   }{
-    \begin{@app1*}[#1]
+    \begin{@app1*}[\hfill{\normalfont\slshape#1}]
   }
 }{%end
 \end{@app1*}
@@ -226,7 +226,7 @@
   \IfNoValueTF {#1} {
     \begin{@app2*}
   }{
-    \begin{@app2*}[#1]
+    \begin{@app2*}[\hfill{\normalfont\slshape#1}]
   }
 }{%end
   \end{@app2*}

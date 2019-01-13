@@ -188,7 +188,7 @@
 
 
 % print a "Please, turn the page" at bottom right of the page
-\NewDocumentCommand \devprintturnpage{ }{
+\NewDocumentCommand \printturnpage{ }{
   \rofoot[\textit{Tourner la page, svp} \faHandORight]
     {\textit{Tourner la page, svp} \faHandORight}
 }

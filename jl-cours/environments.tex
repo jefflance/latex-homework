@@ -175,6 +175,7 @@
     \IfNoValueTF {#1} {
       % if no subtitle
       \begin{@com}
+        % \vspace{-.5cm}
         \noindent
     }{
       % if subtitle
@@ -182,7 +183,7 @@
         \noindent
     }
 }{
-\end{@com}
+  \end{@com}
 }
 
 % remarque
@@ -257,7 +258,7 @@
 
 % application
 \NewDocumentEnvironment{application}{ o }{
-    \IfNoValueTF {#1} {
+  \IfNoValueTF {#1} {
       % if no subtitle
       \begin{@app}
         \noindent
@@ -267,24 +268,13 @@
         \noindent
     }
 }{
-\end{@app}
+  \end{@app}
 }
 
 % methode
 \NewDocumentEnvironment{methode}{ s o }{
   \IfBooleanTF {#1} {
-    % if starred: with logo
-    \IfNoValueTF {#2} {
-      % if no subtitle
-      \begin{@met1}
-        \noindent
-    }{
-      % if subtitle
-      \begin{@met1}[#2]
-        \noindent
-    }
-  }{
-    % if not starred: without logo
+    % if starred: without logo and title
     \IfNoValueTF {#2} {
       % if no subtitle
       \begin{@met2}
@@ -294,12 +284,23 @@
       \begin{@met2}[#2]
         \noindent
     }
+  }{
+    % if not starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@met1}
+        \noindent
+    }{
+      % if subtitle
+      \begin{@met1}[#2]
+        \noindent
+    }
   }
 }{
   \IfBooleanTF {#1} {
-    \end{@met1}
-  }{
     \end{@met2}
+  }{
+    \end{@met1}
   }
 }
 

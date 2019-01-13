@@ -7,26 +7,26 @@
 
 %% definition
 %%
-\RenewDocumentEnvironment{definition}{ s o }{
+\RenewDocumentEnvironment{definition}{ s D<>{Définition} o }{
   \setbeamercolor*{block title}{parent=definition}
   \IfBooleanTF {#1} {
     % if starred: with logo
-    \IfNoValueTF {#2} {
+    \IfNoValueTF {#3} {
       % if no subtitle
-      \begin{block} {\faPencil \hspace{.125em}\ Définition}
+      \begin{block} {\faPencil \hspace{.125em}\ #2}
     }{
       % if subtitle
       \begin{block} {\faPencil \hspace{.125em}\
-                     Définition \hfill{\normalfont\slshape#2}}
+                     #2 \hfill{\normalfont\slshape#3}}
     }
   }{
     % if not starred: without logo
-    \IfNoValueTF {#2} {
+    \IfNoValueTF {#3} {
       % if no subtitle
-      \begin{block} {Définition}
+      \begin{block} {#2}
     }{
       % if subtitle
-      \begin{block} {Définition \hfill{\normalfont\slshape#2}}
+      \begin{block} {#2 \hfill{\normalfont\slshape#3}}
     }
   }
 }{

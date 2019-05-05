@@ -186,15 +186,15 @@
 \NewDocumentCommand \N { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{N} \setminus \{0\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{0\}}\!\!\!
         }{
-            \ensuremath{\!\!\! \mathbb{N} \setminus \{0, #2\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{0, #2\}}\!\!\!
         }
     }{
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{N} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{N}}\!\!\!
         }{
-            \ensuremath{\!\!\! \mathbb{N} \setminus \{#2\} \!\!}
+            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{#2\}}\!\!\!
         }
     }
 }

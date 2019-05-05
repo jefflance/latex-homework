@@ -188,28 +188,30 @@
 
 
 % print a "Please, turn the page" at bottom right of the page
-\NewDocumentCommand \printturnpage{ }{
+\NewDocumentCommand \displayturnpage{ }{
   \rofoot[\textit{Tourner la page, svp} \faHandORight]
     {\textit{Tourner la page, svp} \faHandORight}
 }
 
 
 % print the main directives of the test
-\NewDocumentCommand \devprintdirectives{ }{
-  \begin{center}
-    \fbox{
-      \parbox{.9\textwidth}{
-        \centering
-        Le prêt de matériel et de documents personnels sont interdits.\\
-        Le barème est donné à titre indicatif : il pourra être légèrement différent.\\
-        Les exercices peuvent être traités dans n’importe quel ordre mais attention à bien reporter les numéros des questions.\\
-        Il sera tenu compte dans la notation du soin apporté à la copie et de la clarté des raisonnements.\\
-        Si présent, le symbole \faPencil\ indique que tout ou partie de l'exercice est à réaliser sur l’énoncé.
-      }
+\NewDocumentCommand \displaydirectives{ }{
+\begin{center}
+  \fbox{
+    \parbox{.9\textwidth}{
+      \centering
+      \small
+      Le prêt de matériel et de documents personnels sont interdits.\\
+      Le barème est donné à titre indicatif : il pourra être légèrement différent.\\
+      Les exercices peuvent être traités dans n’importe quel ordre mais attention à bien reporter les numéros des questions.\\
+      Il sera tenu compte dans la notation du soin apporté à la copie et de la clarté des raisonnements.\\
+      Si présent, le symbole \faPencil\ indique que tout ou partie de l'exercice est à réaliser sur l’énoncé.\\
+      Sauf mention contraire, toutes les questions sont à justifier rigoureusement.
     }
-  \end{center}
-  
-  \vspace{.2cm}
+  }
+\end{center}
+
+\vspace{.2cm}
 }
 
 % amsthm style for exercises

@@ -201,7 +201,7 @@
     \parbox{.9\textwidth}{
       \centering
       \small
-      Le prêt de matériel et de documents personnels sont interdits.\\
+      Le prêt de matériel et de documents personnels est interdit.\\
       Le barème est donné à titre indicatif : il pourra être légèrement différent.\\
       Les exercices peuvent être traités dans n’importe quel ordre mais attention à bien reporter les numéros des questions.\\
       Il sera tenu compte dans la notation du soin apporté à la copie et de la clarté des raisonnements.\\

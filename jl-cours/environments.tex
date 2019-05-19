@@ -333,6 +333,19 @@
   \end{bclogo}
 }
 
+% aide
+\NewDocumentEnvironment{aide}{ o }{
+  \IfNoValueTF {#1} {
+    \begin{bclogo}[logo=\bcaide, noborder=true, barre=motif, motifBarre=$ $]{ }
+      \vspace{-1.1em}\em
+  }{
+    \begin{bclogo}[logo=\bcaide, noborder=true, barre=motif, motifBarre=$ $]{\textnormal{\em #1}}
+      \em
+  }
+}{
+  \end{bclogo}
+}
+
 % objectif
 % Tentative d'environnement utilisant bclogo
 \NewDocumentEnvironment{objectif}{ }{

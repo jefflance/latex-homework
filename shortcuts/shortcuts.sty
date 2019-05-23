@@ -14,45 +14,57 @@
 \ProvidesPackage{shortcuts}[2016/05/16 Définitions de raccourcis vers des macros
                                        existantes, v1.0]
 
+
+
 \makeatletter
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 % ENVIRONMENTS
 %
 %
 
-% itemize
+%% itemize
+%%
 \newcommand{\bi}{\begin{itemize}}
 \newcommand{\ei}{\end{itemize}}
 
-% enumerate
+%% enumerate
+%%
 \newcommand{\be}{\begin{enumerate}}
 \newcommand{\ee}{\end{enumerate}}
 
-% descriptions
+%% descriptions
+%%
 \newcommand{\bd}{\begin{description}}
 \newcommand{\ed}{\end{description}}
 
-% questions
+%% questions
+%%
 \newcommand{\bq}{\begin{questions}}
 \newcommand{\eq}{\end{questions}}
-%--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 % TEXT
 %
 %
 
-% another shortcut to whiting text.
+%% another shortcut to whiting text.
+%%
 \NewDocumentCommand \ghost { } {%
     \white
 }
 
-% c'est-à-dire
+%% c'est-à-dire
+%%
 \NewDocumentCommand \cad { } {
 	{c'est-à-dire}
 }
@@ -60,7 +72,8 @@
 	{C'est-à-dire}
 }
 
-% textsuperscript and textsubscript
+%% textsuperscript and textsubscript
+%%
 \NewDocumentCommand \tup { g } {
     \textsuperscript{#1}
 }
@@ -69,7 +82,8 @@
     \textsubscript{#1}
 }
 
-% smileys
+%% smileys
+%%
 \NewDocumentCommand \wink { } {
   {\DejaVuSans 😉}
 }
@@ -81,17 +95,19 @@
 \NewDocumentCommand \sad { } {
   {\DejaVuSans 😞}
 }
-%--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
 % MATHS
 %
 %
 
-% i & j vectors
+%% i & j vectors
+%%
 \NewDocumentCommand \veci { } {
 	\ensuremath{ \vec{\imath} }
 }
@@ -99,32 +115,38 @@
 	\ensuremath{ \vec{\jmath} }
 }
 
-% frame (O;i;j)
+%% frame (O;i;j)
+%%
 \NewDocumentCommand \oij { } {
   \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\right) }
 }
 
-% frame (O;I;I)
+%% frame (O;I;I)
+%%
 \NewDocumentCommand \OIJ { } {
   \ensuremath{ \left(O\; ;\; I\; ;\; J\right) }
 }
 
-% frame (O;x;y)
+%% frame (O;x;y)
+%%
 \NewDocumentCommand \oxy { } {
   \ensuremath{ \left(O\; ;\; x\; ;\; y\right) }
 }
 
-% vector arrow redefinition
+%% vector arrow redefinition
+%%
 \renewcommand{\Vec}[1]{
   \overrightarrow{#1\vphantom(}
 }
 
-% positional notation
+%% positional notation
+%%
 \newcommand{\base}[2]{
   \ensuremath{ \overline{#1\vphantom(}^{#2} }
 }
 
-% sets: N, Z, D, Q, R\Q and R with possibility to minus some numbers
+%% sets: N, Z, D, Q, R\Q and R with possibility to minus some numbers
+%%
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
@@ -203,7 +225,7 @@
         }
     }
 }
-%--
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

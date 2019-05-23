@@ -225,6 +225,20 @@
         }
     }
 }
+
+%% dot product
+%%
+\NewDocumentCommand \dotprod{ s g g } {
+    \IfBooleanTF {#1} {
+        \ensuremath{
+            \vec{#2} \cdot \vec{#3}
+        }
+    }{
+        \ensuremath{
+            \overrightarrow{#1\vphantom(} \cdot \overrightarrow{#2\vphantom(}
+        }
+    }
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

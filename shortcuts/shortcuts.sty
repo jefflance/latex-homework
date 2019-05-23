@@ -60,6 +60,15 @@
 	{C'est-à-dire}
 }
 
+% textsuperscript and textsubscript
+\NewDocumentCommand \tup { g } {
+    \textsuperscript{#1}
+}
+
+\NewDocumentCommand \tub { g } {
+    \textsubscript{#1}
+}
+
 % smileys
 \NewDocumentCommand \wink { } {
   {\DejaVuSans 😉}

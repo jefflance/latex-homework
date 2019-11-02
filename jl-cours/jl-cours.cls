@@ -57,6 +57,7 @@
 \RequirePackage{pageslts}
 \RequirePackage{enumitem}
 \RequirePackage[]{hyperref}
+\RequirePackage{chngcntr}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -123,23 +124,47 @@
 
 \ifthenelse{ \equal{\type}{activity} }{
 	\IfNoValueTF{ \subtitle }{
-		\cohead[\@title]{\@title}
-		\rohead[Activité]{Activité}
+%           \cohead[\@title]{\@title}
+%           \rohead[Activité]{Activité}
+	    \cohead[]{\@title}
+	    \rohead[]{Activité}
 	}{
-		\cohead[\@title]{\@title}
-		\rohead[Activité]{Activité - \@subtitle}
+%	    \cohead[\@title]{\@title}
+%	    \rohead[Activité]{Activité - \@subtitle}
+	    \cohead[]{\@title}
+    \rohead[]{Activité - \@subtitle}
 	}
-
 }{
 	\ifthenelse{ \equal{\type}{exercise} }{
-		\cohead[\@title]{\@title}
-		\rohead[Exercices]{Exercices}
+%		\cohead[\@title]{\@title}
+%		\rohead[Exercices]{Exercices}
+    \IfNoValueTF{ \subtitle }{
+      \cohead[]{\@title}
+      \rohead[]{Exercices}
+    }{
+      \cohead[]{\@title}
+      \rohead[]{Exercices - \@subtitle}
+    }
 	}{
-		\rohead[Cours]{Cours - \@title}
-	}
+    \ifthenelse{ \equal{\type}{auto} }{
+%      \cohead[\@title]{\@title}
+%      \rohead[Rappels]{Rappels - \@subtitle}
+      \cohead[]{\@title}
+      \rohead[]{Rappels - \@subtitle}
+    }{
+      \rohead[Cours]{Cours - \@title}
+    }
+  }
 }
 
-\cofoot*{\thepage\ /\ \pageref{LastPage}}
+\pagenumbering{arabic}
+%\ofoot*{\pagemark}% pagenumber in the outer footer with scrheadings and plain style 
+%\ohead[]{\headmark}% headmark only with scrheadings
+
+\cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+\cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+
+%\clearpairofpagestyles% removes the default page header and footer entries 
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
 \setkomafont{pagefoot}{\normalfont}
@@ -209,14 +234,45 @@
 %
 %
 
+%% 1ere
+\NewDocumentCommand{\classe}{ G{2nde} }{
+  \ifthenelse{ \equal{#1}{2nde} }{
+    \lohead[2\tup{nde}]{2\tup{nde}}
+  }{
+    \ifthenelse{ \equal{#1}{1gen} }{
+      \lohead[1\tup{ère}]{1\tup{ère}}
+    }{
+      \ifthenelse{ \equal{#1}{1stg} }{
+        \lohead[1\tup{ère}STMG]{1\tup{ère}STMG}
+      }{
+        \ifthenelse{ \equal{#1}{tes} }{
+          \lohead[T\tup{ale}ES]{T\tup{ale}ES}
+        }{
+          \lohead{}
+        }
+      }
+    }
+  }
+}
+
+%% page
+%%
+\NewDocumentCommand{\nextpage}{}{
+  \newpage
+  \thispagestyle{myheadings}
+%  \vspace{-1cm}
+%  \cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+%  \cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+}
+
 %% titre
 %%
-\NewDocumentCommand \titre { G{Titre} G{Sous-titre} }{%
+\NewDocumentCommand \titre { G{Titre} G{Sous-titre} G{} G{} }{%
   \setlength{\droptitle}{-2cm}
-	\title{#1}
+  \title{\Jd #1}
   \subtitle{#2}
-	\date{}
-	\maketitle
+  \date{}
+  \maketitle
 }
 
 %% \partie | \sspartie

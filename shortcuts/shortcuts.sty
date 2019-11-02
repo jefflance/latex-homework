@@ -42,6 +42,11 @@
 \newcommand{\bd}{\begin{description}}
 \newcommand{\ed}{\end{description}}
 
+%% columns 
+%%
+\newcommand{\bc}{\begin{columns}}
+\newcommand{\ec}{\end{columns}}
+
 %% questions
 %%
 \newcommand{\bq}{\begin{questions}}
@@ -56,6 +61,18 @@
 % TEXT
 %
 %
+
+%% positive skip.
+%%
+\NewDocumentCommand \pskip { G{.2} } {%
+    \vspace{+#1cm}
+}
+
+%% negative skip.
+%%
+\NewDocumentCommand \nskip { G{.8} } {%
+    \vspace{-#1cm}
+}
 
 %% another shortcut to whiting text.
 %%
@@ -150,14 +167,30 @@
 \NewDocumentCommand \R { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
+%            \mathchoice{\! \mathbb{R} \setminus \{0\} \!}
+%                       {\ensuremath{ \mathbb{R} \setminus \{0\} }}
+%                       {\! \mathbb{R} \setminus \{0\} \!}
+%                       {\! \mathbb{R} \setminus \{0\} \!}
             \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0\}}\!\!\!
         }{
+%            \mathchoice{\! \mathbb{R} \setminus \{0, #2\} \!}
+%                       {\ensuremath{ \mathbb{R} \setminus \{0, #2\} }}
+%                       {\! \mathbb{R} \setminus \{0, #2\} \!}
+%                       {\! \mathbb{R} \setminus \{0, #2\} \!}
             \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0, #2\}}\!\!\!
         }
     }{
         \IfNoValueTF {#2} {
-            \!\!\!\!\ensuremath{\mathbb{R}}\!\!\!
+%            \mathchoice{\mathbb{R}}
+%                       {\ensuremath{ \mathbb{R} }}
+%                       {\mathbb{R}}
+%                       {\mathbb{R}}
+            \!\!\!\!\ensuremath{ \mathbb{R} }\!\!\!
         }{
+%            \mathchoice{\mathbb{R} \setminus \{#2\}}
+%                       {\ensuremath{ \mathbb{R} \setminus \{#2\} }}
+%                       {\mathbb{R} \setminus \{#2\}}
+%                       {\mathbb{R} \setminus \{#2\}}
             \!\!\!\!\ensuremath{\mathbb{R} \setminus \{#2\}}\!\!\!
         }
     }
@@ -238,6 +271,18 @@
             \overrightarrow{#1\vphantom(} \cdot \overrightarrow{#2\vphantom(}
         }
     }
+}
+
+% math letter used as curve name
+%
+\NewDocumentCommand \mscr{ g } {
+    $ \mathscr{#1} $
+}
+
+% point 
+%
+\NewDocumentCommand \point{ G{A} G{0} G{0} } {
+    $ #1\big(#2\ ;\ #3\big) $
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -322,6 +322,39 @@
   }
 }
 
+% exercice
+\NewDocumentEnvironment{exercice}{ s o o o}{
+  \IfBooleanTF {#1} {
+    % if starred: without logo and title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{exercice2}
+        \noindent
+      }{
+        % if subtitle
+        \begin{exercice2}[#2]
+          \noindent
+        }
+      }{
+        % if not starred: with number
+        \IfNoValueTF {#2} {
+          % if no subtitle
+          \begin{exercice1}
+            \noindent
+          }{
+            % if subtitle
+            \begin{exercice1}[#2]
+              \noindent
+            }
+          }
+        }{
+          \IfBooleanTF {#1} {
+          \end{exercice2}
+        }{
+        \end{exercice1}
+      }
+    }
+
 % rappel
 \NewDocumentEnvironment{rappel}{ o }{
   \IfNoValueTF {#1} {
@@ -346,14 +379,14 @@
   \end{bclogo}
 }
 
-% objectif
-% Tentative d'environnement utilisant bclogo
-\NewDocumentEnvironment{objectif}{ }{
-  \vspace{1cm}
-  \begin{center}
-    \Annie\textbf{Objectif :}
-}{
-  \end{center}
-  \vspace{1cm}
-}
+%% objectif
+%% Tentative d'environnement utilisant bclogo
+%\NewDocumentEnvironment{objectif}{ }{
+%  \vspace{1cm}
+%  \begin{center}
+%    \Annie\textbf{Objectif :}
+%}{
+%  \end{center}
+%  \vspace{1cm}
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

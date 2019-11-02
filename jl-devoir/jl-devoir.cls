@@ -142,7 +142,7 @@
  	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}]
     {\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}}
   \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
-  \rohead[Le \@date]{Le \@date}
+  \rohead[Le \@date\\]{Le \@date\\}
   \cehead[]{}
   \lehead[]{}
   \rehead[]{}
@@ -151,7 +151,7 @@
    	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
       {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
     \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
-    \rohead[\@date]{\@date}
+    \rohead[\@date\\]{\@date\\}
     \cehead[]{}
     \lehead[]{}
     \rehead[]{}
@@ -160,7 +160,7 @@
       \cohead[\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}]
         {\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}}
       \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
-      \rohead[\@date]{\@date}
+      \rohead[\@date\\]{\@date\\}
       \cehead[]{}
       \lehead[]{}
       \rehead[]{}

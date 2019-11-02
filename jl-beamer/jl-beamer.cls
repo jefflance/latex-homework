@@ -129,6 +129,7 @@
 \setbeamerfont{enumerate items}{family=\rmfamily}
 \setbeamercolor*{enumerate items}{fg=black}
 \setbeamertemplate{enumerate items}{\textbf{\insertenumlabel}.}
+\setbeamertemplate{enumerate subitem}{\textbf{\alph{enumii})}}
 
 %% Items.
 %%

@@ -30,7 +30,7 @@
 \RequirePackage{xstring}
 \RequirePackage{multido}
 \RequirePackage{xparse}
-\RequirePackage{etoolbox}
+\RequirePackage{etoolbox, xpatch}
 \RequirePackage{ifluatex}
 \RequirePackage{import}
 \RequirePackage{lipsum}
@@ -70,8 +70,7 @@
 \RequirePackage[tikz]{bclogo}
 
 % maths
-\RequirePackage{amsmath, amsthm}
-\RequirePackage{amssymb}
+\RequirePackage{amsmath, amsthm, amsfonts, amssymb}
 \RequirePackage{tkz-euclide}
 \usetikzlibrary{snakes, shadows}
 \RequirePackage{calc}
@@ -95,6 +94,7 @@
 % tables
 \RequirePackage{array}
 \RequirePackage{tabularx}
+\RequirePackage{makecell}
 \RequirePackage{multicol}
 \RequirePackage{multirow}
 \RequirePackage{boldline}
@@ -114,7 +114,7 @@
 \RequirePackage{inconsolata}
 \RequirePackage{tasks}
 \RequirePackage{dashrule}
-% \RequirePackage[zerostyle=d]{newtxtt}
+% \RequirePackage[french]{algorithme}
 %--
 
 
@@ -267,19 +267,25 @@
                            fontsize=\small,
                            bgcolor=white,
                            autogobble,
-                           frame=lines,
+                           frame=single,
                            breaklines,
                            escapeinside=||,
                            xleftmargin=0em,
                            xrightmargin=0em,
                            numbersep=.2em}
+
 \newmintinline{python}{style=autumn,
                        fontsize=\small,
                        bgcolor=friendlybg,
                        autogobble,
                        encoding=utf8}
+
 \renewcommand{\theFancyVerbLine}{
   \sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
+
+\AtBeginEnvironment{minted}{\dontdofcolorbox}
+\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
 %--
 
 
@@ -359,12 +365,14 @@
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
 \newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
 \newfontfamily\Handlee[Ligatures=TeX]{Handlee}
+\newfontfamily\Jd[Ligatures=TeX]{j.d.}
 \newfontfamily\Julee[Ligatures=TeX]{Julee}
 \newfontfamily\Morse[Ligatures=TeX]{Morse}
 \newfontfamily\NixieOne[Ligatures=TeX]{Nixie One}
 \newfontfamily\PenguinAttack[Ligatures=TeX]{PenguinAttack}
 \newfontfamily\PokemonHollow[Ligatures=TeX]{Pokemon Hollow}
 \newfontfamily\PokemonSolid[Ligatures=TeX]{Pokemon Solid}
+\newfontfamily\Purisa[Ligatures=TeX]{Purisa}
 \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
 \newfontfamily\Lato[Ligatures=TeX]{Lato}
 
@@ -426,7 +434,7 @@
 % \NewDocumentCommand \fig { O{1} m }{
 %   \IfFileExists{#2}{
 %     \begin{center}
-%       \includegraphics[scale=#1]{images/#2}
+%       \includegraphics[scale=#1]{#2}
 %     \end{center}
 %   }{
 %     \begin{center}

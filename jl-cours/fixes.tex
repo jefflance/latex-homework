@@ -115,4 +115,22 @@
   \else%
   \hbox{$\vcenter{\normalbaselines\hbox{\null\hfill#2\hfill\null}\hbox to \wd\gboite{\null\hfill#3\hfill\null}}$}%
 \fi}
+
+\newcommand{\boite}[2][]{%
+  \edef\x@x{\the\@listdepth}%
+  \edef\y@y{\the\@enumdepth}%
+  {%
+    %% Sauvegarde valeur 
+    \@listdepth0%
+    \@enumdepth=0%
+    %% Macro 
+    \def\@tmp@a{#1}%
+    \@totalleftmargin=0cm%
+    \dimen0\linewidth\advance\dimen0-2\fboxsep\advance\dimen0-2\fboxrule%
+    \ifx \@tmp@a\@empty\setbox0\vbox{\tolerance10000%
+      \linewidth\dimen0\hsize\dimen0 #2}\else\setbox0\vtop{\tolerance10000\linewidth\dimen0\hsize\dimen0 #2}\fi%
+    \fcolorbox{black}{lightgray}{\box0}}%
+  \global\@listdepth=\x@x%
+  %\global\@enumdepth=\y@y%
+}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -77,7 +77,7 @@
 % \RequirePackage{pgffor,pgfmath} % loaded by tikz
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.16}
-\RequirePackage[output-decimal-marker={,}]{siunitx}
+\RequirePackage{siunitx}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
 \RequirePackage{xlop}
@@ -135,6 +135,12 @@
 % tasks
 \settasks{
   label-format = {\bfseries}
+}
+
+% siunitx
+\sisetup{
+  output-decimal-marker={,},
+  inter-unit-product={\ensuremath{ { } \cdot { } }},
 }
 %--
 

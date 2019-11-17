@@ -345,6 +345,14 @@
 
   \vspace{.2cm}
 }
+
+%% \nonumbering
+%% deactivate page numbering in footer
+%%
+\NewDocumentCommand \nonumbering{ }{
+  \cefoot*{}
+  \cofoot*{}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

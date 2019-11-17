@@ -158,13 +158,13 @@
 }
 
 \pagenumbering{arabic}
-%\ofoot*{\pagemark}% pagenumber in the outer footer with scrheadings and plain style 
+%\ofoot*{\pagemark}% pagenumber in the outer footer with scrheadings and plain style
 %\ohead[]{\headmark}% headmark only with scrheadings
 
 \cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
 \cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
 
-%\clearpairofpagestyles% removes the default page header and footer entries 
+%\clearpairofpagestyles% removes the default page header and footer entries
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
 \setkomafont{pagefoot}{\normalfont}

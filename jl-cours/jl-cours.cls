@@ -234,7 +234,7 @@
 %
 %
 
-%% 1ere
+%% classe
 \NewDocumentCommand{\classe}{ G{2nde} }{
   \ifthenelse{ \equal{#1}{2nde} }{
     \lohead[2\tup{nde}]{2\tup{nde}}

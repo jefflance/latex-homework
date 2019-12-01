@@ -237,16 +237,16 @@
 %% classe
 \NewDocumentCommand{\classe}{ G{2nde} }{
   \ifthenelse{ \equal{#1}{2nde} }{
-    \lohead[2\tup{nde}]{2\tup{nde}}
+    \lohead[2\tup{nde}]{2\up{nde}}
   }{
     \ifthenelse{ \equal{#1}{1gen} }{
-      \lohead[1\tup{ère}]{1\tup{ère}}
+      \lohead[1\tup{ère}]{1\up{ère}}
     }{
       \ifthenelse{ \equal{#1}{1stg} }{
-        \lohead[1\tup{ère}STMG]{1\tup{ère}STMG}
+        \lohead[1\tup{ère}STMG]{1\up{ère}STMG}
       }{
         \ifthenelse{ \equal{#1}{tes} }{
-          \lohead[T\tup{ale}ES]{T\tup{ale}ES}
+          \lohead[T\tup{ale}ES]{T\up{ale}ES}
         }{
           \lohead{}
         }

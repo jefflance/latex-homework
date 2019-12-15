@@ -73,7 +73,7 @@
 %
 %
 
-\DeclareOptionX{type}[cours]{%
+\DeclareOptionX{type}[crs]{%
   \def\type{#1}%
 }
 
@@ -122,7 +122,7 @@
 %%
 \ohead{}
 
-\ifthenelse{ \equal{\type}{activity} }{
+\ifthenelse{ \equal{\type}{act} }{
 	\IfNoValueTF{ \subtitle }{
 %           \cohead[\@title]{\@title}
 %           \rohead[Activité]{Activité}
@@ -135,7 +135,7 @@
     \rohead[]{Activité - \@subtitle}
 	}
 }{
-	\ifthenelse{ \equal{\type}{exercise} }{
+	\ifthenelse{ \equal{\type}{exe} }{
 %		\cohead[\@title]{\@title}
 %		\rohead[Exercices]{Exercices}
     \IfNoValueTF{ \subtitle }{
@@ -146,7 +146,7 @@
       \rohead[]{Exercices - \@subtitle}
     }
 	}{
-    \ifthenelse{ \equal{\type}{auto} }{
+    \ifthenelse{ \equal{\type}{aut} }{
 %      \cohead[\@title]{\@title}
 %      \rohead[Rappels]{Rappels - \@subtitle}
       \cohead[]{\@title}

@@ -218,6 +218,7 @@
   \begin{center}
     \fbox{
       \parbox{.9\textwidth}{
+        \small
         \centering
         Le prêt de matériel et de documents personnels sont interdits.\\
         Le barème est donné à titre indicatif : il pourra être légèrement différent.\\

@@ -1,4 +1,4 @@
-%%%
+\up\up%%%
 %%%
 %%% Classe : jl-cours.cls
 %%% Version : 1.0
@@ -237,16 +237,16 @@
 %% classe
 \NewDocumentCommand{\classe}{ G{2nde} }{
   \ifthenelse{ \equal{#1}{2nde} }{
-    \lohead[2\tup{nde}]{2\up{nde}}
+    \lohead[2\up{nde}]{2\up{nde}}
   }{
     \ifthenelse{ \equal{#1}{1gen} }{
-      \lohead[1\tup{ère}]{1\up{ère}}
+      \lohead[1\up{ère}]{1\up{ère}}
     }{
       \ifthenelse{ \equal{#1}{1stg} }{
-        \lohead[1\tup{ère}STMG]{1\up{ère}STMG}
+        \lohead[1\up{ère}STMG]{1\up{ère}STMG}
       }{
         \ifthenelse{ \equal{#1}{tes} }{
-          \lohead[T\tup{ale}ES]{T\up{ale}ES}
+          \lohead[T\up{ale}ES]{T\up{ale}ES}
         }{
           \lohead{}
         }

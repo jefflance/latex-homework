@@ -1,4 +1,4 @@
-\up\up%%%
+%%%
 %%%
 %%% Classe : jl-cours.cls
 %%% Version : 1.0

@@ -101,16 +101,16 @@
 
 % \titre{TITRE}{SOUS-TITRE}{ANNÉE}{LIEU}
 % defini le titre du document
-\newcommand{\titre}[4]{%
+\newcommand{\titre}[5]{%
 	\title{#1}
 	\subtitle{#2}
 	\date{#3}
-	\author{Calcul mental}
-	\institute{#4}
+	\author{#4}
+	\institute{#5}
 }
 
 
-\NewDocumentCommand \debut { s }{%
+\NewDocumentCommand \debut { s O{c} }{%
 	\begin{frame}[plain]
 		\titlepage
 		\transduration{3}
@@ -119,25 +119,37 @@
   \addtocounter{framenumber}{-1}
 
 	\begin{frame}
-		\centering
-		Voici un rapide calcul mental pour tester votre compréhension du cours.\\~\\
-		\begin{itemize}[<+-|alert@+>]
-			\item Vous répondrez sur la feuille qui vous a été distribuée.
-			\item Le temps pour répondre à chaque question vous est indiqué au début de chacune d'elle.
-			\item Un compte à rebours apparaîtra en bas à droite vous indiquant le temps restant pour répondre.
-    \IfBooleanTF #1 {
-			\item Même si cette activité est appelée << calcul mental >>, vous avez le droit à la calculatrice !
-    }{
-      \item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
+    \IfValueT{#2}{
+      \ifthenelse{ \equal{#2}{a} }{
+        \centering
+        Petite séance d'automatismes pour faire le point sur certains points traités précédemment.\\~\\
+        \transduration{2}
+      }{
+        \ifthenelse{ \equal{#2}{c} }{
+      		\centering
+      		Voici un rapide calcul mental pour tester votre compréhension du cours.\\~\\
+      		\begin{itemize}[<+-|alert@+>]
+      			\item Vous répondrez sur la feuille qui vous a été distribuée.
+      			\item Le temps pour répondre à chaque question vous est indiqué au début de chacune d'elle.
+      			\item Un compte à rebours apparaîtra en bas à droite vous indiquant le temps restant pour répondre.
+            \IfBooleanTF #1 {
+        			\item Même si cette activité est appelée << calcul mental >>, vous avez le droit à la calculatrice !
+            }{
+              \item C'est un calcul mental, la calculatrice n'est donc pas autorisée.
+            }
+      		\end{itemize}
+
+      		\only<5->{Bonne chance !}
+
+      		\only<3>{
+      			\decompte{30}
+            \transduration{4}
+      		}
+        }{
+
+        }
+      }
     }
-		\end{itemize}
-
-		\only<5->{Bonne chance !}
-
-		\only<3>{
-			\decompte{30}
-		}
-		\transduration{4}
 	\end{frame}
 }
 

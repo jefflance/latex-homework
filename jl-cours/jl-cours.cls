@@ -152,7 +152,14 @@
       \cohead[]{\@title}
       \rohead[]{Rappels - \@subtitle}
     }{
-      \rohead[Cours]{Cours - \@title}
+      \ifthenelse{ \equal{\type}{none} }{
+  %      \cohead[\@title]{\@title}
+  %      \rohead[Rappels]{Rappels - \@subtitle}
+        \cohead[]{\@title}
+        \rohead[]{}
+      }{
+        \rohead[Cours]{Cours - \@title}
+      }
     }
   }
 }
@@ -259,10 +266,8 @@
 %%
 \NewDocumentCommand{\nextpage}{}{
   \newpage
-  \thispagestyle{myheadings}
-%  \vspace{-1cm}
-%  \cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
-%  \cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+  \thispagestyle{plain}
+  \lefoot*{}
 }
 
 %% titre

@@ -139,8 +139,8 @@
 
 % KOMA-Script version (preferred)
 \ifthenelse{ \equal{\type}{ds} }{
- 	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}]
-    {\textbf{MATHÉMATIQUES}\\\textbf{Devoir surveillé}}
+ 	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}]
+    {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}}
   \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
   \rohead[Le \@date\\]{Le \@date\\}
   \cehead[]{}
@@ -157,8 +157,8 @@
     \rehead[]{}
 	}{
     \ifthenelse{ \equal{\type}{int} }{
-      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}]
-        {\textbf{MATHÉMATIQUES}\\\textbf{Interrogation}}
+      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{\Jd Interrogation}]
+        {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Interrogation}}
       \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
       \rohead[\@date\\]{\@date\\}
       \cehead[]{}

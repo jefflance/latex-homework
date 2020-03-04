@@ -262,9 +262,9 @@
   }
 }
 
-%% page
+%% pagesuivante
 %%
-\NewDocumentCommand{\nextpage}{}{
+\NewDocumentCommand{\pagesuivante}{}{
   \newpage
   \thispagestyle{plain}
   \lefoot*{}

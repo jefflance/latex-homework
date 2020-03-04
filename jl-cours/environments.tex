@@ -137,6 +137,39 @@
   }
 }
 
+% consequence
+\NewDocumentEnvironment{consequence}{ s o }{
+  \IfBooleanTF {#1} {
+    % if starred: without title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@csq2}
+
+    }{
+      % if subtitle
+      \begin{@csq2}[#2]
+
+    }
+  }{
+    % if not starred: with title
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@csq1}
+
+    }{
+      % if subtitle
+      \begin{@csq1}[#2]
+
+    }
+  }
+}{
+  \IfBooleanTF {#1} {
+    \end{@csq2}
+  }{
+    \end{@csq1}
+  }
+}
+
 % vocabulaire
 \NewDocumentEnvironment{vocabulaire}{ s o }{
   \IfBooleanTF {#1} {

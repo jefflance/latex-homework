@@ -116,6 +116,32 @@
   \end{@dem2*}
 }
 
+% consequence
+\mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
+           outerlinewidth=1pt, outerlinecolor=black]{@csq1}{Conséquence(s)}
+\mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
+           outerlinewidth=1pt, outerlinecolor=black]{@csq2}{}
+
+\RenewDocumentEnvironment{@csq1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@csq1*}
+  }{
+    \begin{@csq1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@csq1*}
+}
+
+\RenewDocumentEnvironment{@csq2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@csq2*}
+  }{
+    \begin{@csq2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@csq2*}
+}
+           
 % vocabulaire
 \mdtheorem[style=pencil, theoremseparator={},
            theoremspace={}]{@voc1}{Vocabulaire}

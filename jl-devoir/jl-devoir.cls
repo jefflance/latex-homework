@@ -203,18 +203,18 @@
 
 \setlist[description]{font=\sffamily\bfseries}
 
-%% \displayturnpage
+%% \tournerlapage
 %% print a "Please, turn the page" at bottom right of the page.
 %%
-\NewDocumentCommand \displayturnpage{ }{
+\NewDocumentCommand \tournerlapage{ }{
   \rofoot[\textit{Tourner la page, svp} \faHandORight]
     {\textit{Tourner la page, svp} \faHandORight}
 }
 
-%% \displaydirectives
+%% \consignes
 %% print the main directives of the test.
 %%
-\NewDocumentCommand \displaydirectives{ }{
+\NewDocumentCommand \consignes{ }{
   \begin{center}
     \fbox{
       \parbox{.9\textwidth}{
@@ -235,8 +235,16 @@
 
 %% text customization
 %%
-\NewDocumentCommand \devprintconc{ }{
+\NewDocumentCommand \conclusion{ }{
   \underline{Conclusion :}
+}
+
+%% pagesuivante
+%%
+\NewDocumentCommand{\pagesuivante}{}{
+  \newpage
+  \thispagestyle{plain}
+  \lefoot*{}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

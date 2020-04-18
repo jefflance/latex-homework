@@ -12,9 +12,9 @@
 
 % definition
 \mdtheorem[style=pencil, theoremseparator={},
-           theoremspace={}, roundcorner=6pt]{@def1}{Définition}
+           theoremspace={}, roundcorner=6pt]{@def1}{\Jd Définition}
 \mdtheorem[style=nologo, theoremseparator={},
-           theoremspace={}, roundcorner=6pt]{@def2}{Définition}
+           theoremspace={}, roundcorner=6pt]{@def2}{\Jd Définition}
 
 \RenewDocumentEnvironment{@def1}{ o } {%begin
   \IfNoValueTF {#1} {
@@ -39,10 +39,10 @@
 % theoreme
 \mdtheorem[style=pencil, theoremseparator={},
            theoremspace={}, roundcorner=6pt,
-           outerlinewidth=1pt, outerlinecolor=black]{@thm1}{Théorème}
+           outerlinewidth=1pt, outerlinecolor=black]{@thm1}{\Jd Théorème}
 \mdtheorem[style=nologo, theoremseparator={},
            theoremspace={}, roundcorner=6pt,
-           outerlinewidth=1pt, outerlinecolor=black]{@thm2}{Théorème}
+           outerlinewidth=1pt, outerlinecolor=black]{@thm2}{\Jd Théorème}
 
 \RenewDocumentEnvironment{@thm1}{ o } {%begin
   \IfNoValueTF {#1} {
@@ -66,9 +66,9 @@
 
 % propriete
 \mdtheorem[style=pencil, theoremseparator={}, theoremspace={},
-           outerlinewidth=1pt, outerlinecolor=black]{@ppt1}{Propriété}
+           outerlinewidth=1pt, outerlinecolor=black]{@ppt1}{\Jd Propriété}
 \mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
-           outerlinewidth=1pt, outerlinecolor=black]{@ppt2}{Propriété}
+           outerlinewidth=1pt, outerlinecolor=black]{@ppt2}{\Jd Propriété}
 
 \RenewDocumentEnvironment{@ppt1}{ o } {%begin
   \IfNoValueTF {#1} {
@@ -92,9 +92,9 @@
 
 % demonstration
 \mdtheorem[style=pencil, theoremseparator={},
-           theoremspace={}]{@dem1}{Démonstration}
+           theoremspace={}]{@dem1}{\Jd Démonstration}
 \mdtheorem[style=nologo, theoremseparator={},
-           theoremspace={}]{@dem2}{Démonstration}
+           theoremspace={}]{@dem2}{\Jd Démonstration}
 
 \RenewDocumentEnvironment{@dem1}{ o } {%begin
   \IfNoValueTF {#1} {
@@ -118,7 +118,7 @@
 
 % consequence
 \mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
-           outerlinewidth=1pt, outerlinecolor=black]{@csq1}{Conséquence(s)}
+           outerlinewidth=1pt, outerlinecolor=black]{@csq1}{\Jd Conséquence(s)}
 \mdtheorem[style=nologo, theoremseparator={}, theoremspace={},
            outerlinewidth=1pt, outerlinecolor=black]{@csq2}{}
 
@@ -141,12 +141,12 @@
 }{%end
   \end{@csq2*}
 }
-           
+
 % vocabulaire
 \mdtheorem[style=pencil, theoremseparator={},
-           theoremspace={}]{@voc1}{Vocabulaire}
+           theoremspace={}]{@voc1}{\Jd Vocabulaire}
 \mdtheorem[style=nologo, theoremseparator={},
-          theoremspace={}]{@voc2}{Vocabulaire}
+          theoremspace={}]{@voc2}{\Jd Vocabulaire}
 
 \RenewDocumentEnvironment{@voc1}{ o } {%begin
   \IfNoValueTF {#1} {
@@ -184,7 +184,7 @@
 
 % remarque
 \mdtheorem[style=warning, theoremseparator={ -},
-           theoremspace={}]{@rmq1}{Remarque(s)}
+           theoremspace={}]{@rmq1}{\Jd Remarque(s)}
 \mdtheorem[style=warning, theoremseparator={},
            theoremspace={}]{@rmq2}{}
 
@@ -209,7 +209,7 @@
 }
 
 % exemple
-\mdtheorem[style=eye, theoremseparator={ -}, theoremspace={}]{@exe1}{ Exemple(s)}
+\mdtheorem[style=eye, theoremseparator={ -}, theoremspace={}]{@exe1}{\Jd Exemple(s)}
 \mdtheorem[style=eye, theoremseparator={}, theoremspace={}]{@exe2}{}
 
 \RenewDocumentEnvironment{@exe1}{ o } {%begin
@@ -234,7 +234,7 @@
 
 % application
 \mdtheorem[style=cogs, theoremseparator={},
-           theoremspace={}]{@app1}{Application}
+           theoremspace={}]{@app1}{\Jd Application}
 \mdtheorem[style=cogs, theoremseparator={},
           theoremspace={}]{@app2}{}
 
@@ -260,7 +260,7 @@
 
 % methode
 \mdtheorem[style=bookmark, theoremseparator={ -},
-           theoremspace={}]{@met1}{Méthode}
+           theoremspace={}]{@met1}{\Jd Méthode}
 \mdtheorem[style=noborder, theoremseparator={},
            theoremspace={}]{@met2}{}
 
@@ -297,7 +297,7 @@
   % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
 
 \theoremstyle{@exo1}
-\newtheorem{exercice1}{Exercice}
+\newtheorem{exercice1}{\Jd Exercice}
 
 % exercice
 \newtheoremstyle{@exo2}
@@ -312,7 +312,7 @@
 % composants du titre du thm : \thmname = nom, \thmnumber = numéro, \thmnote = sous-titre
 
 \theoremstyle{@exo2}
-\newtheorem*{exercice2}{Exercice}
+\newtheorem*{exercice2}{\Jd Exercice}
 
 \counterwithin*{exercice1}{section}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

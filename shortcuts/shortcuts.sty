@@ -141,6 +141,12 @@
 	\ensuremath{ \vec{\jmath} }
 }
 
+%% basis (i,j)
+%%
+\RenewDocumentCommand \ij { } {
+  \ensuremath{ \left(\vec{\imath}\; ;\; \vec{\jmath}\right) }
+}
+
 %% frame (O;i;j)
 %%
 \NewDocumentCommand \oij { } {
@@ -162,7 +168,11 @@
 %% vector arrow redefinition
 %%
 \renewcommand{\Vec}[1]{
-  \overrightarrow{#1\vphantom(}
+  \ensuremath{ \overrightarrow{#1\vphantom(} }
+}
+
+\renewcommand{\vec}[1]{
+  \ensuremath{ \overrightarrow{#1\vphantom(} }
 }
 
 %% positional notation

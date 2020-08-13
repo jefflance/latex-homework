@@ -375,6 +375,7 @@
 \newfontfamily\ChelseaMarket[Ligatures=TeX]{Chelsea Market}
 % \newfontfamily\Comic[Ligatures=TeX]{Comic Sans MS}
 \newfontfamily\DejaVuSans[Ligatures=TeX]{DejaVu Sans}
+\newfontfamily\dominofont[Ligatures=TeX]{DejaVu Sans}
 \newfontfamily\Delius[Ligatures=TeX]{Delius}
 \newfontfamily\DeliusSC[Ligatures=TeX]{Delius Swash Caps}
 \newfontfamily\FingerPaint[Ligatures=TeX]{Finger Paint}
@@ -398,6 +399,16 @@
 % 	\selectfont
 % }
 %--------------------------------------------------------
+
+%---
+% Print dominos
+\newcommand*\d@mino[3]{%
+  {\dominofont\char
+   \numexpr #1 + #2*7 + #3
+   \relax
+ }}
+\newcommand*\domino{\@ifstar{\d@mino{127075}}{\d@mino{127025}}}
+%---
 
 %--
 

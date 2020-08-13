@@ -308,6 +308,12 @@
 \NewDocumentCommand \point{ G{A} G{0} G{0} } {
     $ #1\big(#2\ ;\ #3\big) $
 }
+
+%% print the acronym F.I. for "Forme indéterminée" in bold and sans-serif font.
+%%
+\NewDocumentCommand \FI{ } {
+    \textsf{\textbf{F.I.}}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

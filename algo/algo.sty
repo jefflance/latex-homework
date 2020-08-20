@@ -1,0 +1,85 @@
+% File              : algo.sty
+% Author            : Jeff LANCE <email@jefflance.me>
+% Date              : 24.05.2020
+% Last Modified Date: 24.05.2020
+% Last Modified By  : Jeff LANCE <email@jefflance.me>
+%
+%
+
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{algo}[2020/05/24 Algorithms package, v0.1]
+
+
+
+\makeatletter
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% PACKAGES
+%
+%
+
+\RequirePackage{xparse}
+\RequirePackage{algpseudocode}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% TRANSLATIONS
+%
+%
+
+\algrenewcommand\algorithmicfor{\textbf{Pour}}
+\algnewcommand\algorithmicto{\textbf{à}}
+\algrenewcommand\algorithmicdo{}
+
+\algrenewtext{For}[3]%
+  {\algorithmicfor\ #1 \textbf{allant de} #2 \textbf{à} #3 \algorithmicdo}
+
+\algrenewcommand\algorithmicwhile{\textbf{Tant que}}
+
+\algrenewcommand\algorithmicend{\textbf{Fin}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% COMMANDS
+%
+%
+
+\NewDocumentCommand{\Sets}{ m m }{
+  \State #1 \gets #2
+}
+
+\NewDocumentCommand{\Print}{ m }{
+  \State \textbf{Afficher} #1
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+% ENVIRONMENTS
+%
+%
+
+\NewDocumentEnvironment{pseudocode}{  }{
+  \begin{algorithmic}
+    \sffamily
+}{
+  \end{algorithmic}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+

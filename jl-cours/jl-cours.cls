@@ -112,7 +112,7 @@
 
 %% tkz
 %%
-\usetkzobj{all} % on charge tous les objets
+%\usetkzobj{all} % on charge tous les objets: useless since version 3.02 of tkz-euclide
 
 %% sizing of the page
 %%

@@ -195,13 +195,13 @@
 %                       {\ensuremath{ \mathbb{R} \setminus \{0\} }}
 %                       {\! \mathbb{R} \setminus \{0\} \!}
 %                       {\! \mathbb{R} \setminus \{0\} \!}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{0\}}
         }{
 %            \mathchoice{\! \mathbb{R} \setminus \{0, #2\} \!}
 %                       {\ensuremath{ \mathbb{R} \setminus \{0, #2\} }}
 %                       {\! \mathbb{R} \setminus \{0, #2\} \!}
 %                       {\! \mathbb{R} \setminus \{0, #2\} \!}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0, #2\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
@@ -209,13 +209,13 @@
 %                       {\ensuremath{ \mathbb{R} }}
 %                       {\mathbb{R}}
 %                       {\mathbb{R}}
-            \!\!\!\!\ensuremath{ \mathbb{R} }\!\!\!
+            \ensuremath{ \mathbb{R} }
         }{
 %            \mathchoice{\mathbb{R} \setminus \{#2\}}
 %                       {\ensuremath{ \mathbb{R} \setminus \{#2\} }}
 %                       {\mathbb{R} \setminus \{#2\}}
 %                       {\mathbb{R} \setminus \{#2\}}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{#2\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{#2\}}
         }
     }
 }
@@ -307,6 +307,12 @@
 %%
 \NewDocumentCommand \point{ G{A} G{0} G{0} } {
     $ #1\big(#2\ ;\ #3\big) $
+}
+
+%% print the acronym F.I. for "Forme indéterminée" in bold and sans-serif font.
+%%
+\NewDocumentCommand \FI{ } {
+    \textsf{\textbf{F.I.}}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

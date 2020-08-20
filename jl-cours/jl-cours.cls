@@ -40,6 +40,7 @@
 
 %% Own packages. Those contains some global settings and definitions.
 %%
+\RequirePackage{algo}
 \RequirePackage{commun}
 \RequirePackage{couleurs}
 \RequirePackage{shortcuts}

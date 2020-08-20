@@ -54,8 +54,8 @@
 
 %% tasks
 %%
-%\newcommand{\bq}{\begin{tasks}}
-%\newcommand{\eq}{\end{tasks}}
+\newcommand{\bt}{\begin{tasks}}
+\newcommand{\et}{\end{tasks}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -195,13 +195,13 @@
 %                       {\ensuremath{ \mathbb{R} \setminus \{0\} }}
 %                       {\! \mathbb{R} \setminus \{0\} \!}
 %                       {\! \mathbb{R} \setminus \{0\} \!}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{0\}}
         }{
 %            \mathchoice{\! \mathbb{R} \setminus \{0, #2\} \!}
 %                       {\ensuremath{ \mathbb{R} \setminus \{0, #2\} }}
 %                       {\! \mathbb{R} \setminus \{0, #2\} \!}
 %                       {\! \mathbb{R} \setminus \{0, #2\} \!}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{0, #2\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
@@ -209,13 +209,13 @@
 %                       {\ensuremath{ \mathbb{R} }}
 %                       {\mathbb{R}}
 %                       {\mathbb{R}}
-            \!\!\!\!\ensuremath{ \mathbb{R} }\!\!\!
+            \ensuremath{ \mathbb{R} }
         }{
 %            \mathchoice{\mathbb{R} \setminus \{#2\}}
 %                       {\ensuremath{ \mathbb{R} \setminus \{#2\} }}
 %                       {\mathbb{R} \setminus \{#2\}}
 %                       {\mathbb{R} \setminus \{#2\}}
-            \!\!\!\!\ensuremath{\mathbb{R} \setminus \{#2\}}\!\!\!
+            \ensuremath{\mathbb{R} \setminus \{#2\}}
         }
     }
 }
@@ -270,15 +270,15 @@
 \NewDocumentCommand \N { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{0\}}\!\!\!
+            \ensuremath{\mathbb{N} \setminus \{0\}}
         }{
-            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{0, #2\}}\!\!\!
+            \ensuremath{\mathbb{N} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
-            \!\!\!\!\ensuremath{\mathbb{N}}\!\!\!
+            \ensuremath{\mathbb{N}}
         }{
-            \!\!\!\!\ensuremath{\mathbb{N} \setminus \{#2\}}\!\!\!
+            \ensuremath{\mathbb{N} \setminus \{#2\}}
         }
     }
 }

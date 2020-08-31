@@ -159,7 +159,7 @@
         \cohead[]{\@title}
         \rohead[]{}
       }{
-        \rohead[Cours]{Cours - \@title}
+        \rohead[Cours]{Cours - \@subtitle}
       }
     }
   }

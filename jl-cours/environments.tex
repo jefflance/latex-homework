@@ -355,6 +355,41 @@
   }
 }
 
+% Need to adapt the code in order to get numbering and
+% framing
+%% application
+%\NewDocumentEnvironment{application}{ s o o o}{
+%  \IfBooleanTF {#1} {
+%    % if starred: without logo and title
+%    \IfNoValueTF {#2} {
+%      % if no subtitle
+%      \begin{application2}
+%
+%      }{
+%        % if subtitle
+%        \begin{application2}[#2]
+%
+%        }
+%      }{
+%        % if not starred: with number
+%        \IfNoValueTF {#2} {
+%          % if no subtitle
+%          \begin{application1}
+%
+%          }{
+%            % if subtitle
+%            \begin{application1}[#2]
+%
+%            }
+%          }
+%        }{
+%          \IfBooleanTF {#1} {
+%          \end{application2}
+%        }{
+%        \end{application1}
+%      }
+%    }
+
 % exercice
 \NewDocumentEnvironment{exercice}{ s o o o}{
   \IfBooleanTF {#1} {

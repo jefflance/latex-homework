@@ -58,11 +58,15 @@
 %
 
 \NewDocumentCommand{\Sets}{ m m }{
-  \State #1 \gets #2
+  \State #1 \gets\ #2
 }
 
 \NewDocumentCommand{\Print}{ m }{
   \State \textbf{Afficher} #1
+}
+
+\NewDocumentCommand{\Enter}{ m }{
+  \State \textbf{Saisir} #1
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

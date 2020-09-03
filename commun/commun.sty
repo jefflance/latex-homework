@@ -78,7 +78,7 @@
 % \RequirePackage{pgffor,pgfmath} % loaded by tikz
 \RequirePackage{pgfplots}
 \pgfplotsset{compat=1.16}
-\RequirePackage{siunitx}
+\RequirePackage[load-configurations = abbreviations]{siunitx}
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
 \RequirePackage{xlop}
@@ -140,6 +140,7 @@
 
 % siunitx
 \sisetup{
+  locale=FR,
   output-decimal-marker={,},
   inter-unit-product={\ensuremath{ { } \cdot { } }},
 }

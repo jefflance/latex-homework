@@ -122,7 +122,7 @@
     \IfValueT{#2}{
       \ifthenelse{ \equal{#2}{a} }{
         \centering
-        Petite séance d'automatismes pour faire le point sur certains points traités précédemment.\\~\\
+        Petite séance d'automatismes.\\~\\
         \transduration{2}
       }{
         \ifthenelse{ \equal{#2}{c} }{
@@ -154,22 +154,22 @@
 }
 
 
-% \newcounter{cqcm}
-% \NewDocumentEnvironment{qcm}{ G{60} }{ % begin
-% 		\stepcounter{cqcm}
-% 		\section{Question \usecounter{cqcm}\ }
-% 		\begin{frame}
-% 			\centering
-% 			Question \usecounter{cqcm}\transduration{3}
-% 		\end{frame}
-% 		\begin{frame}
-% 		\centering
-% 		\begin{beamerboxesrounded}{Q\usecounter{cqcm}.\ }
-% 	}{ % end
-% 		\end{beamerboxesrounded} %
-% 		\decompte{#1} %
-% 		\end{frame} %
-% }
+%\newcounter{cjeff}
+%\NewDocumentEnvironment{jeff}{ G{60} }{ % begin
+%		%\stepcounter{cqcm}
+%		%\section{Question \usecounter{cqcm}\ }
+%		%\begin{frame}
+%		%	\centering
+%		%	Question \usecounter{cqcm}\transduration{3}
+%		%\end{frame}
+%    \begin{frame}[fragile]
+%		\centering
+%		\begin{beamerboxesrounded}{Q\usecounter{cjeff}.\ }
+%	}{ % end
+%		\end{beamerboxesrounded} %
+%		\decompte{#1} %
+%		\end{frame} %
+%}
 
 
 \newcommand{\fin}{%

@@ -38,14 +38,14 @@
 
 % language
 \ifluatex
-	\RequirePackage{polyglossia}		% => babel
-	\setdefaultlanguage{french}		% => inputenc
-	\RequirePackage{luatextra}		% charge fontspec => fontenc
+	\RequirePackage{polyglossia}    	% => babel
+	\setdefaultlanguage{french}	      % => inputenc
+	\RequirePackage{luatextra}	      % charge fontspec => fontenc
 	% \defaultfontfeatures{Ligatures=TeX}
 \else
 	\RequirePackage[francais]{babel}	% => polyglossia
 	\RequirePackage[utf8]{inputenc}		% => fontspec
-	\RequirePackage[T1]{fontenc}		% => fontspec
+	\RequirePackage[T1]{fontenc}		  % => fontspec
   % \RequirePackage[babel=true,kerning=true]{microtype}
 \fi
 
@@ -86,7 +86,9 @@
 % tableaux de signe
 %\RequirePackage{tabvar}    % replaced by pdftabvar from pdfadd
 \RequirePackage{fp}
-\RequirePackage[luatex]{pict2e}
+\ifluatex
+  \RequirePackage[luatex]{pict2e}
+\fi
 \RequirePackage{picture}
 \RequirePackage{color}
 \input pdftabvar

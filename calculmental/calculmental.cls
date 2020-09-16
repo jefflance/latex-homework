@@ -127,7 +127,7 @@
       }{
         \ifthenelse{ \equal{#2}{c} }{
       		\centering
-      		Voici un rapide calcul mental pour tester votre compréhension du cours.\\~\\
+      		Voici un rapide calcul mental pour tester vos connaissances.\\~\\
       		\begin{itemize}[<+-|alert@+>]
       			\item Vous répondrez sur la feuille qui vous a été distribuée.
       			\item Le temps pour répondre à chaque question vous est indiqué au début de chacune d'elle.

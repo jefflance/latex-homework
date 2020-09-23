@@ -118,6 +118,8 @@
 \RequirePackage{tasks}
 \RequirePackage{dashrule}
 \RequirePackage{qrcode}
+\RequirePackage{verse}
+\RequirePackage{nicefrac}
 %--
 
 
@@ -197,6 +199,12 @@
 % Texte
 %
 %
+
+% \attrib
+% Set author, source and date for a text
+\newcommand{\attrib}[1]{
+  \nopagebreak{\raggedleft\footnotesize #1\par}
+}
 
 % \hcancel[color][size]{text}
 % Strike text with a color and a defined thickness.

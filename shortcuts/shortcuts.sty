@@ -225,45 +225,45 @@
 \NewDocumentCommand \Q { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0\} \!\!}
+            \ensuremath{\mathbb{Q} \setminus \{0\}}
         }{
-            \ensuremath{\!\!\! \mathbb{Q} \setminus \{0, #2\} \!\!}
+            \ensuremath{\mathbb{Q} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{Q} \!\!}
+            \ensuremath{\mathbb{Q}}
         }{
-            \ensuremath{\!\!\! \mathbb{Q} \setminus \{#2\} \!\!}
+            \ensuremath{\mathbb{Q} \setminus \{#2\}}
         }
     }
 }
 \NewDocumentCommand \D { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{D} \setminus \{0\} \!\!}
+            \ensuremath{\mathbb{D} \setminus \{0\}}
         }{
-            \ensuremath{\!\!\! \mathbb{D} \setminus \{0, #2\} \!\!}
+            \ensuremath{\mathbb{D} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{D} \!\!}
+            \ensuremath{\mathbb{D}}
         }{
-            \ensuremath{\!\!\! \mathbb{D} \setminus \{#2\} \!\!}
+            \ensuremath{\mathbb{D} \setminus \{#2\}}
         }
     }
 }
 \NewDocumentCommand \Z { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0\} \!\!}
+            \ensuremath{\mathbb{Z} \setminus \{0\}}
         }{
-            \ensuremath{\!\!\! \mathbb{Z} \setminus \{0, #2\} \!\!}
+            \ensuremath{\mathbb{Z} \setminus \{0, #2\}}
         }
     }{
         \IfNoValueTF {#2} {
-            \ensuremath{\!\!\! \mathbb{Z} \!\!}
+            \ensuremath{\mathbb{Z}}
         }{
-            \ensuremath{\!\!\! \mathbb{Z} \setminus \{#2\} \!\!}
+            \ensuremath{\mathbb{Z} \setminus \{#2\}}
         }
     }
 }
@@ -279,6 +279,21 @@
             \ensuremath{\mathbb{N}}
         }{
             \ensuremath{\mathbb{N} \setminus \{#2\}}
+        }
+    }
+}
+\NewDocumentCommand \C { s g } {
+    \IfBooleanTF {#1} {
+        \IfNoValueTF {#2} {
+            \ensuremath{\mathbb{C} \setminus \{0\}}
+        }{
+            \ensuremath{\mathbb{C} \setminus \{0, #2\}}
+        }
+    }{
+        \IfNoValueTF {#2} {
+            \ensuremath{\mathbb{C}}
+        }{
+            \ensuremath{\mathbb{C} \setminus \{#2\}}
         }
     }
 }
@@ -309,10 +324,22 @@
     $ #1\big(#2\ ;\ #3\big) $
 }
 
+%% cardinal
+%%
+\NewDocumentCommand \card{ G{E} }{
+    \text{Card($ #1 $)}
+}
+
 %% print the acronym F.I. for "Forme indéterminée" in bold and sans-serif font.
 %%
 \NewDocumentCommand \FI{ } {
     \textsf{\textbf{F.I.}}
+}
+
+%% \nicefrac shortcut
+%%
+\NewDocumentCommand \sfrac{ G{1} G{2}  } {
+  \nicefrac{#1}{#2}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

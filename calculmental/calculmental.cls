@@ -113,7 +113,7 @@
 \NewDocumentCommand \debut { s O{c} }{%
 	\begin{frame}[plain]
 		\titlepage
-		\transduration{3}
+		\transduration{2}
   \end{frame}
 
   \addtocounter{framenumber}{-1}

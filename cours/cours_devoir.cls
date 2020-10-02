@@ -134,10 +134,10 @@
   \rehead[]{}
 }{
 	\ifthenelse{ \equal{\type}{dm} }{
-   	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
-      {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
-    \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
-    \rohead[\@date]{\@date}
+%   	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
+%      {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
+%    \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
+%    \rohead[\@date]{\@date}
     \cehead[]{}
     \lehead[]{}
     \rehead[]{}

@@ -53,7 +53,7 @@
 \RequirePackage{libertine}
 \RequirePackage{pifont}
 \RequirePackage{fontawesome}
-\RequirePackage{eurosym}
+\RequirePackage[right]{eurosym}
 \RequirePackage{frcursive}
 \RequirePackage{emerald}
 
@@ -457,6 +457,57 @@
 	\dimen1=#2\opcolumnwidth
 	\ovalnode{#1}
 		{\kern\dimen1 #3\kern\dimen1}}
+
+%% horizontal or vertical p-uplet
+%%
+\ExplSyntaxOn
+
+\NewDocumentCommand \uplet { s m } {
+  \IfBooleanTF { #1 } {
+    \ensuremath{
+      \begin{pmatrix}
+        \uplet_vertical_list:n {#2}
+      \end{pmatrix}
+    }
+  }{
+    \ensuremath{
+      \left(
+      \uplet_inline_list:n {#2}
+      \right)
+    }
+  }
+}
+% define a sequence for storing the "massaged" items
+\seq_new:N \uplet_seq
+
+\cs_new_protected:Npn \uplet_inline_list:n #1
+{
+  % clear the sequence
+  \seq_clear:N \uplet_seq
+  % cycle through the arguments, storing "<arg>" in the sequence
+  \clist_map_inline:nn { #1 }
+  {
+    \seq_put_right:Nn \uplet_seq { ##1 }
+  }
+  % output the sequence putting ";" in between elements
+  \seq_use:Nnnn \uplet_seq { \ ;\  } { \ ;\  } { \ ;\  }
+}
+
+\cs_new_protected:Npn \uplet_vertical_list:n #1
+{
+  % clear the sequence
+  \seq_clear:N \uplet_seq
+  % cycle through the arguments, storing "<arg>" in the sequence
+  \clist_map_inline:nn { #1 }
+  {
+    \seq_put_right:Nn \uplet_seq { ##1 }
+  }
+  % output the sequence putting ";" in between elements
+  \seq_use:Nnnn \uplet_seq { \\ } { \\ } { \\ }
+}
+
+\ExplSyntaxOff
+
 %--
 
 

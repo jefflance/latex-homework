@@ -120,6 +120,7 @@
 \RequirePackage{qrcode}
 \RequirePackage{verse}
 \RequirePackage{nicefrac}
+\RequirePackage{blindtext}
 %--
 
 
@@ -190,6 +191,16 @@
 
 % Item in a tab.
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
+
+% \firsthline with \cline capabilities
+\newcommand{\firstcline}[1]{%
+  \multicolumn1c{%
+    \global\backup@length\ht\@arstrutbox
+    \global\advance\backup@length\dp\@arstrutbox
+    \global\advance\backup@length\arrayrulewidth
+     \raise\extratabsurround\copy\@arstrutbox
+    }\\[-\backup@length]\cline{#1}
+}
 %--
 
 

@@ -123,43 +123,43 @@
 %%
 \ohead{}
 
-\ifthenelse{ \equal{\type}{act} }{
+\ifthenelse{ \equal{\type}{a} }{
 	\IfNoValueTF{ \subtitle }{
 %           \cohead[\@title]{\@title}
 %           \rohead[Activité]{Activité}
 	    \cohead[]{\@title}
-	    \rohead[]{Activité}
+	    \rohead*[]{Activité}
 	}{
 %	    \cohead[\@title]{\@title}
 %	    \rohead[Activité]{Activité - \@subtitle}
 	    \cohead[]{\@title}
-    \rohead[]{Activité - \@subtitle}
+      \rohead*[]{Activité - \@subtitle}
 	}
 }{
-	\ifthenelse{ \equal{\type}{exe} }{
+	\ifthenelse{ \equal{\type}{e} }{
 %		\cohead[\@title]{\@title}
 %		\rohead[Exercices]{Exercices}
     \IfNoValueTF{ \subtitle }{
       \cohead[]{\@title}
-      \rohead[]{Exercices}
+      \rohead*[]{Exercices}
     }{
       \cohead[]{\@title}
-      \rohead[]{Exercices - \@subtitle}
+      \rohead*[]{Exercices - \@subtitle}
     }
 	}{
-    \ifthenelse{ \equal{\type}{aut} }{
+    \ifthenelse{ \equal{\type}{q} }{
 %      \cohead[\@title]{\@title}
 %      \rohead[Rappels]{Rappels - \@subtitle}
-      \cohead[]{\@title}
-      \rohead[]{Rappels - \@subtitle}
+      \cohead*[]{\@title}
+      \rohead*[]{Rappels - \@subtitle}
     }{
-      \ifthenelse{ \equal{\type}{none} }{
+      \ifthenelse{ \equal{\type}{n} }{
   %      \cohead[\@title]{\@title}
   %      \rohead[Rappels]{Rappels - \@subtitle}
-        \cohead[]{\@title}
-        \rohead[]{}
+        \cohead*[]{\@title}
+        \rohead*[]{}
       }{
-        \rohead[Cours]{Cours - \@subtitle}
+        \rohead*[Cours]{Cours - \@subtitle}
       }
     }
   }
@@ -245,16 +245,16 @@
 %% classe
 \NewDocumentCommand{\classe}{ G{2nde} }{
   \ifthenelse{ \equal{#1}{2nde} }{
-    \lohead[2\up{nde}]{2\up{nde}}
+    \lohead[2\tup{nde}]{2\tup{nde}}
   }{
     \ifthenelse{ \equal{#1}{1gen} }{
-      \lohead[1\up{ère}]{1\up{ère}}
+      \lohead[1\tup{ère}]{1\tup{ère}}
     }{
       \ifthenelse{ \equal{#1}{1stg} }{
-        \lohead[1\up{ère}STMG]{1\up{ère}STMG}
+        \lohead[1\tup{ère}STMG]{1\tup{ère}STMG}
       }{
         \ifthenelse{ \equal{#1}{tes} }{
-          \lohead[T\up{ale}ES]{T\up{ale}ES}
+          \lohead[T\tup{ale}ES]{T\tup{ale}ES}
         }{
           \lohead{}
         }
@@ -275,7 +275,7 @@
 %%
 \NewDocumentCommand \titre { G{Titre} G{Sous-titre} G{} G{} }{%
   \setlength{\droptitle}{-2cm}
-  \title{\Jd #1}
+  \title{\Jd\bfseries #1}
   \subtitle{#2}
   \date{}
   \maketitle

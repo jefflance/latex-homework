@@ -56,6 +56,11 @@
 %%
 \newcommand{\bt}{\begin{tasks}}
 \newcommand{\et}{\end{tasks}}
+
+%% minipage
+%%
+% \newcommand{\bm}{\begin{minipage}}
+% \newcommand{\em}{\end{minipage}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -126,6 +131,18 @@
 \NewDocumentCommand \fg { }{
   >>
 }
+
+% column sep rule
+%%
+\NewDocumentCommand \filet { G{0} } {
+  \setlength{\columnseprule}{#1}
+}
+
+% \num shortcut
+%%
+\NewDocumentCommand \n { g } {
+  \num{#1}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -137,13 +154,16 @@
 %
 %
 
-%% i & j vectors
+%% i, j & k vectors
 %%
 \NewDocumentCommand \veci { } {
 	\ensuremath{ \vec{\imath} }
 }
 \NewDocumentCommand \vecj { } {
 	\ensuremath{ \vec{\jmath} }
+}
+\NewDocumentCommand \veck { } {
+	\ensuremath{ \vec{k} }
 }
 
 %% basis (i,j)
@@ -152,10 +172,22 @@
   \ensuremath{ \left(\vec{\imath}\; ;\; \vec{\jmath}\right) }
 }
 
+%% basis (i,j,k)
+%%
+\NewDocumentCommand \ijk { } {
+  \ensuremath{ \left(\vec{\imath}\; ;\; \vec{\jmath}\ ;\ \vec{k}\right) }
+}
+
 %% frame (O;i;j)
 %%
 \NewDocumentCommand \oij { } {
   \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\right) }
+}
+
+%% frame (O;i;j;k)
+%%
+\NewDocumentCommand \oijk { } {
+  \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\ ;\ \vec{k}\right) }
 }
 
 %% frame (O;I;I)
@@ -178,6 +210,16 @@
 
 \renewcommand{\vec}[1]{
   \ensuremath{ \overrightarrow{#1\vphantom(} }
+}
+
+%% coordinates
+%%
+\NewDocumentCommand \coord { s m }{
+  \IfBooleanTF { #1 } {
+    \uplet*{#1}
+  }{
+    \uplet{#1}
+  }
 }
 
 %% positional notation
@@ -314,8 +356,8 @@
 
 %% math letter used as curve name
 %%
-\NewDocumentCommand \mscr{ G{f} } {
-    $ \mathscr{#1} $
+\NewDocumentCommand \ronde{ G{f} } {
+    \ensuremath{\mathscr{#1}}
 }
 
 %% point
@@ -341,6 +383,18 @@
 \NewDocumentCommand \sfrac{ G{1} G{2}  } {
   \nicefrac{#1}{#2}
 }
+
+%% limits
+%%
+\NewDocumentCommand \limite{ G{f(x)} G{x \to +\infty} }{
+  \ensuremath{\lim\limits_{ #2 } #1}
+}
+
+%%% l
+%%%
+%\RenewDocumentCommand \l {  } {
+%  \ensuremath{\ell}
+%}
 
 % %% renewed \bar command
 % %%

@@ -73,7 +73,7 @@
 % maths
 \RequirePackage{amsmath, amsthm, amsfonts, amssymb}
 \RequirePackage{tkz-euclide}
-\usetikzlibrary{snakes, shadows}
+\usetikzlibrary{arrows, calc, positioning, shapes.geometric, shadows, snakes, tikzmark}
 \RequirePackage{calc}
 % \RequirePackage{pgffor,pgfmath} % loaded by tikz
 \RequirePackage{pgfplots}
@@ -163,6 +163,11 @@
 % MACROS
 %
 %
+
+% 
+% Tikz
+% 
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 % Tableau
 % Alignment commands of the content in the column with a defined width.
@@ -395,7 +400,6 @@
 \newfontfamily\Architects[Ligatures=TeX]{Architects Daughter}
 \newfontfamily\Bristol[Ligatures=TeX]{Bristol}
 \newfontfamily\ChelseaMarket[Ligatures=TeX]{Chelsea Market}
-% \newfontfamily\Comic[Ligatures=TeX]{Comic Sans MS}
 \newfontfamily\DejaVuSans[Ligatures=TeX]{DejaVu Sans}
 \newfontfamily\dominofont[Ligatures=TeX]{DejaVu Sans}
 \newfontfamily\Delius[Ligatures=TeX]{Delius}

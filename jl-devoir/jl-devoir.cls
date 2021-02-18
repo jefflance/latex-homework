@@ -217,7 +217,7 @@
 \NewDocumentCommand \consignes{ }{
   \begin{center}
     \fbox{
-      \parbox{.9\textwidth}{
+      \parbox{.97\linewidth}{
         \small
         \centering
         Le prêt de matériel et de documents personnels sont interdits.\\

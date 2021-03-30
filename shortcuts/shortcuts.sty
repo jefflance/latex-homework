@@ -324,7 +324,7 @@
         }
     }
 }
-\NewDocumentCommand \C { s g } {
+\RenewDocumentCommand \C { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
             \ensuremath{\mathbb{C} \setminus \{0\}}

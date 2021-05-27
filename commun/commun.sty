@@ -419,8 +419,11 @@
   \newfontfamily\Purisa[Ligatures=TeX]{Purisa}
   \newfontfamily\ScratchedLetters[Ligatures=TeX]{Scratched Letters}
   \newfontfamily\Lato[Ligatures=TeX]{Lato}
-% \else
-%   \newcommand\Jd[1]{{\usefont{T1}{j.d.}{m}{n} #1 }
+\else
+  \newcommand\newFontCommand[2]{%
+    \expandafter\newcommand\csname #1\endcsname{\usefont{T1}{#2}{m}{n}}}
+  
+  \newFontCommand{Jd}{j.d.}
 \fi
 
 %--------------------------------------------------------
@@ -456,7 +459,7 @@
 % Create a macro which can be accessed with the name "\color".
 % This macro make the following text to be colored in color.
 \newcommand\newColorCommand[1]{%
-\expandafter\newcommand\csname #1\endcsname{\color{#1}}}
+  \expandafter\newcommand\csname #1\endcsname{\color{#1}}}
 
 % Create some color commands
 \newColorCommand{red}

@@ -125,10 +125,10 @@
 
 % double quoting
 %%
-\NewDocumentCommand \og { }{
+\RenewDocumentCommand \og { }{
   <<
 }
-\NewDocumentCommand \fg { }{
+\RenewDocumentCommand \fg { }{
   >>
 }
 
@@ -216,9 +216,9 @@
 %%
 \NewDocumentCommand \coord { s m }{
   \IfBooleanTF { #1 } {
-    \uplet*{#1}
+    \uplet*{#2}
   }{
-    \uplet{#1}
+    \uplet{#2}
   }
 }
 
@@ -324,7 +324,7 @@
         }
     }
 }
-\RenewDocumentCommand \C { s g } {
+\ProvideDocumentCommand \C { s g } {
     \IfBooleanTF {#1} {
         \IfNoValueTF {#2} {
             \ensuremath{\mathbb{C} \setminus \{0\}}
@@ -349,7 +349,7 @@
         }
     }{
         \ensuremath{
-            \overrightarrow{#1\vphantom(} \cdot \overrightarrow{#2\vphantom(}
+            \overrightarrow{#2\vphantom(} \cdot \overrightarrow{#3\vphantom(}
         }
     }
 }

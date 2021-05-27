@@ -43,7 +43,7 @@
 	\RequirePackage{luatextra}	      % charge fontspec => fontenc
 	% \defaultfontfeatures{Ligatures=TeX}
 \else
-	\RequirePackage[francais]{babel}	% => polyglossia
+	\RequirePackage[french]{babel}	% => polyglossia
 	\RequirePackage[utf8]{inputenc}		% => fontspec
 	\RequirePackage[T1]{fontenc}		  % => fontspec
   % \RequirePackage[babel=true,kerning=true]{microtype}
@@ -113,7 +113,7 @@
 \RequirePackage[dash]{dashundergaps}
 \RequirePackage{comment}
 \RequirePackage{caption}
-\RequirePackage[outputdir=./build]{minted}
+% \RequirePackage[outputdir=./build]{minted}
 \RequirePackage{inconsolata}
 \RequirePackage{tasks}
 \RequirePackage{dashrule}
@@ -329,6 +329,7 @@
 \AtBeginEnvironment{minted}{\dontdofcolorbox}
 \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
 \xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+
 %--
 
 

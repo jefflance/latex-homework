@@ -72,6 +72,7 @@
 
 % maths
 \RequirePackage{amsmath, amsthm, amsfonts, amssymb}
+% \RequirePackage{amsmath, amsthm, amssymb}
 \RequirePackage{tkz-euclide}
 \usetikzlibrary{arrows, calc, positioning, shapes.geometric, shadows, snakes, tikzmark}
 \RequirePackage{calc}
@@ -304,32 +305,34 @@
 %
 
 \definecolor{friendlybg}{HTML}{F0F0F0}
-\newminted[python]{python}{style=bw,
-                           fontsize=\small,
-                           bgcolor=white,
-                           highlightcolor=white,
-                           autogobble,
-                           frame=none,
-                           % breaklines,
-                           escapeinside=||,
-                           xleftmargin=0em,
-                           xrightmargin=0em,
-                           numbersep=.2em}
+\newif\ifplastex\plastexfalse
+\ifplastex
+  \newminted[python]{python}{style=bw,
+                             fontsize=\small,
+                             bgcolor=white,
+                             highlightcolor=white,
+                             autogobble,
+                             frame=none,
+                             % breaklines,
+                             escapeinside=||,
+                             xleftmargin=0em,
+                             xrightmargin=0em,
+                             numbersep=.2em}
 
-\newmintinline{python}{style=bw,
-                       fontsize=\small,
-                       bgcolor=white,
-                       highlightcolor=white,
-                       autogobble,
-                       encoding=utf8}
+  \newmintinline{python}{style=bw,
+                         fontsize=\small,
+                         bgcolor=white,
+                         highlightcolor=white,
+                         autogobble,
+                         encoding=utf8}
 
-\renewcommand{\theFancyVerbLine}{
-  \sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
+  \renewcommand{\theFancyVerbLine}{
+    \sffamily\black{\bfseries{\scriptsize\arabic{FancyVerbLine}}}}
 
-\AtBeginEnvironment{minted}{\dontdofcolorbox}
-\def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
-\xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
-
+  \AtBeginEnvironment{minted}{\dontdofcolorbox}
+  \def\dontdofcolorbox{\renewcommand\fcolorbox[4][]{##4}}
+  \xpatchcmd{\inputminted}{\minted@fvset}{\minted@fvset\dontdofcolorbox}{}{}
+\fi
 %--
 
 

@@ -109,9 +109,6 @@
   \DeclareGraphicsRule{*}{mps}{*}{}
 \fi
 
-% tkz
-\usetkzobj{all} % loading all tkz objects
-
 % sizing of the page, depending on the size parameter of the class
 \ifthenelse{ \equal{\size}{a5} }{
   \geometry{

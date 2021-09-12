@@ -135,7 +135,7 @@
 \ofoot[]{}
 
 % KOMA-Script version (preferred)
-\ifthenelse{ \equal{\type}{ds} }{
+\ifthenelse{ \equal{\type}{e} }{
  	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}]
     {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}}
   \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
@@ -144,7 +144,7 @@
   \lehead[]{}
   \rehead[]{}
 }{
-	\ifthenelse{ \equal{\type}{dm} }{
+	\ifthenelse{ \equal{\type}{d} }{
    	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
       {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
     \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
@@ -153,7 +153,7 @@
     \lehead[]{}
     \rehead[]{}
 	}{
-    \ifthenelse{ \equal{\type}{int} }{
+    \ifthenelse{ \equal{\type}{i} }{
       \cohead[\textbf{MATHÉMATIQUES}\\\textbf{\Jd Interrogation}]
         {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Interrogation}}
       \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
@@ -162,7 +162,13 @@
       \lehead[]{}
       \rehead[]{}
     }{
-    % nothing
+      \cohead[\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}]
+        {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Évaluation}}
+      \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
+      \rohead[Le \@date\\]{Le \@date\\}
+      \cehead[]{}
+      \lehead[]{}
+      \rehead[]{}
     }
 	}
 }

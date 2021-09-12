@@ -114,7 +114,7 @@
 \RequirePackage[dash]{dashundergaps}
 \RequirePackage{comment}
 \RequirePackage{caption}
-% \RequirePackage[outputdir=./build]{minted}
+\RequirePackage[outputdir=./build]{minted}
 \RequirePackage{inconsolata}
 \RequirePackage{tasks}
 \RequirePackage{dashrule}
@@ -305,8 +305,10 @@
 %
 
 \definecolor{friendlybg}{HTML}{F0F0F0}
-\newif\ifplastex\plastexfalse
+\newif\ifplastex
+\plastexfalse
 \ifplastex
+\else
   \newminted[python]{python}{style=bw,
                              fontsize=\small,
                              bgcolor=white,

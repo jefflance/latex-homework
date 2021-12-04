@@ -71,6 +71,39 @@
   }
 }
 
+% corollaire
+\NewDocumentEnvironment{corollaire}{ s o }{
+  \IfBooleanTF {#1} {
+    % if starred: with logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@coro1}
+
+    }{
+      % if subtitle
+      \begin{@coro1}[#2]
+
+    }
+  }{
+    % if not starred: without logo
+    \IfNoValueTF {#2} {
+      % if no subtitle
+      \begin{@coro2}
+
+    }{
+      % if subtitle
+      \begin{@coro2}[#2]
+
+    }
+  }
+}{
+  \IfBooleanTF {#1} {
+    \end{@coro1}
+  }{
+    \end{@coro2}
+  }
+}
+
 % propriete
 \NewDocumentEnvironment{propriete}{ s o }{
   \IfBooleanTF {#1} {

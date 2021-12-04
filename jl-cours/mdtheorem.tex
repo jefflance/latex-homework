@@ -64,6 +64,26 @@
   \end{@thm2*}
 }
 
+\RenewDocumentEnvironment{@coro1}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@coro1*}
+  }{
+    \begin{@coro1*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@coro1*}
+}
+
+\RenewDocumentEnvironment{@coro2}{ o } {%begin
+  \IfNoValueTF {#1} {
+    \begin{@coro2*}
+  }{
+    \begin{@coro2*}[\hfill{\normalfont\slshape#1}]
+  }
+}{%end
+  \end{@coro2*}
+}
+
 % propriete
 \mdtheorem[style=pencil, theoremseparator={}, theoremspace={},
            outerlinewidth=1pt, outerlinecolor=black]{@ppt1}{\Jd Propriété}

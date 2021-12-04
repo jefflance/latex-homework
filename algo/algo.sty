@@ -36,9 +36,16 @@
 %
 %
 
+\algrenewcommand\algorithmicdo{}
+
+\algrenewcommand\algorithmicif{\textbf{Si}}
+\algrenewcommand\algorithmicelse{\textbf{sinon}}
+
+\algrenewtext{If}[1]%
+  {\algorithmicif\ #1 \textbf{alors} \algorithmicdo}
+
 \algrenewcommand\algorithmicfor{\textbf{Pour}}
 \algnewcommand\algorithmicto{\textbf{à}}
-\algrenewcommand\algorithmicdo{}
 
 \algrenewtext{For}[3]%
   {\algorithmicfor\ #1 \textbf{allant de} #2 \textbf{à} #3 \algorithmicdo}

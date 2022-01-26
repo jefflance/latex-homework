@@ -127,12 +127,12 @@
 	\IfNoValueTF{ \subtitle }{
 %           \cohead[\@title]{\@title}
 %           \rohead[Activité]{Activité}
-	    \cohead[]{\@title}
+	    % \cohead[]{\@title}
 	    \rohead*[]{Activité}
 	}{
 %	    \cohead[\@title]{\@title}
 %	    \rohead[Activité]{Activité - \@subtitle}
-	    \cohead[]{\@title}
+	    % \cohead[]{\@title}
       \rohead*[]{Activité - \@subtitle}
 	}
 }{
@@ -140,23 +140,23 @@
 %		\cohead[\@title]{\@title}
 %		\rohead[Exercices]{Exercices}
     \IfNoValueTF{ \subtitle }{
-      \cohead[]{\@title}
+      % \cohead[]{\@title}
       \rohead*[]{Exercices}
     }{
-      \cohead[]{\@title}
+      % \cohead[]{\@title}
       \rohead*[]{Exercices - \@subtitle}
     }
 	}{
     \ifthenelse{ \equal{\type}{q} }{
 %      \cohead[\@title]{\@title}
 %      \rohead[Rappels]{Rappels - \@subtitle}
-      \cohead*[]{\@title}
+      % \cohead*[]{\@title}
       \rohead*[]{Rappels - \@subtitle}
     }{
       \ifthenelse{ \equal{\type}{n} }{
   %      \cohead[\@title]{\@title}
   %      \rohead[Rappels]{Rappels - \@subtitle}
-        \cohead*[]{\@title}
+        % \cohead*[]{\@title}
         \rohead*[]{}
       }{
         \rohead*[Cours]{Cours - \@subtitle}
@@ -165,14 +165,15 @@
   }
 }
 
+% define the page numbering style
 \pagenumbering{arabic}
-%\ofoot*{\pagemark}% pagenumber in the outer footer with scrheadings and plain style
-%\ohead[]{\headmark}% headmark only with scrheadings
+% clear the defauls page header and footer, so the standard page numbering
+% \clearpairofpagestyles
 
+% set my own numbering form for the footer
 \cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
 \cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
 
-%\clearpairofpagestyles% removes the default page header and footer entries
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
 \setkomafont{pagefoot}{\normalfont}

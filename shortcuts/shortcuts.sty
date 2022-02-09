@@ -101,11 +101,11 @@
 
 %% textsuperscript and textsubscript
 %%
-\NewDocumentCommand \tup { g } {
+\NewDocumentCommand \up { g } {
     \textsuperscript{#1}
 }
 
-\NewDocumentCommand \tub { g } {
+\NewDocumentCommand \ub { g } {
     \textsubscript{#1}
 }
 
@@ -169,37 +169,37 @@
 %% basis (i,j)
 %%
 \RenewDocumentCommand \ij { } {
-  \ensuremath{ \left(\vec{\imath}\; ;\; \vec{\jmath}\right) }
+  \ensuremath{ \left(\vec{\imath}\: ;\: \vec{\jmath}\right) }
 }
 
 %% basis (i,j,k)
 %%
 \NewDocumentCommand \ijk { } {
-  \ensuremath{ \left(\vec{\imath}\; ;\; \vec{\jmath}\ ;\ \vec{k}\right) }
+  \ensuremath{ \left(\vec{\imath}\: ;\: \vec{\jmath}\: ;\: \vec{k}\right) }
 }
 
 %% frame (O;i;j)
 %%
 \NewDocumentCommand \oij { } {
-  \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\right) }
+  \ensuremath{ \left(O\: ;\: \vec{\imath}\: ;\: \vec{\jmath}\right) }
 }
 
 %% frame (O;i;j;k)
 %%
 \NewDocumentCommand \oijk { } {
-  \ensuremath{ \left(O\; ;\; \vec{\imath}\; ;\; \vec{\jmath}\ ;\ \vec{k}\right) }
+  \ensuremath{ \left(O\: ;\: \vec{\imath}\: ;\: \vec{\jmath}\: ;\: \vec{k}\right) }
 }
 
 %% frame (O;I;I)
 %%
 \NewDocumentCommand \OIJ { } {
-  \ensuremath{ \left(O\; ;\; I\; ;\; J\right) }
+  \ensuremath{ \left(O\: ;\: I\: ;\: J\right) }
 }
 
 %% frame (O;x;y)
 %%
 \NewDocumentCommand \oxy { } {
-  \ensuremath{ \left(O\; ;\; x\; ;\; y\right) }
+  \ensuremath{ \left(O\: ;\: x\: ;\: y\right) }
 }
 
 %% vector arrow redefinition

@@ -225,12 +225,12 @@
 
 %% titre
 %%
-\newcommand{\titre}[4]{%
+\NewDocumentCommand \titre { G{Titre} G{Sous-titre} G{Date} G{Cours} G{Institut} } {%
 	\title{#1}
 	\subtitle{#2}
 	\date{#3}
-	\author{Cours}
-	\institute{#4}
+	\author{#4}
+	\institute{#5}
 }
 
 %% debut

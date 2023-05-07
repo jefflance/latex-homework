@@ -74,7 +74,7 @@
 %
 %
 
-\DeclareOptionX{type}[crs]{%
+\DeclareOptionX{type}[c]{%
   \def\type{#1}%
 }
 
@@ -141,13 +141,15 @@
 %		\rohead[Exercices]{Exercices}
     \IfNoValueTF{ \subtitle }{
       % \cohead[]{\@title}
+      \rehead*[]{Exercices}
       \rohead*[]{Exercices}
     }{
       % \cohead[]{\@title}
+      \rehead*[]{Exercices - \@subtitle}
       \rohead*[]{Exercices - \@subtitle}
     }
 	}{
-    \ifthenelse{ \equal{\type}{q} }{
+    \ifthenelse{ \equal{\type}{r} }{
 %      \cohead[\@title]{\@title}
 %      \rohead[Rappels]{Rappels - \@subtitle}
       % \cohead*[]{\@title}
@@ -171,8 +173,7 @@
 % \clearpairofpagestyles
 
 % set my own numbering form for the footer
-\cofoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
-\cefoot[\thepage\ /\ \pageref{LastPage}]{\thepage\ /\ \pageref{LastPage}}
+\cfoot*{\thepage\ /\ \pageref{LastPage}}
 
 \pagestyle{scrheadings}
 \setkomafont{pagehead}{\normalfont\bfseries}
@@ -357,8 +358,7 @@
 %% deactivate page numbering in footer
 %%
 \NewDocumentCommand \nonumbering{ }{
-  \cefoot*{}
-  \cofoot*{}
+  \cfoot*{}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

@@ -43,14 +43,15 @@
 	\RequirePackage{luatextra}	      % charge fontspec => fontenc
 	% \defaultfontfeatures{Ligatures=TeX}
 \else
-	\RequirePackage[french]{babel}	% => polyglossia
+	\RequirePackage[french]{babel}	  % => polyglossia
 	\RequirePackage[utf8]{inputenc}		% => fontspec
 	\RequirePackage[T1]{fontenc}		  % => fontspec
   % \RequirePackage[babel=true,kerning=true]{microtype}
 \fi
 
 % fonts
-\RequirePackage{libertine}
+\RequirePackage{inconsolata}
+% \RequirePackage{libertine}
 \RequirePackage{pifont}
 \RequirePackage{fontawesome}
 \RequirePackage[right]{eurosym}
@@ -72,9 +73,8 @@
 
 % maths
 \RequirePackage{amsmath, amsthm, amsfonts, amssymb}
-% \RequirePackage{amsmath, amsthm, amssymb}
 \RequirePackage{tkz-euclide}
-\usetikzlibrary{arrows, calc, positioning, shapes.geometric, shadows, snakes, tikzmark}
+\usetikzlibrary{arrows, calc, patterns, positioning, shapes.geometric, shadows, snakes, tikzmark}
 \RequirePackage{calc}
 \RequirePackage{fourier}
 \RequirePackage{pgfplots}
@@ -83,6 +83,9 @@
 \RequirePackage{asymptote}
 \RequirePackage{mathrsfs}
 \RequirePackage{xlop}
+% \RequirePackage{pst-plot,pst-tree,pstricks,pst-node}
+% \RequirePackage{pst-eucl}
+% \RequirePackage{pstricks-add}
 
 % tableaux de signe
 %\RequirePackage{tabvar}    % replaced by pdftabvar from pdfadd
@@ -99,7 +102,6 @@
 \RequirePackage{array}
 \RequirePackage{tabularx}
 \RequirePackage{makecell}
-\RequirePackage{multicol}
 \RequirePackage{multirow}
 \RequirePackage{boldline}
 \RequirePackage{colortbl}
@@ -116,13 +118,13 @@
 \RequirePackage{comment}
 \RequirePackage{caption}
 \RequirePackage[outputdir=./build]{minted}
-\RequirePackage{inconsolata}
 \RequirePackage{tasks}
 \RequirePackage{dashrule}
 \RequirePackage{qrcode}
 \RequirePackage{verse}
 \RequirePackage{nicefrac}
 \RequirePackage{blindtext}
+\RequirePackage{wasysym}
 %--
 
 
@@ -168,9 +170,9 @@
 %
 %
 
-% 
+%
 % Tikz
-% 
+%
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 % Tableau
@@ -294,6 +296,10 @@
     \fbox{\usebox{\fminipagebox}}%
     \kern\dimexpr-\fboxsep-\fboxrule\relax
   }\par\kern#2
+}
+
+\NewDocumentCommand \colsep{ G{1} }{
+    \setlength{\columnseprule}{#1}
 }
 %--
 
@@ -429,7 +435,7 @@
 \else
   \newcommand\newFontCommand[2]{%
     \expandafter\newcommand\csname #1\endcsname{\usefont{T1}{#2}{m}{n}}}
-  
+
   \newFontCommand{Jd}{j.d.}
 \fi
 
@@ -471,6 +477,7 @@
 % Create some color commands
 \newColorCommand{red}
 \newColorCommand{black}
+\newColorCommand{blue}
 \newColorCommand{gray}
 \newColorCommand{green}
 \newColorCommand{lapislazuli}

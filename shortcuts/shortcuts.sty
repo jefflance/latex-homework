@@ -143,6 +143,11 @@
 \NewDocumentCommand \n { g } {
   \num{#1}
 }
+
+% use € to print \euro symbol
+%%
+\catcode `\€=\active
+\def €{\euro }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -202,15 +207,21 @@
   \ensuremath{ \left(O\: ;\: x\: ;\: y\right) }
 }
 
-%% vector arrow redefinition
+%% frame (O;u;v)
 %%
-\renewcommand{\Vec}[1]{
-  \ensuremath{ \overrightarrow{#1\vphantom(} }
+\NewDocumentCommand \ouv { } {
+  \ensuremath{ \left(O\: ;\: \vec{u}\: ;\: \vec{v}\right) }
 }
 
+%% vector arrow redefinition
+%%
 \renewcommand{\vec}[1]{
-  \ensuremath{ \overrightarrow{#1\vphantom(} }
+  \ensuremath{ \overrightarrow{\, \mathstrut#1 \,} }
 }
+
+% \renewcommand{\vec}[1]{
+%   \ensuremath{ \overrightarrow{#1\vphantom(} }
+% }
 
 %% coordinates
 %%
@@ -381,7 +392,7 @@
 %% \nicefrac shortcut
 %%
 \NewDocumentCommand \sfrac{ G{1} G{2}  } {
-  \nicefrac{#1}{#2}
+    \nicefrac{#1}{#2}
 }
 
 %% limits
@@ -402,9 +413,24 @@
 %  \ensuremath{\ell}
 %}
 
-% %% renewed \bar command
-% %%
-% \renewcommand{\bar}[1]{\overline{#1}}
+%% renewed \bar command
+%%
+\NewDocumentCommand \barre { g } {
+    {\overline{\,\mathstrut#1\,}}
+}
+\RenewDocumentCommand \bar { g } {
+    {\overline{\,\mathstrut#1\,}}
+}
+
+%% Complex numbers
+%%
+\NewDocumentCommand \re { G{z} } {
+    \ensuremath{\operatorname{Re}(#1)}
+}
+
+\NewDocumentCommand \im { G{z} } {
+    \ensuremath{\operatorname{Im}(#1)}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

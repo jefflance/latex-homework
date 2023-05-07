@@ -69,7 +69,7 @@
 %
 %
 
-\DeclareOptionX{type}[ds]{%
+\DeclareOptionX{type}[e]{%
   \def\type{#1}%
 }
 
@@ -146,7 +146,7 @@
 }{
 	\ifthenelse{ \equal{\type}{d} }{
    	\cohead[\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}]
-      {\textbf{MATHÉMATIQUES}\\\textbf{Devoir maison}}
+      {\textbf{MATHÉMATIQUES}\\\textbf{\Jd Devoir maison}}
     \lohead[NOM :\\Prénom :]{NOM :\\Prénom :}
     \rohead[\@date\\]{\@date\\}
     \cehead[]{}

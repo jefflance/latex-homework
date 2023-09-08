@@ -116,7 +116,7 @@
 
 %% sizing of the page
 %%
-\geometry{a4paper, includeheadfoot, hmargin=.7cm, vmargin=.5cm, head=14.5pt}
+\geometry{a4paper, includeheadfoot, hmargin=.8cm, vmargin=.8cm, head=14.5pt}
 
 %% title, header and footer
 %% KOMA-Script version (preferred)

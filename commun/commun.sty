@@ -186,29 +186,24 @@
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
 % Tableau
-% Alignment commands of the content in the column with a defined width.
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{M}[1]{>{\centering}m{#1}}
-%% lh{largeur} : gauche - haut
-%\newcolumntype{lh}[1]{>{\raggedright}p{#1}}
-%% ch{largeur} : centre - haut
-%\newcolumntype{ch}[1]{>{\centering\arraybackslash}p{#1}}
-%% rh{largeur} : droite - haut
-%\newcolumntype{rh}[1]{>{\raggedleft}p{#1}}
-%% lc{largeur} : gauche - centre
-%\newcolumntype{lc}[1]{>{\raggedright}m{#1}}
-%% cc{largeur} : centre - centre
-% \newcolumntype{M}[1]{ >{\centering\arraybackslash} m{#1} }
-%% rc{largeur} : droite - centre
-%\newcolumntype{rc}[1]{>{\raggedleft}m{#1}}
-%% lb{largeur} : gauche - bas
-%\newcolumntype{lb}[1]{>{\raggedright}b{#1}}
-%% cb{largeur} : centre - bas
-%\newcolumntype{cb}[1]{>{\centering}b{#1}}
-%% rb{largeur} : droite - bas
-%\newcolumntype{rb}[1]{>{\raggedleft}b{#1}}
+% Alignment commands of the content in a column or row in tabularray.
+\NewColumnType{l}{Q[l]}
+\NewColumnType{c}{Q[c]}
+\NewColumnType{r}{Q[r]}
+\NewColumnType{t}[1]{Q[t,wd=#1]}
+\NewColumnType{m}[1]{Q[m,wd=#1]}
+\NewColumnType{b}[1]{Q[b,wd=#1]}
+\NewColumnType{h}[1]{Q[h,wd=#1]}
+\NewColumnType{f}[1]{Q[f,wd=#1]}
+\NewColumnType{X}[1][]{Q[co=1,#1]}
+\NewRowType{l}{Q[l]}
+\NewRowType{c}{Q[c]}
+\NewRowType{r}{Q[r]}
+\NewRowType{t}[1]{Q[t,ht=#1]}
+\NewRowType{m}[1]{Q[m,ht=#1]}
+\NewRowType{b}[1]{Q[b,ht=#1]}
+\NewRowType{h}[1]{Q[h,ht=#1]}
+\NewRowType{f}[1]{Q[f,ht=#1]}
 
 % Item in a tab.
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
